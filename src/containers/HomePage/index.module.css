@@ -64,9 +64,19 @@
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
   font-size: 1rem;
   border: 1px solid rgb(46, 46, 46);
+}
+
+.inputUsernameError {
+  border-color: #e30202;
+}
+
+.errorMessage {
+  color: #e30202;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.25rem;
 }
 
 .button {

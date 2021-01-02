@@ -28,7 +28,7 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": ["error"],
     "import/no-extraneous-dependencies": [
       "error",
-      { devDependencies: ["**/*.test.ts", "**/*.spec.ts"] },
+      { devDependencies: ["**/*.test.ts", "**/*.spec.ts", "**/*.test.tsx"] },
     ],
     "import/extensions": [
       "error",
