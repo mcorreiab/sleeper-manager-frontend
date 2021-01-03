@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { useRouter } from "next/router";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +12,7 @@ const HomePage = () => {
   ]);
   const [username, setUsername] = useState("");
   const [usernameMissing, setUsernameMissing] = useState(null);
+  const router = useRouter();
 
   const onChangeUsername = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -23,6 +25,8 @@ const HomePage = () => {
     event.preventDefault();
     if (username.length === 0) {
       setUsernameMissing("Should inform an username");
+    } else {
+      router.push(`/unavailable?user=${username}`);
     }
   };
 
