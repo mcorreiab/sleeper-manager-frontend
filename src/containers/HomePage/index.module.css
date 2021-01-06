@@ -58,14 +58,18 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.inputUsername,
-.inputUsername:focus {
+.inputUsername {
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   font-size: 1rem;
   border: 1px solid rgb(46, 46, 46);
+  outline: none;
+}
+
+.inputUsername:focus {
+  border: 2px solid #0073cd;
 }
 
 .inputUsernameError {
@@ -89,6 +93,7 @@
   border: 0;
   color: white;
   font-weight: bold;
+  outline: none;
 }
 
 .illustration {
