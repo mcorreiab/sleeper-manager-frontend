@@ -12,24 +12,6 @@ const mockedUseRouter = useRouter as jest.Mock;
 
 describe("render home page", () => {
   describe("render static information", () => {
-    it("should render application title with success", () => {
-      render(<HomePage />);
-
-      expect(screen.queryByText("Sleeper Manager")).toBeInTheDocument();
-    });
-
-    it("should have a github mark", () => {
-      render(<HomePage />);
-
-      expect(screen.queryByTestId("github-icon")).toBeInTheDocument();
-    });
-
-    it("should have a about icon", () => {
-      render(<HomePage />);
-
-      expect(screen.queryByTestId("info")).toBeInTheDocument();
-    });
-
     it("should have a overall explanation of what does the platform", () => {
       render(<HomePage />);
 
