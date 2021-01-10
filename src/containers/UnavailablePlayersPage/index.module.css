@@ -1,0 +1,9 @@
+.userInformation {
+  display: flex;
+  align-items: center;
+}
+
+.userAvatar {
+  width: 2.5rem;
+  margin-right: 1rem;
+}

@@ -1,0 +1,37 @@
+.inputUsername {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid rgb(46, 46, 46);
+  outline: none;
+}
+
+.inputUsername:focus {
+  border: 2px solid #0073cd;
+}
+
+.inputUsernameError {
+  border-color: #e30202;
+}
+
+.errorMessage {
+  color: #e30202;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.25rem;
+}
+
+.button {
+  background-color: #fa7820;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: auto;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
