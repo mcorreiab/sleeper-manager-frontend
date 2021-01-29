@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.menuTitle {
+  color: #fa7820;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.navigation {
+  flex-basis: 28%;
+}
+
+.navigationList {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 540px) {
+  .navigation {
+    flex-basis: 16%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navigation {
+    flex-basis: 12%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .navigation {
+    flex-basis: 9%;
+  }
+}

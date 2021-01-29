@@ -2,6 +2,11 @@
   flex-grow: 1;
 }
 
+.illustration img {
+  width: 100%;
+  height: 100%;
+}
+
 .inputArea {
   font-family: "Open Sans", sans-serif;
 }

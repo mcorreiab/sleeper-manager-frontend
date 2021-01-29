@@ -12,7 +12,7 @@ describe("withHeader high order component", () => {
     );
 
     expect(screen.queryByText("Sleeper Manager")).toBeInTheDocument();
-    expect(screen.queryByTestId("github-icon")).toBeInTheDocument();
-    expect(screen.queryByTestId("info")).toBeInTheDocument();
+    expect(screen.queryByAltText("github logo")).toBeInTheDocument();
+    expect(screen.queryByAltText("info circle")).toBeInTheDocument();
   });
 });

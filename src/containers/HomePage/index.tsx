@@ -38,11 +38,9 @@ const HomePage: FunctionComponent = () => {
     <WithHeader>
       <main className={styles.content}>
         <TitleArea className={styles.titleArea} />
-        <img
-          className={styles.illustration}
-          src="/ball-and-helmet.svg"
-          alt="Helmet and ball"
-        />
+        <figure className={styles.illustration}>
+          <img src="/ball-and-helmet.svg" alt="Helmet and ball" />
+        </figure>
         <InputUsername
           className={styles.inputArea}
           onFormSubmit={onFormSubmit}
