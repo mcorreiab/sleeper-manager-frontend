@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
 import Header from "../../components/Header";
+import UserInformation from "./components/UserInformation";
 import styles from "./index.module.css";
 
 interface RosterProps {
@@ -23,18 +24,11 @@ const unavailablePlayersPage: FunctionComponent<Props> = ({
   const { user } = router.query;
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <Header />
-      </div>
+      </header>
       <main>
-        <div className={styles.userInformation}>
-          <img
-            className={styles.userAvatar}
-            src={avatarUrl}
-            alt="User avatar"
-          />
-          <span className={styles.username}>{user}</span>
-        </div>
+        <UserInformation avatarUrl={avatarUrl} username={user as string} />
         <div className={styles.leagueCarousel}>
           <div className={styles.leftArrow}>
             <img src="/left-arrow.svg" alt="left arrow" />

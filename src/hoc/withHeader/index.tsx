@@ -8,7 +8,9 @@ interface Props {
 
 const withHeader: FunctionComponent<Props> = ({ children }) => (
   <div className={styles.container}>
-    <Header />
+    <header>
+      <Header />
+    </header>
     {children}
   </div>
 );

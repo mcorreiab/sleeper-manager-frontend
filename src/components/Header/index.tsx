@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./index.module.css";
 
 const Header: FunctionComponent = () => (
-  <header className={styles.header}>
+  <div className={styles.header}>
     <h1 className={styles.menuTitle}>Sleeper Manager</h1>
     <nav className={styles.navigation}>
       <ul className={styles.navigationList}>
@@ -25,7 +25,7 @@ const Header: FunctionComponent = () => (
         </li>
       </ul>
     </nav>
-  </header>
+  </div>
 );
 
 export default Header;

@@ -1,0 +1,15 @@
+.userInformation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 var(--content-spacing);
+}
+
+.userAvatar {
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
+.username {
+  color: #eaeaea;
+}

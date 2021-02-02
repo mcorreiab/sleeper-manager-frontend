@@ -1,8 +1,8 @@
-import { screen } from "@testing-library/react";
+import { Screen } from "@testing-library/react";
 
 expect.extend({
-  toHaveACompleteHeader() {
-    const title = screen.queryByText("Sleeper Manager");
+  toHaveACompleteHeader(received: Screen) {
+    const title = received.queryByText("Sleeper Manager");
     if (!title) {
       return {
         message: () => "Expected header title to be present",
@@ -10,7 +10,7 @@ expect.extend({
       };
     }
 
-    const githubLogo = screen.queryByAltText("github logo");
+    const githubLogo = received.queryByAltText("github logo");
 
     if (!githubLogo) {
       return {
@@ -19,7 +19,7 @@ expect.extend({
       };
     }
 
-    const infoCircle = screen.queryByAltText("info circle");
+    const infoCircle = received.queryByAltText("info circle");
 
     if (!infoCircle) {
       return {

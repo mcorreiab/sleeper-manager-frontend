@@ -1,0 +1,42 @@
+[
+  {
+    "id": "11",
+    "ownerId": "303333123121229824",
+    "players": [
+      {
+        "id": "4351",
+        "name": "Tim Patrick",
+        "injuryStatus": "Questionable",
+        "starter": true
+      },
+      {
+        "id": "6801",
+        "name": "Tee Higgins",
+        "injuryStatus": "Questionable",
+        "starter": true
+      }
+    ],
+    "league": {
+      "name": "LIGA PODRE",
+      "id": "601167637388521472",
+      "size": 12
+    }
+  },
+  {
+    "id": "14",
+    "ownerId": "303333123121229824",
+    "players": [
+      {
+        "id": "2431",
+        "name": "Mike Davis",
+        "injuryStatus": "Questionable",
+        "starter": true
+      }
+    ],
+    "league": {
+      "name": "BFF - LIGA 8",
+      "id": "599686504830263296",
+      "size": 16
+    }
+  }
+]

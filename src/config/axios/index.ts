@@ -8,5 +8,6 @@ appAxios.interceptors.response.use((value: AxiosResponse) => {
   response.data = camelizeKeys(value.data);
   return response;
 });
+appAxios.defaults.timeout = 10000;
 
 export default appAxios;
