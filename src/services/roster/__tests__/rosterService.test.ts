@@ -15,6 +15,6 @@ describe("roster service test", () => {
 
     const actual = await getRostersByUserId(userId);
 
-    expect(actual.length).toEqual(2);
+    expect(actual.length).toEqual(5);
   });
 });

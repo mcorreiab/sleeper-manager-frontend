@@ -1,42 +1,127 @@
 [
   {
     "id": "11",
-    "ownerId": "303333123121229824",
+    "owner_id": "303333123121229824",
     "players": [
       {
         "id": "4351",
         "name": "Tim Patrick",
-        "injuryStatus": "Questionable",
-        "starter": true
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "WR",
+        "team": "DEN"
       },
       {
         "id": "6801",
         "name": "Tee Higgins",
-        "injuryStatus": "Questionable",
-        "starter": true
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "WR",
+        "team": "CIN"
       }
     ],
     "league": {
       "name": "LIGA PODRE",
       "id": "601167637388521472",
-      "size": 12
+      "size": 12,
+      "points_by_reception": "Half PPR"
     }
   },
   {
     "id": "14",
-    "ownerId": "303333123121229824",
+    "owner_id": "303333123121229824",
     "players": [
       {
         "id": "2431",
         "name": "Mike Davis",
-        "injuryStatus": "Questionable",
-        "starter": true
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "RB",
+        "team": "CAR"
       }
     ],
     "league": {
       "name": "BFF - LIGA 8",
       "id": "599686504830263296",
-      "size": 16
+      "size": 16,
+      "points_by_reception": "PPR"
+    }
+  },
+  {
+    "id": "1",
+    "owner_id": "303333123121229824",
+    "players": [
+      {
+        "id": "5849",
+        "name": "Kyler Murray",
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "QB",
+        "team": "ARI"
+      }
+    ],
+    "league": {
+      "name": "Profootball Show",
+      "id": "540634024144465920",
+      "size": 16,
+      "points_by_reception": "Half PPR"
+    }
+  },
+  {
+    "id": "10",
+    "owner_id": "303333123121229824",
+    "players": [
+      {
+        "id": "4199",
+        "name": "Aaron Jones",
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "RB",
+        "team": "GB"
+      }
+    ],
+    "league": {
+      "name": "NOME Ano 3",
+      "id": "518558499754741760",
+      "size": 12,
+      "points_by_reception": "Half PPR"
+    }
+  },
+  {
+    "id": "6",
+    "owner_id": "303333123121229824",
+    "players": [
+      {
+        "id": "2431",
+        "name": "Mike Davis",
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "RB",
+        "team": "CAR"
+      },
+      {
+        "id": "4663",
+        "name": "Austin Ekeler",
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "RB",
+        "team": "LAC"
+      },
+      {
+        "id": "5849",
+        "name": "Kyler Murray",
+        "injury_status": "Questionable",
+        "starter": true,
+        "position": "QB",
+        "team": "ARI"
+      }
+    ],
+    "league": {
+      "name": "SuperFlex Fantasy",
+      "id": "516367724713119744",
+      "size": 12,
+      "avatar": "95ce9b25a64fcd1811757d2823b1da44",
+      "points_by_reception": "Half PPR"
     }
   }
 ]

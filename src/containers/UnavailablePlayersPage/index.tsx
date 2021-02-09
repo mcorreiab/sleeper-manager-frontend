@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import UserInformation from "./components/UserInformation";
+import LeaguesCarousel from "./components/LeaguesCarousel";
 import styles from "./index.module.css";
 
 interface RosterProps {
@@ -29,25 +30,12 @@ const unavailablePlayersPage: FunctionComponent<Props> = ({
       </header>
       <main>
         <UserInformation avatarUrl={avatarUrl} username={user as string} />
-        <div className={styles.leagueCarousel}>
-          <div className={styles.leftArrow}>
-            <img src="/left-arrow.svg" alt="left arrow" />
-          </div>
-          <div className={styles.leagueCard}>
-            <img
-              src={rosters.avatarUrl}
-              alt="League avatar"
-              className={styles.leagueImage}
-            />
-            <p className={styles.leagueName}>{rosters.name}</p>
-            <p className={styles.leagueDetails}>
-              {rosters.size} teams | {rosters.type}
-            </p>
-          </div>
-          <div className={styles.rightArrow}>
-            <img src="/right-arrow.svg" alt="right arrow" />
-          </div>
-        </div>
+        <LeaguesCarousel
+          name={rosters.name}
+          avatarUrl={rosters.avatarUrl}
+          size={rosters.size}
+          type={rosters.type}
+        />
       </main>
     </div>
   );

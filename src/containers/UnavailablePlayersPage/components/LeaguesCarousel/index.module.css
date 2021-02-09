@@ -1,0 +1,45 @@
+.leagueCarousel {
+  display: flex;
+}
+
+.leftArrow {
+  padding: 2.375rem 1.5rem;
+  margin-right: 1rem;
+  background-color: #282b35;
+  border-radius: 0px 16px 16px 0px;
+  align-self: center;
+}
+
+.rightArrow {
+  padding: 2.375rem 1.5rem;
+  margin-left: 1rem;
+  background-color: #282b35;
+  border-radius: 16px 0px 0px 16px;
+  align-self: center;
+}
+
+.leagueCard {
+  flex-basis: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #3a28a7;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.leagueImage {
+  max-width: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.leagueName {
+  color: #ffffff;
+  font-weight: 900;
+  margin-bottom: 0.25rem;
+}
+
+.leagueDetails {
+  color: #ffffff;
+}

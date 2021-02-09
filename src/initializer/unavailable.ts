@@ -1,4 +1,5 @@
 import { getRostersByUserId, getUserInformation } from "../services";
+import RosterModel from "../services/roster/model";
 
 interface RosterProps {
   name: string;
@@ -12,17 +13,23 @@ export interface Props {
   rosters: RosterProps[];
 }
 
+const avatarBaseUrl = "https://sleepercdn.com/avatars/";
+
+const getRosterAvatar = (roster: RosterModel): string =>
+  roster.league.avatar
+    ? `${avatarBaseUrl}${roster.league.avatar}`
+    : "/sleeper-logo.png";
+
 const getProps = async (user: string): Promise<Props> => {
   const userInformation = await getUserInformation(user);
   const rosters = await getRostersByUserId(userInformation.userId);
-  const userAvatarUrl = `https://sleepercdn.com/avatars/${userInformation.avatar}`;
-  const leagueUrl = `https://sleepercdn.com/avatars/${userInformation.avatar}`;
+  const userAvatarUrl = `${avatarBaseUrl}${userInformation.avatar}`;
 
   const rosterProps: RosterProps[] = rosters.map((roster) => ({
     name: roster.league.name,
     size: roster.league.size,
-    avatarUrl: leagueUrl,
-    type: "Standard",
+    avatarUrl: getRosterAvatar(roster),
+    type: roster.league.pointsByReception,
   }));
 
   return {
