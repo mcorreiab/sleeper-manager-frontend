@@ -1,5 +1,6 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styles from "./index.module.css";
+import LeagueCard from "../LeagueCard";
 
 interface RosterProps {
   name: string;
@@ -8,26 +9,32 @@ interface RosterProps {
   type: string;
 }
 
-const leagueCarousel = ({ name, size, avatarUrl, type }: RosterProps) => {
+interface Props {
+  rosters: RosterProps[];
+  rosterIndex: number;
+  clickOnRightArrow: () => void;
+}
+
+const leagueCarousel: FunctionComponent<Props> = ({
+  rosters,
+  rosterIndex,
+  clickOnRightArrow,
+}) => {
+  const { name, avatarUrl, size, type } = rosters[rosterIndex];
   return (
     <div className={styles.leagueCarousel}>
-      <div className={styles.leftArrow}>
+      <button className={styles.leftArrow} type="button">
         <img src="/left-arrow.svg" alt="left arrow" />
-      </div>
-      <div className={styles.leagueCard}>
-        <img
-          src={avatarUrl}
-          alt="League avatar"
-          className={styles.leagueImage}
-        />
-        <p className={styles.leagueName}>{name}</p>
-        <p className={styles.leagueDetails}>
-          {size} teams | {type}
-        </p>
-      </div>
-      <div className={styles.rightArrow}>
+      </button>
+      <LeagueCard name={name} avatarUrl={avatarUrl} size={size} type={type} />
+      <button
+        className={styles.rightArrow}
+        onClick={clickOnRightArrow}
+        onKeyDown={clickOnRightArrow}
+        type="button"
+      >
         <img src="/right-arrow.svg" alt="right arrow" />
-      </div>
+      </button>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import UnavailablePlayersPage from "../containers/UnavailablePlayersPage";
 import { Props, getProps } from "../initializer/unavailable";
 
 const unavailable: FunctionComponent<Props> = ({ avatarUrl, rosters }) => (
-  <UnavailablePlayersPage avatarUrl={avatarUrl} rosters={rosters[0]} />
+  <UnavailablePlayersPage userAvatarUrl={avatarUrl} rosters={rosters} />
 );
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
