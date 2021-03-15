@@ -1,10 +1,23 @@
-.leagueCarousel {
+.carousel {
   display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: all 1s;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+
+.carouselItem {
+  flex-shrink: 0;
 }
 
 .leftArrow {
+  position: absolute;
   padding: 2.375rem 1.5rem;
-  margin-right: 1rem;
   background-color: #282b35;
   border-radius: 0px 16px 16px 0px;
   align-self: center;
@@ -12,8 +25,9 @@
 }
 
 .rightArrow {
+  position: absolute;
+  right: 0;
   padding: 2.375rem 1.5rem;
-  margin-left: 1rem;
   background-color: #282b35;
   border-radius: 16px 0px 0px 16px;
   align-self: center;

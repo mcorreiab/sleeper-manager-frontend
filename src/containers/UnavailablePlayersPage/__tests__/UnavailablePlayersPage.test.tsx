@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import "../../util/jest-matchers/jest-extend-header";
 import UnavailablePlayersPage from "../index";
@@ -50,19 +50,6 @@ mockedUseRouter.mockImplementation(() => ({
   },
 }));
 
-const expectThatLeagueIsOnScreen = async ({ name, size, type, avatarUrl }) => {
-  expect(screen.queryByText(name)).toBeInTheDocument();
-  expect(screen.queryByText(`${size} teams | ${type}`)).toBeInTheDocument();
-
-  const leagueAvatar = await screen.findByAltText("League avatar");
-
-  if (!(leagueAvatar instanceof HTMLImageElement)) {
-    throw new Error(`Should be a image, is ${leagueAvatar}`);
-  }
-
-  expect(leagueAvatar.src).toEqual(avatarUrl);
-};
-
 describe("Unavailable players page", () => {
   it("should mount screen with success", async () => {
     render(
@@ -70,41 +57,5 @@ describe("Unavailable players page", () => {
     );
 
     expect(screen).toHaveACompleteHeader();
-    expect(screen.queryByText(username)).toBeInTheDocument();
-
-    const avatar = await screen.findByAltText("User avatar");
-
-    if (!(avatar instanceof HTMLImageElement)) {
-      throw new Error(`Should be a image, is ${avatar}`);
-    }
-
-    expect(avatar.src).toEqual(userAvatarUrl);
-
-    await expectThatLeagueIsOnScreen(initialSelectedLeague);
-
-    expect(screen.queryByAltText("left arrow")).toBeInTheDocument();
-  });
-
-  it("when clicking on right arrow should show the next roster", async () => {
-    render(
-      <UnavailablePlayersPage userAvatarUrl={userAvatarUrl} rosters={rosters} />
-    );
-
-    const rightArrow = await screen.findByAltText("right arrow");
-    fireEvent.click(rightArrow);
-
-    await expectThatLeagueIsOnScreen(secondLeague);
-  });
-
-  it("when clicking on right arrow and finish the list should return to beginning", async () => {
-    render(
-      <UnavailablePlayersPage userAvatarUrl={userAvatarUrl} rosters={rosters} />
-    );
-
-    const rightArrow = await screen.findByAltText("right arrow");
-    for (let i = 0; i < rosters.length; i += 1) {
-      fireEvent.click(rightArrow);
-    }
-    await expectThatLeagueIsOnScreen(initialSelectedLeague);
   });
 });

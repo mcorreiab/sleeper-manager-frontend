@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import UserInformation from "./components/UserInformation";
-import LeaguesCarousel from "./components/LeaguesCarousel";
+import LeaguesCarousel from "../Carousel";
 import styles from "./index.module.css";
 
 interface RosterProps {
@@ -23,16 +23,6 @@ const unavailablePlayersPage: FunctionComponent<Props> = ({
 }) => {
   const router = useRouter();
   const { user } = router.query;
-  const [selectedRosterIndex, setSelectedRosterIndex] = useState(0);
-
-  const showNextLeagueCard = () => {
-    const nextIndex = selectedRosterIndex + 1;
-    if (nextIndex < rosters.length) {
-      setSelectedRosterIndex(nextIndex);
-    } else {
-      setSelectedRosterIndex(0);
-    }
-  };
 
   return (
     <div className={styles.container}>
@@ -41,11 +31,7 @@ const unavailablePlayersPage: FunctionComponent<Props> = ({
       </header>
       <main>
         <UserInformation avatarUrl={userAvatarUrl} username={user as string} />
-        <LeaguesCarousel
-          rosters={rosters}
-          rosterIndex={selectedRosterIndex}
-          clickOnRightArrow={showNextLeagueCard}
-        />
+        <LeaguesCarousel rosters={rosters} />
       </main>
     </div>
   );
