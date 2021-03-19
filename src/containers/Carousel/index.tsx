@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
+import classnames from "classnames";
 import styles from "./index.module.css";
 import LeagueCard from "../UnavailablePlayersPage/components/LeagueCard";
 
@@ -75,22 +76,43 @@ const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
     setDirection("left");
   };
 
+  const getIndexToShow = (): number => {
+    if (!inTransition) {
+      return 1;
+    }
+
+    if (direction === "right") {
+      return 2;
+    }
+
+    return 0;
+  };
+
   /* eslint-disable react/no-array-index-key */
   const mountRosterComponents = (): JSX.Element[] =>
-    rostersToShow.map((roster, index) => (
-      <div
-        key={`${roster.name}${index}`}
-        className={styles.carouselItem}
-        style={{ flexBasis: `${cardPercentualSize}%` }}
-      >
-        <LeagueCard
-          name={roster.name}
-          avatarUrl={roster.avatarUrl}
-          size={roster.size}
-          type={roster.type}
-        />
-      </div>
-    ));
+    rostersToShow.map((roster, index) => {
+      let className: string = styles.carouselItem;
+      const indexToShow = getIndexToShow();
+
+      if (index !== indexToShow) {
+        className = classnames(styles.carouselItem, styles.disappear);
+      }
+
+      return (
+        <div
+          key={`${roster.name}${index}`}
+          className={className}
+          style={{ flexBasis: `${cardPercentualSize}%` }}
+        >
+          <LeagueCard
+            name={roster.name}
+            avatarUrl={roster.avatarUrl}
+            size={roster.size}
+            type={roster.type}
+          />
+        </div>
+      );
+    });
   /* eslint-enable react/no-array-index-key */
 
   return (
@@ -104,7 +126,9 @@ const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
             rostersToShow.length * 51 + (rostersToShow.length - 1) * 25
           }%`,
         }}
-        onTransitionEnd={onSliderTransitionEnd}
+        onTransitionEnd={
+          isTransitionEnabled ? onSliderTransitionEnd : undefined
+        }
         data-testid="slider"
       >
         {mountRosterComponents()}

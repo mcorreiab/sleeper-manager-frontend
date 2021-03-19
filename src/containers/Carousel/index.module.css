@@ -6,13 +6,18 @@
 
 .slider {
   display: flex;
-  transition: all 1s;
+  transition: all 0.5s;
   flex-shrink: 0;
   justify-content: space-between;
 }
 
 .carouselItem {
+  transition: opacity 0.5s ease-in-out;
   flex-shrink: 0;
+}
+
+.disappear {
+  opacity: 0;
 }
 
 .leftArrow {
