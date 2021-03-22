@@ -5,8 +5,8 @@ import React, {
   FunctionComponent,
 } from "react";
 import { useRouter } from "next/router";
+import WithHeader from "@/hoc/withHeader";
 import styles from "./index.module.css";
-import WithHeader from "../../hoc/withHeader";
 import TitleArea from "./components/TitleArea";
 import InputUsername from "./components/InputUsername";
 

@@ -1,9 +1,9 @@
 import { camelizeKeys } from "humps";
-import axios from "../../../config/axios";
+import axios from "@/config/axios";
 import getRostersByUserId from "../index";
 import response from "./rosterModelResponse.json";
 
-jest.mock("../../../config/axios");
+jest.mock("@/config/axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("roster service test", () => {

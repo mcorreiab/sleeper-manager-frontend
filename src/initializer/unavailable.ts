@@ -1,5 +1,5 @@
-import { getRostersByUserId, getUserInformation } from "../services";
-import RosterModel from "../services/roster/model";
+import { getRostersByUserId, getUserInformation } from "@/services/index";
+import RosterModel from "@/services/roster/model";
 
 interface RosterProps {
   name: string;

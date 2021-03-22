@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import HomePage from "../containers/HomePage";
+import HomePage from "@/containers/HomePage";
 
 const home: FunctionComponent = () => <HomePage />;
 

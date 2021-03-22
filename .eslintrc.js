@@ -43,4 +43,19 @@ module.exports = {
       },
     ],
   },
+  settings: {
+    "import/resolver": {
+      typescript: {},
+      alias: {
+        map: [
+          ["@/config", "./src/config"],
+          ["@/initializer", "./src/initializer"],
+          ["@/containers", "./src/containers"],
+          ["@/components", "./src/components"],
+          ["@/hoc", "./src/hoc"],
+          ["@/services", "./src/services"],
+        ],
+      },
+    },
+  },
 };
