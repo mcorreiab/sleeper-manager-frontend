@@ -1,17 +1,14 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import classnames from "classnames";
 import styles from "./index.module.css";
-import LeagueCard from "../UnavailablePlayersPage/components/LeagueCard";
 
-export interface RosterProps {
-  name: string;
-  size: number;
-  avatarUrl: string;
-  type: string;
+export interface ContentProps {
+  key: string;
+  element: React.ReactNode;
 }
 
 export interface Props {
-  rosters: RosterProps[];
+  content: ContentProps[];
 }
 
 const cardPercentualSize = 12;
@@ -19,10 +16,10 @@ const rightDistancePercentualSize = 5.6;
 const transformDislocation =
   cardPercentualSize * 2 + rightDistancePercentualSize;
 
-const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
+const leagueCarousel: FunctionComponent<Props> = ({ content: contents }) => {
   const [transformIndex, setTransformIndex] = useState(-cardPercentualSize);
-  const [rostersToShow, setRostersToShow] = useState(
-    [rosters[rosters.length - 1]].concat(rosters)
+  const [contentToShow, setContentToShow] = useState(
+    [contents[contents.length - 1]].concat(contents)
   );
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const [direction, setDirection] = useState<"right" | "left">("right");
@@ -34,32 +31,32 @@ const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
     }
   }, [inTransition]);
 
-  const mountRightDirectionRoster = (): RosterProps[] => {
-    const lastSelectedCard = rostersToShow[1];
+  const mountRightDirectionContent = (): ContentProps[] => {
+    const lastSelectedCard = contentToShow[1];
     return [lastSelectedCard]
-      .concat(rostersToShow.slice(2))
+      .concat(contentToShow.slice(2))
       .concat(lastSelectedCard);
   };
 
-  const mountLeftDirectionRoster = (): RosterProps[] => {
-    const previousCard = rostersToShow[rostersToShow.length - 2];
-    const selectedCard = rostersToShow[0];
+  const mountLeftDirectionContent = (): ContentProps[] => {
+    const previousCard = contentToShow[contentToShow.length - 2];
+    const selectedCard = contentToShow[0];
     return [previousCard, selectedCard].concat(
-      rostersToShow.slice(1, rostersToShow.length - 1)
+      contentToShow.slice(1, contentToShow.length - 1)
     );
   };
 
-  const mountNewRosters = (): RosterProps[] => {
+  const mountNewContent = (): ContentProps[] => {
     if (direction === "right") {
-      return mountRightDirectionRoster();
+      return mountRightDirectionContent();
     }
 
-    return mountLeftDirectionRoster();
+    return mountLeftDirectionContent();
   };
 
   const onSliderTransitionEnd = () => {
     setIsTransitionEnabled(false);
-    setRostersToShow(mountNewRosters());
+    setContentToShow(mountNewContent());
     setInTransition(false);
     setTransformIndex(-cardPercentualSize);
   };
@@ -89,8 +86,8 @@ const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
   };
 
   /* eslint-disable react/no-array-index-key */
-  const mountRosterComponents = (): JSX.Element[] =>
-    rostersToShow.map((roster, index) => {
+  const mountContent = (): JSX.Element[] =>
+    contentToShow.map((content, index) => {
       let className: string = styles.carouselItem;
       const indexToShow = getIndexToShow();
 
@@ -100,16 +97,11 @@ const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
 
       return (
         <div
-          key={`${roster.name}${index}`}
+          key={`${content.key}${index}`}
           className={className}
           style={{ flexBasis: `${cardPercentualSize}%` }}
         >
-          <LeagueCard
-            name={roster.name}
-            avatarUrl={roster.avatarUrl}
-            size={roster.size}
-            type={roster.type}
-          />
+          {content.element}
         </div>
       );
     });
@@ -123,7 +115,7 @@ const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
           transform: `translateX(${transformIndex}%)`,
           transition: isTransitionEnabled ? undefined : "none",
           width: `${
-            rostersToShow.length * 51 + (rostersToShow.length - 1) * 25
+            contentToShow.length * 51 + (contentToShow.length - 1) * 25
           }%`,
         }}
         onTransitionEnd={
@@ -131,7 +123,7 @@ const leagueCarousel: FunctionComponent<Props> = ({ rosters }) => {
         }
         data-testid="slider"
       >
-        {mountRosterComponents()}
+        {mountContent()}
       </div>
       <button
         className={styles.leftArrow}

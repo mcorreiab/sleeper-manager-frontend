@@ -1,4 +1,4 @@
-import { getProps } from "../unavailable";
+import getProps from "../unavailable";
 import { getRostersByUserId, getUserInformation } from "../../services";
 
 jest.mock("../../services", () => ({
@@ -14,6 +14,14 @@ const userInformation = {
   avatar: "avatar",
 };
 
+const player = {
+  id: "playerId",
+  name: "playerName",
+  injuryStatus: "injuryStatus",
+  position: "position",
+  team: "team",
+};
+
 const roster = {
   league: {
     name: "name",
@@ -21,7 +29,24 @@ const roster = {
     pointsByReception: "Half PPR",
     avatar: "leagueAvatar",
   },
+  players: [player],
 };
+
+const createExpectedRoster = (avatar: string) => ({
+  name: roster.league.name,
+  size: roster.league.size,
+  avatarUrl: avatar,
+  type: roster.league.pointsByReception,
+  players: [
+    {
+      id: player.id,
+      name: player.name,
+      injuryStatus: player.injuryStatus,
+      position: player.position,
+      team: player.team,
+    },
+  ],
+});
 
 describe("Unavailable initializer", () => {
   describe("getProps", () => {
@@ -31,14 +56,11 @@ describe("Unavailable initializer", () => {
 
       const actual = await getProps("user");
 
-      const expectedRoster = {
-        name: roster.league.name,
-        size: roster.league.size,
-        avatarUrl: `https://sleepercdn.com/avatars/${roster.league.avatar}`,
-        type: roster.league.pointsByReception,
-      };
+      const expectedRoster = createExpectedRoster(
+        `https://sleepercdn.com/avatars/${roster.league.avatar}`
+      );
 
-      expect(actual.avatarUrl).toEqual(
+      expect(actual.userAvatarUrl).toEqual(
         `https://sleepercdn.com/avatars/${userInformation.avatar}`
       );
       expect(actual.rosters[0]).toEqual(expectedRoster);
@@ -52,14 +74,9 @@ describe("Unavailable initializer", () => {
 
       const actual = await getProps("user");
 
-      const expectedRoster = {
-        name: roster.league.name,
-        size: roster.league.size,
-        avatarUrl: `/sleeper-logo.png`,
-        type: roster.league.pointsByReception,
-      };
+      const expectedRoster = createExpectedRoster("/sleeper-logo.png");
 
-      expect(actual.avatarUrl).toEqual(
+      expect(actual.userAvatarUrl).toEqual(
         `https://sleepercdn.com/avatars/${userInformation.avatar}`
       );
       expect(actual.rosters[0]).toEqual(expectedRoster);

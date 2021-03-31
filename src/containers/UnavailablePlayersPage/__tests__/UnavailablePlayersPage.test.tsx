@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import "../../util/jest-matchers/jest-extend-header";
-import UnavailablePlayersPage from "../index";
+import UnavailablePlayersPage, { RosterProps, PlayerProps } from "../index";
 
 jest.mock("next/link", () => ({ children }) => children);
 jest.mock("next/router", () => ({
@@ -18,28 +18,40 @@ const createLeague = (
   name: string,
   size: number,
   avatarUrl: string,
-  type: string
-) => ({ name, size, avatarUrl, type });
+  type: string,
+  players: PlayerProps[]
+): RosterProps => ({ name, size, avatarUrl, type, players });
+
+const player: PlayerProps = {
+  id: "id",
+  injuryStatus: "injuryStatus",
+  name: "name",
+  position: "position",
+  team: "team",
+};
 
 const initialSelectedLeague = createLeague(
   "firstRoster",
   10,
   "http://league.com/",
-  "Standard"
+  "Standard",
+  [player]
 );
 
 const secondLeague = createLeague(
   "secondRoster",
   12,
   "http://league2.com/",
-  "Half PPR"
+  "Half PPR",
+  [player]
 );
 
 const thirdLeague = createLeague(
   "thirdRoster",
   14,
   "http://league3.com/",
-  "PPR"
+  "PPR",
+  [player]
 );
 
 const rosters = [initialSelectedLeague, secondLeague, thirdLeague];
