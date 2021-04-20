@@ -1,0 +1,17 @@
+.playerCard {
+  padding: 1rem 1.5rem;
+  background-color: #292e3c;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.name {
+  color: #eaeaea;
+  margin-bottom: 0.25rem;
+}
+
+.detail {
+  color: #8f97ab;
+  font-size: 0.875rem;
+  display: flex;
+}

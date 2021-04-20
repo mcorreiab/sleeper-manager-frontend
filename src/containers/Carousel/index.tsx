@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
-import classnames from "classnames";
+import { SliderWithButtons, Slider } from "./components";
 import styles from "./index.module.css";
 
 export interface ContentProps {
@@ -7,19 +7,55 @@ export interface ContentProps {
   element: React.ReactNode;
 }
 
-export interface Props {
-  content: ContentProps[];
+export interface FullContentProps {
+  primaryContent: ContentProps;
+  secondaryContent: ContentProps;
 }
 
-const cardPercentualSize = 12;
-const rightDistancePercentualSize = 5.6;
-const transformDislocation =
-  cardPercentualSize * 2 + rightDistancePercentualSize;
+export interface Props {
+  content: FullContentProps[];
+}
 
-const leagueCarousel: FunctionComponent<Props> = ({ content: contents }) => {
-  const [transformIndex, setTransformIndex] = useState(-cardPercentualSize);
+const mountCarouselDistances = (
+  contentSize: number,
+  contentPercentualSize: number,
+  contentDistance: number
+) => {
+  const sliderSize =
+    (contentSize + 1) * contentPercentualSize + contentSize * contentDistance;
+  const cardPercentualSize = (contentPercentualSize / sliderSize) * 100;
+  const contentPercentualDistance = (contentDistance / sliderSize) * 100;
+  return {
+    sliderSize,
+    cardPercentualSize,
+    contentPercentualDistance,
+    contentDislocation: cardPercentualSize * 2 + contentPercentualDistance,
+  };
+};
+
+const leagueCarousel: FunctionComponent<Props> = ({ content }) => {
+  const primaryCarouselDistances = mountCarouselDistances(
+    content.length,
+    51,
+    25
+  );
+
+  const secondaryCarouselDistances = mountCarouselDistances(
+    content.length,
+    87,
+    7
+  );
+
+  const [
+    primaryCarouselTransformIndex,
+    setPrimaryCarouselTransformIndex,
+  ] = useState(-primaryCarouselDistances.cardPercentualSize);
+  const [
+    secondaryCarouselTransformIndex,
+    setSecondaryCarouselTransformIndex,
+  ] = useState(-secondaryCarouselDistances.cardPercentualSize);
   const [contentToShow, setContentToShow] = useState(
-    [contents[contents.length - 1]].concat(contents)
+    [content[content.length - 1]].concat(content)
   );
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const [direction, setDirection] = useState<"right" | "left">("right");
@@ -31,14 +67,14 @@ const leagueCarousel: FunctionComponent<Props> = ({ content: contents }) => {
     }
   }, [inTransition]);
 
-  const mountRightDirectionContent = (): ContentProps[] => {
+  const mountRightDirectionContent = (): FullContentProps[] => {
     const lastSelectedCard = contentToShow[1];
     return [lastSelectedCard]
       .concat(contentToShow.slice(2))
       .concat(lastSelectedCard);
   };
 
-  const mountLeftDirectionContent = (): ContentProps[] => {
+  const mountLeftDirectionContent = (): FullContentProps[] => {
     const previousCard = contentToShow[contentToShow.length - 2];
     const selectedCard = contentToShow[0];
     return [previousCard, selectedCard].concat(
@@ -46,7 +82,7 @@ const leagueCarousel: FunctionComponent<Props> = ({ content: contents }) => {
     );
   };
 
-  const mountNewContent = (): ContentProps[] => {
+  const mountNewContent = (): FullContentProps[] => {
     if (direction === "right") {
       return mountRightDirectionContent();
     }
@@ -58,88 +94,62 @@ const leagueCarousel: FunctionComponent<Props> = ({ content: contents }) => {
     setIsTransitionEnabled(false);
     setContentToShow(mountNewContent());
     setInTransition(false);
-    setTransformIndex(-cardPercentualSize);
+    setPrimaryCarouselTransformIndex(
+      -primaryCarouselDistances.cardPercentualSize
+    );
+    setSecondaryCarouselTransformIndex(
+      -secondaryCarouselDistances.cardPercentualSize
+    );
   };
 
   const clickOnRightArrow = () => {
-    setTransformIndex(-transformDislocation);
+    setPrimaryCarouselTransformIndex(
+      -primaryCarouselDistances.contentDislocation
+    );
+    setSecondaryCarouselTransformIndex(
+      -secondaryCarouselDistances.contentDislocation
+    );
     setInTransition(true);
     setDirection("right");
   };
 
   const clickOnLeftArrow = () => {
-    setTransformIndex(rightDistancePercentualSize);
+    setPrimaryCarouselTransformIndex(
+      primaryCarouselDistances.contentPercentualDistance
+    );
+    setSecondaryCarouselTransformIndex(
+      secondaryCarouselDistances.contentPercentualDistance
+    );
     setInTransition(true);
     setDirection("left");
   };
 
-  const getIndexToShow = (): number => {
-    if (!inTransition) {
-      return 1;
-    }
-
-    if (direction === "right") {
-      return 2;
-    }
-
-    return 0;
-  };
-
-  /* eslint-disable react/no-array-index-key */
-  const mountContent = (): JSX.Element[] =>
-    contentToShow.map((content, index) => {
-      let className: string = styles.carouselItem;
-      const indexToShow = getIndexToShow();
-
-      if (index !== indexToShow) {
-        className = classnames(styles.carouselItem, styles.disappear);
-      }
-
-      return (
-        <div
-          key={`${content.key}${index}`}
-          className={className}
-          style={{ flexBasis: `${cardPercentualSize}%` }}
-        >
-          {content.element}
-        </div>
-      );
-    });
-  /* eslint-enable react/no-array-index-key */
-
   return (
-    <div className={styles.carousel}>
-      <div
-        className={styles.slider}
-        style={{
-          transform: `translateX(${transformIndex}%)`,
-          transition: isTransitionEnabled ? undefined : "none",
-          width: `${
-            contentToShow.length * 51 + (contentToShow.length - 1) * 25
-          }%`,
-        }}
-        onTransitionEnd={
-          isTransitionEnabled ? onSliderTransitionEnd : undefined
-        }
-        data-testid="slider"
-      >
-        {mountContent()}
-      </div>
-      <button
-        className={styles.leftArrow}
-        onClick={clickOnLeftArrow}
-        type="button"
-      >
-        <img src="/left-arrow.svg" alt="Left button" />
-      </button>
-      <button
-        className={styles.rightArrow}
-        onClick={clickOnRightArrow}
-        type="button"
-      >
-        <img src="/right-arrow.svg" alt="Right button" />
-      </button>
-    </div>
+    <>
+      <SliderWithButtons
+        transformIndex={primaryCarouselTransformIndex}
+        cardPercentualSize={primaryCarouselDistances.cardPercentualSize}
+        clickOnLeftArrow={clickOnLeftArrow}
+        clickOnRightArrow={clickOnRightArrow}
+        content={contentToShow.map((contents) => contents.primaryContent)}
+        isTransitionEnabled={isTransitionEnabled}
+        direction={direction}
+        inTransition={inTransition}
+        onSliderTransitionEnd={onSliderTransitionEnd}
+        width={primaryCarouselDistances.sliderSize}
+      />
+      <p className={styles.playerFirstSection}>Players to change now</p>
+      <Slider
+        transformIndex={secondaryCarouselTransformIndex}
+        cardPercentualSize={secondaryCarouselDistances.cardPercentualSize}
+        content={contentToShow.map((contents) => contents.secondaryContent)}
+        isTransitionEnabled={isTransitionEnabled}
+        direction={direction}
+        inTransition={inTransition}
+        onSliderTransitionEnd={onSliderTransitionEnd}
+        width={secondaryCarouselDistances.sliderSize}
+      />
+    </>
   );
 };
 

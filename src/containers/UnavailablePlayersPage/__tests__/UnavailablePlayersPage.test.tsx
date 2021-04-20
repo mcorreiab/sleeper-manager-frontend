@@ -69,5 +69,12 @@ describe("Unavailable players page", () => {
     );
 
     expect(screen).toHaveACompleteHeader();
+    expect(screen.queryByText(initialSelectedLeague.name)).toBeInTheDocument();
+    expect(
+      screen.queryByText(
+        `${initialSelectedLeague.size} teams | ${initialSelectedLeague.type}`
+      )
+    ).toBeInTheDocument();
+    expect(screen.queryAllByText(player.name).length).toBeGreaterThan(0);
   });
 });

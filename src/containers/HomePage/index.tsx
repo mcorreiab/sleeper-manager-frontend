@@ -7,8 +7,7 @@ import React, {
 import { useRouter } from "next/router";
 import WithHeader from "@/hoc/withHeader";
 import styles from "./index.module.css";
-import TitleArea from "./components/TitleArea";
-import InputUsername from "./components/InputUsername";
+import { TitleArea, InputUsername } from "./components";
 
 const HomePage: FunctionComponent = () => {
   const [username, setUsername] = useState("");

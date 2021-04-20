@@ -8,49 +8,79 @@ const createContent = (text: string): ContentProps => ({
   element: <div>{text}</div>,
 });
 
-const firstRosterName = "firstRosterName";
-const firstContent = createContent(firstRosterName);
+const createLines = (firstLine: string, secondLine: string) => ({
+  primaryContent: createContent(firstLine),
+  secondaryContent: createContent(secondLine),
+});
 
-const secondRosterName = "secondRosterName";
-const secondContent = createContent(secondRosterName);
+const firstContentFirstLine = "firstContentFirstLine";
+const firstContentSecondaryLine = "firstContentSecondaryLine";
+const firstContent = createLines(
+  firstContentFirstLine,
+  firstContentSecondaryLine
+);
 
-const thirdRosterName = "thirdRosterName";
-const thirdContent = createContent(thirdRosterName);
+const secondContentFirstLine = "secondContentFirstLine";
+const secondContentSecondaryLine = "secondContentSecondaryLine";
+const secondContent = createLines(
+  secondContentFirstLine,
+  secondContentSecondaryLine
+);
+
+const thirdContentFirstLine = "thirdContentFirstLine";
+const thirdContentSecondaryLine = "thirdContentSecondaryLine";
+const thirdContent = createLines(
+  thirdContentFirstLine,
+  thirdContentSecondaryLine
+);
 
 const content = [firstContent, secondContent, thirdContent];
 
-describe("Carousel test", () => {
-  it("should render the carousel with success", () => {
-    render(<Carousel content={content} />);
+const renderCarousel = () => render(<Carousel content={content} />);
 
-    expect(screen.queryByText(firstRosterName)).toBeInTheDocument();
-    expect(screen.queryByText(secondRosterName)).toBeInTheDocument();
-    expect(screen.queryAllByText(thirdRosterName).length).toEqual(2);
+describe("Carousel test", () => {
+  it("should render the content with success", () => {
+    renderCarousel();
+
+    expect(screen.queryByText(firstContentFirstLine)).toBeInTheDocument();
+    expect(screen.queryByText(firstContentSecondaryLine)).toBeInTheDocument();
+    expect(screen.queryByText(secondContentFirstLine)).toBeInTheDocument();
+    expect(screen.queryByText(secondContentSecondaryLine)).toBeInTheDocument();
+    expect(screen.queryAllByText(thirdContentFirstLine).length).toEqual(2);
+    expect(screen.queryAllByText(thirdContentSecondaryLine).length).toEqual(2);
   });
 
   it("when clicks on right button should move carousel to the next card", async () => {
-    render(<Carousel content={content} />);
+    renderCarousel();
+
     const rightButton = screen.getByAltText("Right button");
     fireEvent.click(rightButton);
 
     const slider = screen.getByTestId("slider");
     fireEvent.transitionEnd(slider);
 
-    expect(screen.queryByText(thirdRosterName)).toBeInTheDocument();
-    expect(screen.queryByText(secondRosterName)).toBeInTheDocument();
-    expect(screen.queryAllByText(firstRosterName).length).toEqual(2);
+    expect(screen.queryByText(thirdContentFirstLine)).toBeInTheDocument();
+    expect(screen.queryByText(thirdContentSecondaryLine)).toBeInTheDocument();
+    expect(screen.queryByText(secondContentFirstLine)).toBeInTheDocument();
+    expect(screen.queryByText(secondContentSecondaryLine)).toBeInTheDocument();
+    expect(screen.queryAllByText(firstContentFirstLine).length).toEqual(2);
+    expect(screen.queryAllByText(firstContentFirstLine).length).toEqual(2);
   });
 
   it("when clicks on left button should move carousel to the next card", async () => {
-    render(<Carousel content={content} />);
+    renderCarousel();
+
     const leftButton = screen.getByAltText("Left button");
     fireEvent.click(leftButton);
 
     const slider = screen.getByTestId("slider");
     fireEvent.transitionEnd(slider);
 
-    expect(screen.queryByText(thirdRosterName)).toBeInTheDocument();
-    expect(screen.queryByText(firstRosterName)).toBeInTheDocument();
-    expect(screen.queryAllByText(secondRosterName).length).toEqual(2);
+    expect(screen.queryByText(thirdContentFirstLine)).toBeInTheDocument();
+    expect(screen.queryByText(thirdContentSecondaryLine)).toBeInTheDocument();
+    expect(screen.queryByText(firstContentFirstLine)).toBeInTheDocument();
+    expect(screen.queryByText(firstContentSecondaryLine)).toBeInTheDocument();
+    expect(screen.queryAllByText(secondContentFirstLine).length).toEqual(2);
+    expect(screen.queryAllByText(secondContentSecondaryLine).length).toEqual(2);
   });
 });

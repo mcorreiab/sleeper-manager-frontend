@@ -5,6 +5,7 @@
   background-color: #3a28a7;
   align-items: center;
   border-radius: 16px;
+  text-align: center;
 }
 
 .leagueImage {
@@ -13,11 +14,11 @@
 }
 
 .leagueName {
-  color: #ffffff;
+  color: #fff;
   font-weight: 900;
   margin-bottom: 0.25rem;
 }
 
 .leagueDetails {
-  color: #ffffff;
+  color: #fff;
 }

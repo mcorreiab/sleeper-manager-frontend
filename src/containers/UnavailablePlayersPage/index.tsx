@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
 import Header from "@/components/Header";
-import { UserInformation, LeagueCard } from "./components";
-import Carousel, { ContentProps } from "../Carousel";
+import { UserInformation, LeagueCard, PlayerCard } from "./components";
+import Carousel, { FullContentProps } from "../Carousel";
 import styles from "./index.module.css";
 
 export interface PlayerProps {
@@ -32,16 +32,30 @@ const unavailablePlayersPage: FunctionComponent<Props> = ({
 }) => {
   const router = useRouter();
   const { user } = router.query;
-  const carouselContent: ContentProps[] = rosters.map((roster) => ({
-    key: roster.name,
-    element: (
-      <LeagueCard
-        avatarUrl={roster.avatarUrl}
-        name={roster.name}
-        size={roster.size}
-        type={roster.type}
-      />
-    ),
+  const carouselContent: FullContentProps[] = rosters.map((roster) => ({
+    primaryContent: {
+      key: roster.name,
+      element: (
+        <LeagueCard
+          avatarUrl={roster.avatarUrl}
+          name={roster.name}
+          size={roster.size}
+          type={roster.type}
+        />
+      ),
+    },
+    secondaryContent: {
+      key: `${roster.name} roster`,
+      element: roster.players.map((player) => (
+        <PlayerCard
+          key={player.id}
+          name={player.name}
+          injuryStatus={player.injuryStatus}
+          position={player.position}
+          team={player.team}
+        />
+      )),
+    },
   }));
 
   return (
@@ -50,8 +64,15 @@ const unavailablePlayersPage: FunctionComponent<Props> = ({
         <Header />
       </header>
       <main>
-        <UserInformation avatarUrl={userAvatarUrl} username={user as string} />
-        <Carousel content={carouselContent} />
+        <section>
+          <UserInformation
+            avatarUrl={userAvatarUrl}
+            username={user as string}
+          />
+        </section>
+        <section>
+          <Carousel content={carouselContent} />
+        </section>
       </main>
     </div>
   );

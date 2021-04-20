@@ -1,0 +1,22 @@
+.slider {
+  align-items: center !important;
+}
+
+.leftArrow {
+  position: absolute;
+  padding: 2.375rem 1.5rem;
+  background-color: #282b35;
+  border-radius: 0 16px 16px 0;
+  align-self: center;
+  border: 0;
+}
+
+.rightArrow {
+  position: absolute;
+  right: 0;
+  padding: 2.375rem 1.5rem;
+  background-color: #282b35;
+  border-radius: 16px 0 0 16px;
+  align-self: center;
+  border: 0;
+}

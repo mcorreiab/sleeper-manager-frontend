@@ -1,40 +1,6 @@
-.carousel {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
-
-.slider {
-  display: flex;
-  transition: all 0.5s;
-  flex-shrink: 0;
-  justify-content: space-between;
-}
-
-.carouselItem {
-  transition: opacity 0.5s ease-in-out;
-  flex-shrink: 0;
-}
-
-.disappear {
-  opacity: 0;
-}
-
-.leftArrow {
-  position: absolute;
-  padding: 2.375rem 1.5rem;
-  background-color: #282b35;
-  border-radius: 0px 16px 16px 0px;
-  align-self: center;
-  border: 0;
-}
-
-.rightArrow {
-  position: absolute;
-  right: 0;
-  padding: 2.375rem 1.5rem;
-  background-color: #282b35;
-  border-radius: 16px 0px 0px 16px;
-  align-self: center;
-  border: 0;
+.playerFirstSection {
+  color: #eaeaea;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin: 2rem 0 1rem 7%;
 }
