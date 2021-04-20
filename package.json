@@ -6,7 +6,7 @@
     "dev": "next dev",
     "devDebug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:ts": "eslint --ext .ts --ext .tsx src/**",
     "lint:css": "stylelint **/*.css",
