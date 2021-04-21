@@ -1,7 +1,7 @@
 .carousel {
   display: flex;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .slider {
