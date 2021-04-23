@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, TransitionEventHandler } from "react";
 import classnames from "classnames";
 import styles from "./index.module.css";
 
@@ -19,6 +19,12 @@ export interface Props {
   width: number;
   className?: string;
 }
+
+const childrenOnTransitionEnd: TransitionEventHandler<HTMLDivElement> = (
+  event
+) => {
+  event.stopPropagation();
+};
 
 const slider: FunctionComponent<Props> = ({
   content,
@@ -60,6 +66,7 @@ const slider: FunctionComponent<Props> = ({
           key={`${key}${index}`}
           className={contentClasses}
           style={{ flexBasis: `${cardPercentualSize}%` }}
+          onTransitionEnd={childrenOnTransitionEnd}
         >
           {element}
         </div>
