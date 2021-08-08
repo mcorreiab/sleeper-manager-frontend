@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  background-color: #3a28a7;
+  border-radius: 16px;
+  padding: 7.5% 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divider {
+  height: 71px;
+  border: 1px solid #5e49dc;
+  margin: 0 12.5%;
+}

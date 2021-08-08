@@ -13,13 +13,16 @@ const Header: FunctionComponent = () => (
             target="_blank"
             rel="noreferrer"
           >
-            <img src="/github-logo.svg" alt="github logo" />
+            <img src="/github-logo.svg" alt="The logo from github webpage" />
           </a>
         </li>
         <li>
           <Link href="/about">
             <a href="/about">
-              <img src="/info-circle.svg" alt="info circle" />
+              <img
+                src="/info-circle.svg"
+                alt="A circle with an exclamation point"
+              />
             </a>
           </Link>
         </li>

@@ -1,0 +1,24 @@
+.text {
+  color: #ffffff;
+  display: grid;
+  grid-template: "badge number" "text text";
+  column-gap: 10%;
+  row-gap: 10%;
+  align-items: center;
+}
+
+.badge {
+  grid-area: badge;
+  justify-self: end;
+}
+
+.number {
+  grid-area: number;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.textItem {
+  grid-area: text;
+  text-align: center;
+}

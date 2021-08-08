@@ -1,11 +1,14 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import "../../util/jest-matchers/jest-extend-header";
 import UnavailablePlayersPage, { RosterProps, PlayerProps } from "../index";
 
-jest.mock("next/link", () => ({ children }) => children);
+jest.mock(
+  "next/link",
+  () =>
+    ({ children }) =>
+      children
+);
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
 }));
@@ -68,13 +71,30 @@ describe("Unavailable players page", () => {
       <UnavailablePlayersPage userAvatarUrl={userAvatarUrl} rosters={rosters} />
     );
 
-    expect(screen).toHaveACompleteHeader();
-    expect(screen.queryByText(initialSelectedLeague.name)).toBeInTheDocument();
+    const userAvatar = await screen.findByAltText("User avatar");
+
+    if (!(userAvatar instanceof HTMLImageElement)) {
+      fail("User avatar should be a button");
+    }
+
+    expect(userAvatar.src).toEqual(userAvatarUrl);
+    expect(screen.getByText(username)).toBeInTheDocument();
+    expect(screen.getByAltText("A generic league badge")).toBeInTheDocument();
     expect(
-      screen.queryByText(
-        `${initialSelectedLeague.size} teams | ${initialSelectedLeague.type}`
-      )
+      screen.getByAltText("A generic football helmet badge")
     ).toBeInTheDocument();
-    expect(screen.queryAllByText(player.name).length).toBeGreaterThan(0);
+    expect(screen.getByLabelText("League's overview")).toHaveTextContent(
+      "3 Leagues to be reviewed"
+    );
+    expect(screen.getByLabelText("Player's overview")).toHaveTextContent(
+      "3 Players to be changed"
+    );
+    expect(screen.getByText("Leagues to review")).toBeInTheDocument();
+
+    rosters.forEach((roster) =>
+      expect(screen.getByText(roster.name)).toBeInTheDocument()
+    );
+
+    expect(screen).toHaveACompleteHeader();
   });
 });

@@ -1,8 +1,6 @@
-import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
 import Header from "@/components/Header";
-import { UserInformation, LeagueCard, PlayerCard } from "./components";
-import Carousel, { FullContentProps } from "../Carousel";
+import { UserInformation, Summary } from "./components";
 import styles from "./index.module.css";
 
 export interface PlayerProps {
@@ -26,54 +24,42 @@ export interface Props {
   rosters: RosterProps[];
 }
 
-const unavailablePlayersPage: FunctionComponent<Props> = ({
+const unavailablePlayersPage: React.FunctionComponent<Props> = ({
   userAvatarUrl,
   rosters,
 }) => {
   const router = useRouter();
   const { user } = router.query;
-  const carouselContent: FullContentProps[] = rosters.map((roster) => ({
-    primaryContent: {
-      key: roster.name,
-      element: (
-        <LeagueCard
-          avatarUrl={roster.avatarUrl}
-          name={roster.name}
-          size={roster.size}
-          type={roster.type}
-        />
-      ),
-    },
-    secondaryContent: {
-      key: `${roster.name} roster`,
-      element: roster.players.map((player) => (
-        <PlayerCard
-          key={player.id}
-          name={player.name}
-          injuryStatus={player.injuryStatus}
-          position={player.position}
-          team={player.team}
-        />
-      )),
-    },
-  }));
+
+  const rosterInfo = rosters.map((roster) => (
+    <h2 key={roster.name}>{roster.name}</h2>
+  ));
 
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <Header />
-      </header>
-      <main>
-        <section>
-          <UserInformation
-            avatarUrl={userAvatarUrl}
-            username={user as string}
-          />
-        </section>
-        <section>
-          <Carousel content={carouselContent} />
-        </section>
-      </main>
+    <div className={styles.content}>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <Header />
+        </header>
+        <main>
+          <section aria-label="User situation overview">
+            <UserInformation
+              avatarUrl={userAvatarUrl}
+              username={user as string}
+            />
+            <section
+              aria-label="Player's leagues and players overview"
+              className={styles.summary}
+            >
+              <Summary rosters={rosters} />
+            </section>
+          </section>
+          <section>
+            <h1 className={styles.leagueTitle}>Leagues to review</h1>
+            {rosterInfo}
+          </section>
+        </main>
+      </div>
     </div>
   );
 };

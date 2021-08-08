@@ -12,7 +12,11 @@ describe("withHeader high order component", () => {
     );
 
     expect(screen.queryByText("Sleeper Manager")).toBeInTheDocument();
-    expect(screen.queryByAltText("github logo")).toBeInTheDocument();
-    expect(screen.queryByAltText("info circle")).toBeInTheDocument();
+    expect(
+      screen.queryByAltText("The logo from github webpage")
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByAltText("A circle with an exclamation point")
+    ).toBeInTheDocument();
   });
 });

@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from "react";
 import styles from "./index.module.css";
 
 interface Props {
@@ -6,11 +5,16 @@ interface Props {
   avatarUrl: string;
 }
 
-const userInformation: FunctionComponent<Props> = ({ username, avatarUrl }) => (
+const userInformationSection: React.FunctionComponent<Props> = ({
+  username,
+  avatarUrl,
+}) => (
   <div className={styles.userInformation}>
     <img className={styles.userAvatar} src={avatarUrl} alt="User avatar" />
-    <span className={styles.username}>{username}</span>
+    <p aria-label="Username" className={styles.username}>
+      {username}
+    </p>
   </div>
 );
 
-export default userInformation;
+export default userInformationSection;

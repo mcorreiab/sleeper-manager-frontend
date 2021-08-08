@@ -1,8 +1,6 @@
 .userInformation {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 0 var(--content-spacing);
 }
 
 .userAvatar {

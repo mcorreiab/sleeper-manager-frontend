@@ -1,11 +1,14 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
 import { useRouter } from "next/router";
-import "../../util/jest-matchers/jest-extend-header";
 import HomePage from "../index";
 
-jest.mock("next/link", () => ({ children }) => children);
+jest.mock(
+  "next/link",
+  () =>
+    ({ children }) =>
+      children
+);
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
 }));

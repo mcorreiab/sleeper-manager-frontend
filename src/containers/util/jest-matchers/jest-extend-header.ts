@@ -10,7 +10,7 @@ expect.extend({
       };
     }
 
-    const githubLogo = received.queryByAltText("github logo");
+    const githubLogo = received.queryByAltText("The logo from github webpage");
 
     if (!githubLogo) {
       return {
@@ -19,7 +19,9 @@ expect.extend({
       };
     }
 
-    const infoCircle = received.queryByAltText("info circle");
+    const infoCircle = received.queryByAltText(
+      "A circle with an exclamation point"
+    );
 
     if (!infoCircle) {
       return {

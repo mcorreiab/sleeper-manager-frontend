@@ -6,12 +6,19 @@ jest.mock("../../services", () => ({
   getUserInformation: jest.fn(),
 }));
 
-const mockedGetRostersByUserId = getRostersByUserId as jest.Mock;
-const mockedGetUserInformation = getUserInformation as jest.Mock;
+const mockedGetRostersByUserId = getRostersByUserId as jest.MockedFunction<
+  typeof getRostersByUserId
+>;
+const mockedGetUserInformation = getUserInformation as jest.MockedFunction<
+  typeof getUserInformation
+>;
+
+const username = "username";
 
 const userInformation = {
   userId: "userId",
   avatar: "avatar",
+  username,
 };
 
 const player = {
@@ -30,6 +37,7 @@ const roster = {
     avatar: "leagueAvatar",
   },
   players: [player],
+  id: "rosterId",
 };
 
 const createExpectedRoster = (avatar: string) => ({
@@ -48,38 +56,40 @@ const createExpectedRoster = (avatar: string) => ({
   ],
 });
 
+mockedGetUserInformation.mockReturnValue(Promise.resolve(userInformation));
+mockedGetRostersByUserId.mockReturnValue(Promise.resolve([roster]));
+
 describe("Unavailable initializer", () => {
   describe("getProps", () => {
     it("should get roster props with success", async () => {
-      mockedGetUserInformation.mockReturnValue(userInformation);
-      mockedGetRostersByUserId.mockReturnValue([roster]);
-
-      const actual = await getProps("user");
+      const actual = await getProps(username);
 
       const expectedRoster = createExpectedRoster(
         `https://sleepercdn.com/avatars/${roster.league.avatar}`
       );
 
-      expect(actual.userAvatarUrl).toEqual(
-        `https://sleepercdn.com/avatars/${userInformation.avatar}`
-      );
-      expect(actual.rosters[0]).toEqual(expectedRoster);
+      const expected = {
+        userAvatarUrl: `https://sleepercdn.com/avatars/${userInformation.avatar}`,
+        rosters: [expectedRoster],
+      };
+
+      expect(actual).toEqual(expected);
     });
 
     it("if avatar league is missing should use the default sleeper image", async () => {
       const rosterWithoutAvatar = Object.create(roster);
       rosterWithoutAvatar.league.avatar = undefined;
-      mockedGetUserInformation.mockReturnValue(userInformation);
-      mockedGetRostersByUserId.mockReturnValue([rosterWithoutAvatar]);
 
       const actual = await getProps("user");
 
       const expectedRoster = createExpectedRoster("/sleeper-logo.png");
 
-      expect(actual.userAvatarUrl).toEqual(
-        `https://sleepercdn.com/avatars/${userInformation.avatar}`
-      );
-      expect(actual.rosters[0]).toEqual(expectedRoster);
+      const expected = {
+        userAvatarUrl: `https://sleepercdn.com/avatars/${userInformation.avatar}`,
+        rosters: [expectedRoster],
+      };
+
+      expect(actual).toEqual(expected);
     });
   });
 });
