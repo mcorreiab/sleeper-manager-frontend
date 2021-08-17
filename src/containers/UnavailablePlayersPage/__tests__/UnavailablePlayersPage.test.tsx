@@ -1,7 +1,13 @@
-import React from "react";
 import { useRouter } from "next/router";
 import { render, screen } from "@testing-library/react";
-import UnavailablePlayersPage, { RosterProps, PlayerProps } from "../index";
+import faker from "faker";
+import UnavailablePlayersPage from "../index";
+import createLeague from "./createLeague";
+import {
+  expectOverviewToBePresent,
+  expectUserDataToBePresent,
+  expectLeagueDataToBePresent,
+} from "./expected";
 
 jest.mock(
   "next/link",
@@ -17,47 +23,11 @@ const mockedUseRouter = useRouter as jest.Mock;
 const username = "username";
 const userAvatarUrl = "http://test.com/";
 
-const createLeague = (
-  name: string,
-  size: number,
-  avatarUrl: string,
-  type: string,
-  players: PlayerProps[]
-): RosterProps => ({ name, size, avatarUrl, type, players });
+const firstLeague = createLeague(faker, 3, 0, 1, "League 1");
+const secondLeague = createLeague(faker, 5, 2, 3, "Premier League");
+const thirdLeague = createLeague(faker, 0, 0, 1, "La liga");
 
-const player: PlayerProps = {
-  id: "id",
-  injuryStatus: "injuryStatus",
-  name: "name",
-  position: "position",
-  team: "team",
-};
-
-const initialSelectedLeague = createLeague(
-  "firstRoster",
-  10,
-  "http://league.com/",
-  "Standard",
-  [player]
-);
-
-const secondLeague = createLeague(
-  "secondRoster",
-  12,
-  "http://league2.com/",
-  "Half PPR",
-  [player]
-);
-
-const thirdLeague = createLeague(
-  "thirdRoster",
-  14,
-  "http://league3.com/",
-  "PPR",
-  [player]
-);
-
-const rosters = [initialSelectedLeague, secondLeague, thirdLeague];
+const rosters = [firstLeague, secondLeague, thirdLeague];
 
 mockedUseRouter.mockImplementation(() => ({
   query: {
@@ -71,30 +41,29 @@ describe("Unavailable players page", () => {
       <UnavailablePlayersPage userAvatarUrl={userAvatarUrl} rosters={rosters} />
     );
 
-    const userAvatar = await screen.findByAltText("User avatar");
+    expect(screen).toHaveACompleteHeader();
+    await expectUserDataToBePresent(userAvatarUrl, username);
+    expectOverviewToBePresent();
 
-    if (!(userAvatar instanceof HTMLImageElement)) {
-      fail("User avatar should be a button");
-    }
-
-    expect(userAvatar.src).toEqual(userAvatarUrl);
-    expect(screen.getByText(username)).toBeInTheDocument();
-    expect(screen.getByAltText("A generic league badge")).toBeInTheDocument();
-    expect(
-      screen.getByAltText("A generic football helmet badge")
-    ).toBeInTheDocument();
-    expect(screen.getByLabelText("League's overview")).toHaveTextContent(
-      "3 Leagues to be reviewed"
-    );
-    expect(screen.getByLabelText("Player's overview")).toHaveTextContent(
-      "3 Players to be changed"
-    );
     expect(screen.getByText("Leagues to review")).toBeInTheDocument();
 
-    rosters.forEach((roster) =>
-      expect(screen.getByText(roster.name)).toBeInTheDocument()
+    expectLeagueDataToBePresent(firstLeague.name, 3, 0, 1);
+    expectLeagueDataToBePresent(secondLeague.name, 5, 2, 3);
+    expectLeagueDataToBePresent(thirdLeague.name, 0, 0, 1);
+
+    expect(screen.getAllByText("Questionable").length).toBe(3);
+    const questionable = firstLeague.players.filter(
+      (player) => player.injuryStatus === "Questionable"
     );
 
-    expect(screen).toHaveACompleteHeader();
+    questionable.forEach((player) => {
+      expect(screen.queryByText(player.name)).toBeInTheDocument();
+      expect(
+        screen.queryByLabelText(`${player.name} position`)
+      ).toHaveTextContent(player.position);
+      expect(
+        screen.queryByLabelText(`${player.name} NFL team`)
+      ).toHaveTextContent(player.team);
+    });
   });
 });

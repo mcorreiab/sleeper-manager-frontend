@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Header from "@/components/Header";
-import { UserInformation, Summary } from "./components";
+import { UserInformation, Summary, LeagueInformation } from "./components";
 import styles from "./index.module.css";
 
 export interface PlayerProps {
@@ -31,8 +31,13 @@ const unavailablePlayersPage: React.FunctionComponent<Props> = ({
   const router = useRouter();
   const { user } = router.query;
 
-  const rosterInfo = rosters.map((roster) => (
-    <h2 key={roster.name}>{roster.name}</h2>
+  const numberOfLeagues = rosters.length;
+  const totalOfPlayers = rosters
+    .map((roster) => roster.players.length)
+    .reduce((previousValue, currentValue) => previousValue + currentValue);
+
+  const leagues = rosters.map((roster) => (
+    <LeagueInformation key={roster.name} roster={roster} />
   ));
 
   return (
@@ -51,12 +56,15 @@ const unavailablePlayersPage: React.FunctionComponent<Props> = ({
               aria-label="Player's leagues and players overview"
               className={styles.summary}
             >
-              <Summary rosters={rosters} />
+              <Summary
+                leaguesTotal={numberOfLeagues}
+                playersTotal={totalOfPlayers}
+              />
             </section>
           </section>
           <section>
             <h1 className={styles.leagueTitle}>Leagues to review</h1>
-            {rosterInfo}
+            {leagues}
           </section>
         </main>
       </div>

@@ -17,7 +17,7 @@ const summaryItem: React.FunctionComponent<summaryItemProps> = ({
 }) => (
   <li aria-label={summaryLabel} className={styles.text}>
     <img className={styles.badge} src={imagePath} alt={imageDescription} />
-    <em className={styles.number}>{quantity} </em>
+    <strong className={styles.number}>{quantity} </strong>
     <p className={styles.textItem}>{text}</p>
   </li>
 );

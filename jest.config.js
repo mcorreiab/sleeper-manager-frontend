@@ -8,4 +8,5 @@ module.exports = {
     "@/services/(.*)$": "<rootDir>/src/services/$1",
     "@/model/(.*)$": "<rootDir>/src/model/$1",
   },
+  testMatch: [ "**/?(*.)+(spec|test).[jt]s?(x)" ]
 };

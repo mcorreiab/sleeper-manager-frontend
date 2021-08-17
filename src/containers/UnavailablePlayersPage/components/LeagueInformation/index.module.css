@@ -1,0 +1,35 @@
+.container {
+  padding: 5.2% 7.7% 0;
+  background-color: #292e3c;
+  border-radius: 8px;
+  margin-bottom: 7.7%;
+}
+
+.container[open] {
+  padding-bottom: 24px;
+}
+
+.summary {
+  display: grid;
+  grid-template-areas: "name expand" "situation situation";
+  row-gap: 0.5rem;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 700;
+  grid-area: name;
+}
+
+.overview {
+  font-size: 0.875rem;
+  color: #8f97ab;
+  grid-area: situation;
+  display: flex;
+  margin-bottom: 6.4%;
+}
+
+.expand {
+  grid-area: expand;
+  place-self: center end;
+}

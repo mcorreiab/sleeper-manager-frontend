@@ -1,0 +1,34 @@
+.detail {
+  display: grid;
+  grid-template-areas: "name name name name" "position divider team .";
+  grid-template-columns: auto auto auto 2fr;
+  row-gap: 0.5rem;
+  width: 100%;
+}
+
+.detailWithRule {
+  grid-template-areas: "name name name name" "position divider team ." "rule rule rule rule";
+}
+
+.name {
+  grid-area: name;
+}
+
+.position {
+  grid-area: position;
+}
+
+.nflTeam {
+  grid-area: team;
+}
+
+.divider {
+  grid-area: divider;
+  align-self: center;
+}
+
+.horizontalRule {
+  grid-area: rule;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 3.1%;
+}

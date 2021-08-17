@@ -26,8 +26,11 @@ module.exports = {
   plugins: ["react", "@typescript-eslint"],
   rules: {
     "react/jsx-filename-extension": [1, { extensions: [".tsx"] }],
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-use-before-define": ["error", { functions: false, classes: false }],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { functions: false, classes: false },
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       { devDependencies: ["**/*.test.ts", "**/*.spec.ts", "**/*.test.tsx"] },
