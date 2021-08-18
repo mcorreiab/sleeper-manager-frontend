@@ -1,6 +1,5 @@
-import React, { FunctionComponent } from "react";
 import HomePage from "@/containers/HomePage";
 
-const home: FunctionComponent = () => <HomePage />;
+const home: React.FunctionComponent = () => <HomePage />;
 
 export default home;

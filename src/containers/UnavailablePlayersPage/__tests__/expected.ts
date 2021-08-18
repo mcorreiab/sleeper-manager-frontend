@@ -1,4 +1,6 @@
 import { screen } from "@testing-library/react";
+import { PlayerProps } from "../index";
+import { LeagueContext } from "./types";
 
 export async function expectUserDataToBePresent(
   userAvatarUrl: string,
@@ -27,16 +29,26 @@ export function expectOverviewToBePresent(): void {
   );
 }
 
-export function expectLeagueDataToBePresent(
-  leagueName: string,
-  outPlayers: number,
-  doubtfulPlayers: number,
-  questionablePlayers: number
-): void {
-  expect(screen.getByText(leagueName)).toBeInTheDocument();
-  expect(
-    screen.getByLabelText(`${leagueName} players situation`)
-  ).toHaveTextContent(
-    `${outPlayers} Out ${doubtfulPlayers} Doubtful ${questionablePlayers} Questionable`
+export function expectLeagueDataToBePresent({
+  name,
+  doubtful,
+  out,
+  questionable,
+}: LeagueContext): void {
+  expect(screen.getByText(name)).toBeInTheDocument();
+  expect(screen.getByLabelText(`${name} players situation`)).toHaveTextContent(
+    `${out} Out ${doubtful} Doubtful ${questionable} Questionable`
   );
+}
+
+export function expectPlayersToBePresent(players: PlayerProps[]): void {
+  players.forEach((player) => {
+    expect(screen.queryByText(player.name)).toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(`${player.name} position`)
+    ).toHaveTextContent(player.position);
+    expect(
+      screen.queryByLabelText(`${player.name} NFL team`)
+    ).toHaveTextContent(player.team);
+  });
 }

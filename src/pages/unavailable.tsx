@@ -1,11 +1,13 @@
 import { GetServerSideProps } from "next";
-import React, { FunctionComponent } from "react";
 import UnavailablePlayersPage, {
   Props,
 } from "@/containers/UnavailablePlayersPage";
 import getProps from "@/initializer/unavailable";
 
-const unavailable: FunctionComponent<Props> = ({ userAvatarUrl, rosters }) => (
+const unavailable: React.FunctionComponent<Props> = ({
+  userAvatarUrl,
+  rosters,
+}) => (
   <UnavailablePlayersPage userAvatarUrl={userAvatarUrl} rosters={rosters} />
 );
 

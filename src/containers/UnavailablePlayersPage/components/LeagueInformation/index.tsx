@@ -59,11 +59,37 @@ const leagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
     (player) => player.injuryStatus === "Questionable"
   );
 
+  const questionableComponent =
+    questionablePlayers.length > 0 ? (
+      <ListStatusPlayer
+        statusLabel="Questionable"
+        players={questionablePlayers}
+        lastStatus
+      />
+    ) : null;
+
+  const doubtfulComponent =
+    doubtfulPlayers.length > 0 ? (
+      <ListStatusPlayer
+        statusLabel="Doubtful"
+        players={doubtfulPlayers}
+        lastStatus={questionablePlayers.length === 0}
+      />
+    ) : null;
+
+  const outComponent =
+    outPlayers.length > 0 ? (
+      <ListStatusPlayer
+        statusLabel="Out"
+        players={outPlayers}
+        lastStatus={
+          questionablePlayers.length === 0 && doubtfulPlayers.length === 0
+        }
+      />
+    ) : null;
+
   return (
-    <details
-      onToggle={() => onClick()}
-      className={styles.container}
-    >
+    <details onToggle={() => onClick()} className={styles.container}>
       <summary className={styles.summary}>
         <h2 className={styles.name} key={roster.name}>
           {roster.name}
@@ -78,11 +104,9 @@ const leagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
           {questionablePlayers.length} Questionable
         </p>
       </summary>
-      <ListStatusPlayer
-        statusLabel="Questionable"
-        players={questionablePlayers}
-        hidden={!detailHidden}
-      />
+      {outComponent}
+      {doubtfulComponent}
+      {questionableComponent}
     </details>
   );
 };

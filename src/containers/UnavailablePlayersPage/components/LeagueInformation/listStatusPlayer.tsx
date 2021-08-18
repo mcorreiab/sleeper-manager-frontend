@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import HorizontalRule from "./horizontalRule";
 import styles from "./listStatusPlayer.module.css";
 import Player from "./player";
 
@@ -13,13 +13,13 @@ export interface PlayerProps {
 export interface Props {
   statusLabel: string;
   players: PlayerProps[];
-  hidden: boolean;
+  lastStatus: boolean;
 }
 
 const listStatusPlayer: React.FunctionComponent<Props> = ({
   statusLabel,
   players,
-  hidden,
+  lastStatus,
 }) => {
   const playersComponent = players.map((player, index) => (
     <Player
@@ -32,12 +32,10 @@ const listStatusPlayer: React.FunctionComponent<Props> = ({
   ));
 
   return (
-    <div
-      className={classnames(styles.container)}
-      aria-hidden={hidden}
-    >
+    <div className={styles.container}>
       <h3 className={styles.statusLabel}>{statusLabel}</h3>
       <ul className={styles.playerList}>{playersComponent}</ul>
+      {!lastStatus && <HorizontalRule className={styles.horizontalRule} />}
     </div>
   );
 };

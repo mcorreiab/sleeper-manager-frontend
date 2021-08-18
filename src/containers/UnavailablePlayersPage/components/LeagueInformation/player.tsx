@@ -1,5 +1,6 @@
 import classnames from "classnames";
 import RoundDivider from "../RoundDivider";
+import HorizontalRule from "./horizontalRule";
 import styles from "./player.module.css";
 
 export interface Props {
@@ -28,7 +29,7 @@ const player: React.FunctionComponent<Props> = ({
     <p aria-label={`${name} NFL team`} className={styles.nflTeam}>
       {team}
     </p>
-    {hasHorizontalRule && <hr className={styles.horizontalRule} />}
+    {hasHorizontalRule && <HorizontalRule className={styles.horizontalRule} />}
   </li>
 );
 

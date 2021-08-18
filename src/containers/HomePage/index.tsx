@@ -1,15 +1,10 @@
-import React, {
-  useState,
-  ChangeEvent,
-  FormEvent,
-  FunctionComponent,
-} from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/router";
 import WithHeader from "@/hoc/withHeader";
 import styles from "./index.module.css";
 import { TitleArea, InputUsername } from "./components";
 
-const HomePage: FunctionComponent = () => {
+const HomePage: React.FunctionComponent = () => {
   const [username, setUsername] = useState("");
   const [isUsernameMissing, setIsUsernameMissing] = useState(false);
   const router = useRouter();

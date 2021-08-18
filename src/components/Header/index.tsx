@@ -1,8 +1,7 @@
-import React, { FunctionComponent } from "react";
 import Link from "next/link";
 import styles from "./index.module.css";
 
-const Header: FunctionComponent = () => (
+const Header: React.FunctionComponent = () => (
   <div className={styles.header}>
     <h1 className={styles.menuTitle}>Sleeper Manager</h1>
     <nav className={styles.navigation}>

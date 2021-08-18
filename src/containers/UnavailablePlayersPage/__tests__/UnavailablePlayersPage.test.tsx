@@ -3,10 +3,12 @@ import { render, screen } from "@testing-library/react";
 import faker from "faker";
 import UnavailablePlayersPage from "../index";
 import createLeague from "./createLeague";
+import { LeagueContext } from "./types";
 import {
   expectOverviewToBePresent,
   expectUserDataToBePresent,
   expectLeagueDataToBePresent,
+  expectPlayersToBePresent,
 } from "./expected";
 
 jest.mock(
@@ -23,9 +25,30 @@ const mockedUseRouter = useRouter as jest.Mock;
 const username = "username";
 const userAvatarUrl = "http://test.com/";
 
-const firstLeague = createLeague(faker, 3, 0, 1, "League 1");
-const secondLeague = createLeague(faker, 5, 2, 3, "Premier League");
-const thirdLeague = createLeague(faker, 0, 0, 1, "La liga");
+const firstLeagueContext: LeagueContext = {
+  out: 3,
+  doubtful: 0,
+  questionable: 1,
+  name: "League 1",
+};
+
+const secondLeagueContext: LeagueContext = {
+  out: 5,
+  doubtful: 2,
+  questionable: 3,
+  name: "Premier League",
+};
+
+const thirdLeagueContext: LeagueContext = {
+  out: 1,
+  doubtful: 0,
+  questionable: 0,
+  name: "La liga",
+};
+
+const firstLeague = createLeague(faker, firstLeagueContext);
+const secondLeague = createLeague(faker, secondLeagueContext);
+const thirdLeague = createLeague(faker, thirdLeagueContext);
 
 const rosters = [firstLeague, secondLeague, thirdLeague];
 
@@ -47,23 +70,16 @@ describe("Unavailable players page", () => {
 
     expect(screen.getByText("Leagues to review")).toBeInTheDocument();
 
-    expectLeagueDataToBePresent(firstLeague.name, 3, 0, 1);
-    expectLeagueDataToBePresent(secondLeague.name, 5, 2, 3);
-    expectLeagueDataToBePresent(thirdLeague.name, 0, 0, 1);
+    expectLeagueDataToBePresent(firstLeagueContext);
+    expectLeagueDataToBePresent(secondLeagueContext);
+    expectLeagueDataToBePresent(thirdLeagueContext);
 
-    expect(screen.getAllByText("Questionable").length).toBe(3);
-    const questionable = firstLeague.players.filter(
-      (player) => player.injuryStatus === "Questionable"
-    );
+    expect(screen.getAllByText("Questionable").length).toBe(2);
+    expect(screen.getAllByText("Doubtful").length).toBe(1);
+    expect(screen.getAllByText("Out").length).toBe(3);
 
-    questionable.forEach((player) => {
-      expect(screen.queryByText(player.name)).toBeInTheDocument();
-      expect(
-        screen.queryByLabelText(`${player.name} position`)
-      ).toHaveTextContent(player.position);
-      expect(
-        screen.queryByLabelText(`${player.name} NFL team`)
-      ).toHaveTextContent(player.team);
-    });
+    expectPlayersToBePresent(firstLeague.players);
+    expectPlayersToBePresent(secondLeague.players);
+    expectPlayersToBePresent(thirdLeague.players);
   });
 });

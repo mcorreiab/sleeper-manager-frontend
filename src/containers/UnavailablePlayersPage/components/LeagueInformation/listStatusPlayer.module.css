@@ -23,6 +23,6 @@
   align-items: flex-start;
 }
 
-.notVisible {
-  display: none;
+.horizontalRule {
+  margin: 3.1% 0 9.3%;
 }

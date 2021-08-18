@@ -1,27 +1,20 @@
 import { RosterProps, PlayerProps } from "../index";
+import { LeagueContext } from "./types";
 
 export default (
   faker: Faker.FakerStatic,
-  outPlayers: number,
-  doubtfulPlayers: number,
-  questionablePlayers: number,
-  leagueName: string
+  { out, doubtful, questionable, name }: LeagueContext
 ): RosterProps => {
-  const outPlayersList = createPlayersByStatus(
-    outPlayers,
-    leagueName,
-    faker,
-    "Out"
-  );
+  const outPlayersList = createPlayersByStatus(out, name, faker, "Out");
   const doubtfulPlayerList = createPlayersByStatus(
-    doubtfulPlayers,
-    leagueName,
+    doubtful,
+    name,
     faker,
     "Doubtful"
   );
   const questionablePlayersList = createPlayersByStatus(
-    questionablePlayers,
-    leagueName,
+    questionable,
+    name,
     faker,
     "Questionable"
   );
@@ -32,13 +25,7 @@ export default (
     ...questionablePlayersList,
   ];
 
-  return createLeague(
-    leagueName,
-    10,
-    faker.internet.url(),
-    "Standard",
-    players
-  );
+  return createLeague(name, 10, faker.internet.url(), "Standard", players);
 };
 
 function createPlayersByStatus(

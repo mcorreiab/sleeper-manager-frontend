@@ -1,4 +1,5 @@
-import React, { FormEvent, ChangeEvent, FunctionComponent } from "react";
+import { FormEvent, ChangeEvent } from "react";
+import classnames from "classnames";
 import styles from "./index.module.css";
 
 interface Props {
@@ -9,25 +10,24 @@ interface Props {
   isUsernameMissing: boolean;
 }
 
-const inputUsername: FunctionComponent<Props> = ({
+const inputUsername: React.FunctionComponent<Props> = ({
   className,
   onFormSubmit,
   username,
   onChangeUsername,
   isUsernameMissing,
 }) => {
-  const inputUsernameClasses = [styles.inputUsername];
-  let usernameMissing: string = null;
-  if (isUsernameMissing) {
-    inputUsernameClasses.push(styles.inputUsernameError);
-    usernameMissing = "Should inform an username";
-  }
+  const usernameMissing = isUsernameMissing
+    ? "Should inform an username"
+    : null;
 
   return (
     <div className={className}>
       <form onSubmit={onFormSubmit}>
         <input
-          className={inputUsernameClasses.join(" ")}
+          className={classnames(styles.inputUsername, {
+            [styles.inputUsernameError]: isUsernameMissing,
+          })}
           placeholder="Insert your username here"
           value={username}
           onChange={onChangeUsername}
