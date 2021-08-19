@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import UnavailablePlayersPage from "../index";
 import createLeague from "./createLeague";
@@ -81,5 +82,27 @@ describe("Unavailable players page", () => {
     expectPlayersToBePresent(firstLeague.players);
     expectPlayersToBePresent(secondLeague.players);
     expectPlayersToBePresent(thirdLeague.players);
+  });
+
+  it("should correctly toggle the arrow", async () => {
+    render(
+      <UnavailablePlayersPage userAvatarUrl={userAvatarUrl} rosters={rosters} />
+    );
+
+    expect(screen.getAllByAltText("An arrow up").length).toEqual(3);
+    const leagueCard = await screen.findByText(firstLeagueContext.name);
+
+    userEvent.click(leagueCard);
+
+    await waitFor(() => {
+      expect(screen.getAllByAltText("An arrow up").length).toEqual(2);
+      expect(screen.getAllByAltText("An arrow down").length).toEqual(1);
+    });
+
+    userEvent.click(leagueCard);
+
+    await waitFor(() => {
+      expect(screen.getAllByAltText("An arrow up").length).toEqual(3);
+    });
   });
 });
