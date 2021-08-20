@@ -20,7 +20,7 @@ const Header: React.FunctionComponent = () => (
             <a href="/about">
               <img
                 src="/info-circle.svg"
-                alt="A circle with an exclamation point"
+                alt="More information about sleeper manager"
               />
             </a>
           </Link>

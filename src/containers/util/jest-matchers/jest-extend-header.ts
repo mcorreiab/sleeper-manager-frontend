@@ -20,7 +20,7 @@ expect.extend({
     }
 
     const infoCircle = received.queryByAltText(
-      "A circle with an exclamation point"
+      "More information about sleeper manager"
     );
 
     if (!infoCircle) {
