@@ -12,6 +12,7 @@
 
 .name {
   grid-area: name;
+  color: #eaeaea;
 }
 
 .position {

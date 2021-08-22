@@ -15,7 +15,7 @@ describe("withHeader high order component", () => {
       screen.queryByAltText("The logo from github webpage")
     ).toBeInTheDocument();
     expect(
-      screen.queryByAltText("A circle with an exclamation point")
+      screen.queryByAltText("More information about sleeper manager")
     ).toBeInTheDocument();
   });
 });

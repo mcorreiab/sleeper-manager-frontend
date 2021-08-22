@@ -34,15 +34,15 @@ const leagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
   const arrow = detailHidden ? (
     <img
       aria-hidden="true"
-      src="/expand.svg"
-      alt="An arrow down"
+      src="/hide.svg"
+      alt="An arrow up"
       className={styles.expand}
     />
   ) : (
     <img
       aria-hidden="true"
-      src="/hide.svg"
-      alt="An arrow up"
+      src="/expand.svg"
+      alt="An arrow down"
       className={styles.expand}
     />
   );

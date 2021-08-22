@@ -89,20 +89,20 @@ describe("Unavailable players page", () => {
       <UnavailablePlayersPage userAvatarUrl={userAvatarUrl} rosters={rosters} />
     );
 
-    expect(screen.getAllByAltText("An arrow up").length).toEqual(3);
+    expect(screen.getAllByAltText("An arrow down").length).toEqual(3);
     const leagueCard = await screen.findByText(firstLeagueContext.name);
 
     userEvent.click(leagueCard);
 
     await waitFor(() => {
-      expect(screen.getAllByAltText("An arrow up").length).toEqual(2);
-      expect(screen.getAllByAltText("An arrow down").length).toEqual(1);
+      expect(screen.getAllByAltText("An arrow down").length).toEqual(2);
+      expect(screen.getAllByAltText("An arrow up").length).toEqual(1);
     });
 
     userEvent.click(leagueCard);
 
     await waitFor(() => {
-      expect(screen.getAllByAltText("An arrow up").length).toEqual(3);
+      expect(screen.getAllByAltText("An arrow down").length).toEqual(3);
     });
   });
 });

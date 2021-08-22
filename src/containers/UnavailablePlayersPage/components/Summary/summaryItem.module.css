@@ -16,9 +16,13 @@
   grid-area: number;
   font-weight: 900;
   font-style: normal;
+  font-size: 1.5rem;
 }
 
 .textItem {
   grid-area: text;
   text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.009375rem;
 }
