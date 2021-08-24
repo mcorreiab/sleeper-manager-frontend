@@ -11,7 +11,7 @@
   border-radius: 32px;
   background-color: #3a28a7;
   align-self: flex-start;
-  margin-bottom: 4.7%;
+  margin-bottom: 0.5rem;
 }
 
 .playerList {
@@ -24,5 +24,5 @@
 }
 
 .horizontalRule {
-  margin: 3.1% 0 9.3%;
+  margin: 0.5rem 0 1.5rem;
 }

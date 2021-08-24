@@ -12,7 +12,7 @@
 }
 
 .navigation {
-  flex-basis: 28%;
+  flex-basis: 5rem;
 }
 
 .navigationList {
@@ -21,22 +21,4 @@
   padding: 0;
   margin: 0;
   justify-content: space-between;
-}
-
-@media screen and (min-width: 540px) {
-  .navigation {
-    flex-basis: 16%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .navigation {
-    flex-basis: 12%;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .navigation {
-    flex-basis: 9%;
-  }
 }

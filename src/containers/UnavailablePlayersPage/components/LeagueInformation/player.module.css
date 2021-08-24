@@ -30,5 +30,5 @@
 
 .horizontalRule {
   grid-area: rule;
-  margin-bottom: 3.1%;
+  margin-bottom: 0.5rem;
 }

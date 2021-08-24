@@ -1,8 +1,8 @@
 .container {
-  padding: 5.2% 7.7% 0;
+  padding: 1rem 1.5rem 0;
   background-color: #292e3c;
   border-radius: 8px;
-  margin-bottom: 5.2%;
+  margin-bottom: 1rem;
 }
 
 .container[open] {
@@ -26,7 +26,7 @@
   color: #8f97ab;
   grid-area: situation;
   display: flex;
-  margin-bottom: 6.4%;
+  margin-bottom: 1rem;
 }
 
 .expand {

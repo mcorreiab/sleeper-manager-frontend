@@ -2,7 +2,7 @@
   display: flex;
   background-color: #3a28a7;
   border-radius: 16px;
-  padding: 7.5% 10%;
+  padding: 1.5rem 2rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -12,5 +12,5 @@
   border-width: 1px;
   border-left: 0px;
   border-color:#5e49dc;
-  margin: 0 12.5%;
+  margin: 0 2.25rem;
 }

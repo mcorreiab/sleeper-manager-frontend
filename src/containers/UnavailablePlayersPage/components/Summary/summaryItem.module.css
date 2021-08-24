@@ -2,8 +2,8 @@
   color: #ffffff;
   display: grid;
   grid-template: "badge number" "text text";
-  column-gap: 10%;
-  row-gap: 10%;
+  column-gap: 0.5rem;
+  row-gap: 0.25rem;
   align-items: center;
 }
 

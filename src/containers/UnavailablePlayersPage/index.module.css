@@ -5,20 +5,20 @@
 }
 
 .container {
-  margin: 4.5% var(--content-spacing) 0;
+  margin: 1rem var(--content-spacing) 0;
   color: #eaeaea;
 }
 
 .header {
-  margin-bottom: 7.5%;
+  margin-bottom: 1.625rem;
 }
 
 .summary {
-  margin-top: 5.6%;
+  margin-top: 1.25rem;
 }
 
 .leagueTitle {
   font-weight: 700;
   font-size: 0.875em;
-  margin: 8.9% 0 5.2%;
+  margin: 2rem 0 1rem;
 }
