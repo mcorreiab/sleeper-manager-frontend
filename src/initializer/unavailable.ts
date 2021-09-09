@@ -11,7 +11,7 @@ const getRosterAvatar = (roster: RosterModel): string =>
 
 const getProps = async (user: string): Promise<Props> => {
   const userInformation = await getUserInformation(user);
-  let rosters = [];
+  let rosters: RosterModel[] = [];
   try {
     rosters = await getRostersByUserId(userInformation.userId);
   } catch (error) {
