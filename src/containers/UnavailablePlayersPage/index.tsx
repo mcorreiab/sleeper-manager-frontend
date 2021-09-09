@@ -32,13 +32,35 @@ const unavailablePlayersPage: React.FunctionComponent<Props> = ({
   const { user } = router.query;
 
   const numberOfLeagues = rosters.length;
-  const totalOfPlayers = rosters
-    .map((roster) => roster.players.length)
-    .reduce((previousValue, currentValue) => previousValue + currentValue);
 
-  const leagues = rosters.map((roster) => (
-    <LeagueInformation key={roster.name} roster={roster} />
-  ));
+  let totalOfPlayers = 0;
+  if (numberOfLeagues > 0) {
+    totalOfPlayers = rosters
+      .map((roster) => roster.players.length)
+      .reduce((previousValue, currentValue) => previousValue + currentValue);
+  }
+
+  let component;
+
+  if (totalOfPlayers > 0) {
+    const leagues = rosters.map((roster) => (
+      <LeagueInformation key={roster.name} roster={roster} />
+    ));
+
+    component = (
+      <>
+        <h1 className={styles.leagueTitle}>Leagues to review</h1>
+        {leagues}
+      </>
+    );
+  } else {
+    component = (
+      <>
+        <p style={{ marginTop: "1rem", fontWeight: 700 }}>Nothing to show</p>
+        <p style={{ marginTop: "0.5rem" }}>All your players are up to go!</p>
+      </>
+    );
+  }
 
   return (
     <div className={styles.content}>
@@ -62,10 +84,7 @@ const unavailablePlayersPage: React.FunctionComponent<Props> = ({
               />
             </section>
           </section>
-          <section>
-            <h1 className={styles.leagueTitle}>Leagues to review</h1>
-            {leagues}
-          </section>
+          <section>{component}</section>
         </main>
       </div>
     </div>

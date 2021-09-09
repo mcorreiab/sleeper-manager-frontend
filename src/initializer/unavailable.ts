@@ -11,7 +11,12 @@ const getRosterAvatar = (roster: RosterModel): string =>
 
 const getProps = async (user: string): Promise<Props> => {
   const userInformation = await getUserInformation(user);
-  const rosters = await getRostersByUserId(userInformation.userId);
+  let rosters = [];
+  try {
+    rosters = await getRostersByUserId(userInformation.userId);
+  } catch (error) {
+    //
+  }
   const userAvatarUrl = `${avatarBaseUrl}${userInformation.avatar}`;
 
   const rosterProps: RosterProps[] = rosters.map((roster) => ({
