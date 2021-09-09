@@ -17,7 +17,10 @@ const getProps = async (user: string): Promise<Props> => {
   } catch (error) {
     //
   }
-  const userAvatarUrl = `${avatarBaseUrl}${userInformation.avatar}`;
+  const userAvatarUrl =
+    userInformation && userInformation.avatar
+      ? `${avatarBaseUrl}${userInformation.avatar}`
+      : "/sleeper-logo.png";
 
   const rosterProps: RosterProps[] = rosters.map((roster) => ({
     name: roster.league.name,
