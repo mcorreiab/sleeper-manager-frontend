@@ -8,6 +8,7 @@ interface Props {
   username: string;
   onChangeUsername: (event: ChangeEvent<HTMLInputElement>) => void;
   isUsernameMissing: boolean;
+  isUsernameInvalid: boolean;
 }
 
 const inputUsername: React.FunctionComponent<Props> = ({
@@ -16,10 +17,11 @@ const inputUsername: React.FunctionComponent<Props> = ({
   username,
   onChangeUsername,
   isUsernameMissing,
+  isUsernameInvalid,
 }) => {
-  const usernameMissing = isUsernameMissing
-    ? "Should inform an username"
-    : null;
+  let usernameMissing = isUsernameMissing ? "Should inform an username" : null;
+
+  usernameMissing = isUsernameInvalid ? "User not found" : usernameMissing;
 
   return (
     <div className={className}>

@@ -3,7 +3,7 @@ import UserModel from "./model";
 
 const getUserInformation = async (username: string): Promise<UserModel> => {
   const response = await axios.get<UserModel>(
-    `https://api.sleeper.app/v1/user/${username}`
+    `https://api.sleeper.app/v1/user/${username.replace(" ", "")}`
   );
   return response.data;
 };

@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import WithHeader from "@/hoc/withHeader";
 import styles from "./index.module.css";
 import { TitleArea, InputUsername } from "./components";
+import getUserInformation from "@/services/user";
 
 const HomePage: React.FunctionComponent = () => {
   const [username, setUsername] = useState("");
   const [isUsernameMissing, setIsUsernameMissing] = useState(false);
+  const [isInvalidUsername, setIsInvalidUsername] = useState(false);
   const router = useRouter();
 
   const onChangeUsername = (event: ChangeEvent<HTMLInputElement>) => {
@@ -14,17 +16,24 @@ const HomePage: React.FunctionComponent = () => {
 
     setUsername(event.target.value);
     setIsUsernameMissing(false);
+    setIsInvalidUsername(false);
   };
 
-  const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (username.length === 0) {
       setIsUsernameMissing(true);
     } else {
-      router.push({
-        pathname: "/unavailable",
-        query: { user: username },
-      });
+      const userInformation = await getUserInformation(username);
+
+      if (userInformation) {
+        router.push({
+          pathname: "/unavailable",
+          query: { user: username.trim() },
+        });
+      } else {
+        setIsInvalidUsername(true);
+      }
     }
   };
 
@@ -41,6 +50,7 @@ const HomePage: React.FunctionComponent = () => {
           username={username}
           onChangeUsername={onChangeUsername}
           isUsernameMissing={isUsernameMissing}
+          isUsernameInvalid={isInvalidUsername}
         />
       </main>
     </WithHeader>

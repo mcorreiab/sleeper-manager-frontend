@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { useRouter } from "next/router";
 import HomePage from "../index";
 
@@ -101,10 +101,12 @@ describe("render home page", () => {
 
       await goButtonClick();
 
-      expect(mockRouterPush).toHaveBeenCalledWith({
-        pathname: "/unavailable",
-        query: { user: "username" },
-      });
+      await waitFor(() => {
+        expect(mockRouterPush).toHaveBeenCalledWith({
+          pathname: "/unavailable",
+          query: { user: "username" },
+        });
+      })
     });
   });
 });
