@@ -7,7 +7,7 @@ const custom404: React.FunctionComponent = () => {
   useEffect(() => {
     setTimeout(() => {
       router.replace("/");
-    }, 2000);
+    }, 3000);
   });
 
   return (
@@ -19,10 +19,12 @@ const custom404: React.FunctionComponent = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        color: "#eaeaea",
       }}
     >
       <img src="/pass-drop.svg" alt="NFL Player dropping a pass" />
-      <h1 style={{ color: "#eaeaea" }}>Page not found</h1>
+      <h1>Page not found</h1>
+      <p>Redirecting you back to home</p>
     </main>
   );
 };
