@@ -1,93 +1,63 @@
-import { useRouter } from "next/router";
-import Header from "@/components/Header";
-import { UserInformation, Summary, LeagueInformation } from "./components";
-import styles from "./index.module.css";
+import { useCallback, useEffect, useState } from "react";
+import getRoster from "@/services/roster";
+import { Loading } from "./components";
+import RostersPage from "./rostersPage";
+import { RosterModel } from "@/services/roster/model";
+import useUser from "@/hooks/useUser";
 
-export interface PlayerProps {
-  id: string;
-  name: string;
-  injuryStatus: string;
-  position: string;
-  team: string;
+interface Props {
+  username: string;
 }
 
-export interface RosterProps {
-  name: string;
-  size: number;
-  avatarUrl: string;
-  type: string;
-  players: PlayerProps[];
-}
+const avatarBaseUrl = "https://sleepercdn.com/avatars/";
 
-export interface Props {
-  userAvatarUrl: string;
-  rosters: RosterProps[];
-}
+const getRosterAvatar = (roster: RosterModel): string =>
+  roster.league.avatar
+    ? `${avatarBaseUrl}${roster.league.avatar}`
+    : "/sleeper-logo.png";
 
 const unavailablePlayersPage: React.FunctionComponent<Props> = ({
-  userAvatarUrl,
-  rosters,
+  username,
 }) => {
-  const router = useRouter();
-  const { user } = router.query;
+  const { data, isLoading } = useUser(username, true);
+  const [rosters, setRosters] = useState<RosterModel[] | null>(null);
 
-  const numberOfLeagues = rosters.length;
+  const getRosterCallback = useCallback(async () => {
+    if (!isLoading && data) {
+      const rostersData = await getRoster(data.userId);
+      setRosters(rostersData);
+    }
+  }, [data]);
 
-  let totalOfPlayers = 0;
-  if (numberOfLeagues > 0) {
-    totalOfPlayers = rosters
-      .map((roster) => roster.players.length)
-      .reduce((previousValue, currentValue) => previousValue + currentValue);
-  }
+  useEffect(() => {
+    getRosterCallback();
+  }, [getRosterCallback]);
 
-  let component;
+  if (data && rosters) {
+    const userAvatarUrl =
+      data && data.avatar
+        ? `${avatarBaseUrl}${data.avatar}`
+        : "/sleeper-logo.png";
 
-  if (totalOfPlayers > 0) {
-    const leagues = rosters.map((roster) => (
-      <LeagueInformation key={roster.name} roster={roster} />
-    ));
-
-    component = (
-      <>
-        <h1 className={styles.leagueTitle}>Leagues to review</h1>
-        {leagues}
-      </>
-    );
-  } else {
-    component = (
-      <>
-        <p style={{ marginTop: "1rem", fontWeight: 700 }}>Nothing to show</p>
-        <p style={{ marginTop: "0.5rem" }}>All your players are up to go!</p>
-      </>
+    return (
+      <RostersPage
+        user={data.displayName}
+        userAvatarUrl={userAvatarUrl}
+        rosters={rosters.map((roster) => ({
+          name: roster.league.name,
+          size: roster.league.size,
+          avatarUrl: getRosterAvatar(roster),
+          type: roster.league.pointsByReception,
+          players: roster.players,
+        }))}
+      />
     );
   }
 
   return (
-    <div className={styles.content}>
-      <div className={styles.container}>
-        <header className={styles.header}>
-          <Header />
-        </header>
-        <main>
-          <section aria-label="User situation overview">
-            <UserInformation
-              avatarUrl={userAvatarUrl}
-              username={user as string}
-            />
-            <section
-              aria-label="Player's leagues and players overview"
-              className={styles.summary}
-            >
-              <Summary
-                leaguesTotal={numberOfLeagues}
-                playersTotal={totalOfPlayers}
-              />
-            </section>
-          </section>
-          <section>{component}</section>
-        </main>
-      </div>
-    </div>
+    <main>
+      <Loading />
+    </main>
   );
 };
 

@@ -1,10 +1,10 @@
-import { RosterProps, PlayerProps } from "../index";
 import { LeagueContext } from "./types";
+import { RosterModel, PlayerModel } from "@/services/roster/model";
 
 export default (
   faker: Faker.FakerStatic,
   { out, doubtful, questionable, name }: LeagueContext
-): RosterProps => {
+): RosterModel => {
   const outPlayersList = createPlayersByStatus(out, name, faker, "Out");
   const doubtfulPlayerList = createPlayersByStatus(
     doubtful,
@@ -25,7 +25,14 @@ export default (
     ...questionablePlayersList,
   ];
 
-  return createLeague(name, 10, faker.internet.url(), "Standard", players);
+  return createLeague(
+    faker.random.alphaNumeric(),
+    name,
+    10,
+    faker.internet.url(),
+    "Standard",
+    players
+  );
 };
 
 function createPlayersByStatus(
@@ -33,12 +40,12 @@ function createPlayersByStatus(
   leagueName: string,
   faker: Faker.FakerStatic,
   injuryStatus: string
-): PlayerProps[] {
-  const players: PlayerProps[] = [];
+): PlayerModel[] {
+  const players: PlayerModel[] = [];
 
   for (let index = 0; index < quantityOfPlayers; index += 1) {
     const name = faker.name.findName();
-    const player: PlayerProps = {
+    const player: PlayerModel = {
       id: leagueName.concat(name),
       injuryStatus,
       name,
@@ -53,11 +60,16 @@ function createPlayersByStatus(
 }
 
 function createLeague(
+  id: string,
   name: string,
   size: number,
   avatarUrl: string,
   type: string,
-  players: PlayerProps[]
-): RosterProps {
-  return { name, size, avatarUrl, type, players };
+  players: PlayerModel[]
+): RosterModel {
+  return {
+    id,
+    league: { name, size, pointsByReception: type, avatar: avatarUrl },
+    players,
+  };
 }

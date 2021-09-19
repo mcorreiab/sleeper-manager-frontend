@@ -1,5 +1,5 @@
 import axios from "@/config/axios";
-import RosterModel from "./model";
+import { RosterModel } from "./model";
 
 const getRostersByUserId = async (userId: string): Promise<RosterModel[]> => {
   const response = await axios.get<RosterModel[]>(

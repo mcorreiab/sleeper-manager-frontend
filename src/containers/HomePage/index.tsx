@@ -1,14 +1,15 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { useRouter } from "next/router";
 import WithHeader from "@/hoc/withHeader";
 import styles from "./index.module.css";
 import { TitleArea, InputUsername } from "./components";
-import getUserInformation from "@/services/user";
+import useUser from "@/hooks/useUser";
 
 const HomePage: React.FunctionComponent = () => {
   const [username, setUsername] = useState("");
   const [isUsernameMissing, setIsUsernameMissing] = useState(false);
-  const [isInvalidUsername, setIsInvalidUsername] = useState(false);
+  const [shouldFetch, setShouldFetch] = useState(false);
+  const { data, usernameMissing } = useUser(username, shouldFetch);
   const router = useRouter();
 
   const onChangeUsername = (event: ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +17,7 @@ const HomePage: React.FunctionComponent = () => {
 
     setUsername(event.target.value);
     setIsUsernameMissing(false);
-    setIsInvalidUsername(false);
+    setShouldFetch(false);
   };
 
   const onFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -24,18 +25,15 @@ const HomePage: React.FunctionComponent = () => {
     if (username.length === 0) {
       setIsUsernameMissing(true);
     } else {
-      const userInformation = await getUserInformation(username);
-
-      if (userInformation) {
-        router.push({
-          pathname: "/unavailable",
-          query: { user: username.trim() },
-        });
-      } else {
-        setIsInvalidUsername(true);
-      }
+      setShouldFetch(true);
     }
   };
+
+  useEffect(() => {
+    if (data) {
+      router.push(`/unavailable/${data.username}`);
+    }
+  }, [data]);
 
   return (
     <WithHeader>
@@ -50,7 +48,7 @@ const HomePage: React.FunctionComponent = () => {
           username={username}
           onChangeUsername={onChangeUsername}
           isUsernameMissing={isUsernameMissing}
-          isUsernameInvalid={isInvalidUsername}
+          isUsernameInvalid={usernameMissing}
         />
       </main>
     </WithHeader>

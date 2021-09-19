@@ -3,33 +3,31 @@ import "@testing-library/jest-dom/extend-expect";
 import Header from "../../../../components/Header";
 import "../jest-extend-header";
 
-describe("Test jest extension for header", () => {
-  it("should have a complete header", () => {
-    render(<Header />);
+it("should have a complete header", () => {
+  render(<Header />);
 
-    expect(screen).toHaveACompleteHeader();
-  });
+  expect(screen).toHaveACompleteHeader();
+});
 
-  it("should be missing title", () => {
-    render(<div />);
+it("should be missing title", () => {
+  render(<div />);
 
-    expect(screen).not.toHaveACompleteHeader();
-  });
+  expect(screen).not.toHaveACompleteHeader();
+});
 
-  it("should be missing github logo", () => {
-    render(<div>Sleeper Manager</div>);
+it("should be missing github logo", () => {
+  render(<div>Sleeper Manager</div>);
 
-    expect(screen).not.toHaveACompleteHeader();
-  });
+  expect(screen).not.toHaveACompleteHeader();
+});
 
-  it("should be missing info circle", () => {
-    render(
-      <div>
-        Sleeper Manager
-        <img alt="github logo" />
-      </div>
-    );
+it("should be missing info circle", () => {
+  render(
+    <div>
+      Sleeper Manager
+      <img alt="github logo" />
+    </div>
+  );
 
-    expect(screen).not.toHaveACompleteHeader();
-  });
+  expect(screen).not.toHaveACompleteHeader();
 });

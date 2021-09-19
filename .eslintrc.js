@@ -47,6 +47,10 @@ module.exports = {
     ],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+    "no-param-reassign": [
+      "error",
+      { props: true, ignorePropertyModificationsFor: ["state"] },
+    ],
   },
   settings: {
     "import/resolver": {
@@ -54,6 +58,7 @@ module.exports = {
       alias: {
         map: [
           ["@/config", "./src/config"],
+          ["@/hooks", "./src/hooks"],
           ["@/initializer", "./src/initializer"],
           ["@/containers", "./src/containers"],
           ["@/components", "./src/components"],

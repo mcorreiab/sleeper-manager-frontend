@@ -7,4 +7,4 @@ interface RosterModel {
   league: LeagueModel;
 }
 
-export default RosterModel;
+export type { RosterModel, PlayerModel, LeagueModel };

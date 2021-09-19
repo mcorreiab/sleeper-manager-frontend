@@ -9,6 +9,7 @@
 This is a frontend for [sleeper-manager](https://github.com/mcorreiab/sleeper-manager)
 
 ## What is Sleeper Manager
+
 Sleeper manager is a tool that intends to easy the life of people that play fantasy football in [Sleeper](https://sleeper.app/)
 
 It provides funcionalities using the [public sleeper api ](https://docs.sleeper.app/)
@@ -16,16 +17,19 @@ It provides funcionalities using the [public sleeper api ](https://docs.sleeper.
 ### Funcionalities
 
 Currently, the Sleeper Manager have funcionalities that:
+
 - List all players that have a injury status across all leagues of an user
 
-
 ## Running locally
+
 To run the application locally you will need
+
 - [Docker](https://docs.docker.com/desktop/)
 - [Docker compose](https://docs.docker.com/compose/install/)
 
 To get the system up and running, use
-``` shell
+
+```shell
 docker-compose up -d
 ```
 
