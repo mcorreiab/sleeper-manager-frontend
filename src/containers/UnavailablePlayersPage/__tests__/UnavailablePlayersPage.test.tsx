@@ -65,11 +65,19 @@ describe("Mount Unavailable Players page with roster data", () => {
     name: "La liga",
   };
 
+  const fourthLeagueContext: LeagueContext = {
+    out: 0,
+    doubtful: 1,
+    questionable: 0,
+    name: "Major League Soccer",
+  };
+
   const firstLeague = createLeague(faker, firstLeagueContext);
   const secondLeague = createLeague(faker, secondLeagueContext);
   const thirdLeague = createLeague(faker, thirdLeagueContext);
+  const fourthLeague = createLeague(faker, fourthLeagueContext);
 
-  const rosters = [firstLeague, secondLeague, thirdLeague];
+  const rosters = [firstLeague, secondLeague, thirdLeague, fourthLeague];
 
   beforeAll(() => {
     mockedUseUser.mockReturnValue(userData);
@@ -83,21 +91,23 @@ describe("Mount Unavailable Players page with roster data", () => {
     await waitFor(() => {
       expect(screen).toHaveACompleteHeader();
       expectUserDataToBePresent(expectedAvatarUrl, displayName);
-      expectOverviewToBePresent(3, 15);
+      expectOverviewToBePresent(4, 16);
 
       expect(screen.getByText("Leagues to review")).toBeInTheDocument();
 
       expectLeagueDataToBePresent(firstLeagueContext);
       expectLeagueDataToBePresent(secondLeagueContext);
       expectLeagueDataToBePresent(thirdLeagueContext);
+      expectLeagueDataToBePresent(fourthLeagueContext);
 
       expect(screen.getAllByText("Questionable").length).toBe(2);
-      expect(screen.getAllByText("Doubtful").length).toBe(1);
+      expect(screen.getAllByText("Doubtful").length).toBe(2);
       expect(screen.getAllByText("Out").length).toBe(3);
 
       expectPlayersToBePresent(firstLeague.players);
       expectPlayersToBePresent(secondLeague.players);
       expectPlayersToBePresent(thirdLeague.players);
+      expectPlayersToBePresent(fourthLeague.players);
     });
   });
 
@@ -105,7 +115,7 @@ describe("Mount Unavailable Players page with roster data", () => {
     render(<UnavailablePlayersPage username={username} />);
 
     await waitFor(() => {
-      expect(screen.getAllByAltText("An arrow down").length).toEqual(3);
+      expect(screen.getAllByAltText("An arrow down").length).toEqual(4);
     });
 
     const leagueCard = await screen.findByText(firstLeagueContext.name);
@@ -113,14 +123,14 @@ describe("Mount Unavailable Players page with roster data", () => {
     userEvent.click(leagueCard);
 
     await waitFor(() => {
-      expect(screen.getAllByAltText("An arrow down").length).toEqual(2);
+      expect(screen.getAllByAltText("An arrow down").length).toEqual(3);
       expect(screen.getAllByAltText("An arrow up").length).toEqual(1);
     });
 
     userEvent.click(leagueCard);
 
     await waitFor(() => {
-      expect(screen.getAllByAltText("An arrow down").length).toEqual(3);
+      expect(screen.getAllByAltText("An arrow down").length).toEqual(4);
     });
   });
 });
