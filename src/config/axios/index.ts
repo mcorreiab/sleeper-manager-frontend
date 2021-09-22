@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import axiosRetry from 'axios-retry';
+import axiosRetry from "axios-retry";
 import { camelizeKeys } from "humps";
 
 const appAxios = axios.create();

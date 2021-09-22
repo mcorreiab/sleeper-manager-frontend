@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import UserModel from "@/services/user/model";
+import UserModel from "./model";
 import axios from "@/config/axios";
 
 interface UserData {

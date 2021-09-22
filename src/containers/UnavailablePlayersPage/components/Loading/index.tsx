@@ -8,7 +8,7 @@ const loading: React.FunctionComponent = () => (
       loop
       src="https://assets9.lottiefiles.com/packages/lf20_NXDoNy.json"
     />
-    <h1 style={{ color: "white" }}>Loading...</h1>
+    <h1 className={styles.text}>Loading...</h1>
   </div>
 );
 

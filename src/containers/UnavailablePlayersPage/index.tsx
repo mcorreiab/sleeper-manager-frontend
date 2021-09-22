@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import getRoster from "@/services/roster";
-import { Loading } from "./components";
-import RostersPage from "./rostersPage";
 import { RosterModel } from "@/services/roster/model";
 import useUser from "@/hooks/useUser";
+import { Loading } from "./components";
+import RostersPage from "./rostersPage";
+import styles from "./index.module.css";
 
 interface Props {
   username: string;
@@ -55,7 +56,7 @@ const unavailablePlayersPage: React.FunctionComponent<Props> = ({
   }
 
   return (
-    <main>
+    <main className={styles.loading}>
       <Loading />
     </main>
   );

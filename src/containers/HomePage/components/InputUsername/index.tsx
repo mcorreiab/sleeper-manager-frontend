@@ -18,26 +18,38 @@ const inputUsername: React.FunctionComponent<Props> = ({
   onChangeUsername,
   isUsernameMissing,
   isUsernameInvalid,
-}) => {
-  let usernameMissing = isUsernameMissing ? "Should inform an username" : null;
+}) => (
+  <div className={className}>
+    <form onSubmit={onFormSubmit}>
+      <input
+        className={classnames(styles.inputUsername, {
+          [styles.inputUsernameError]: isUsernameMissing,
+        })}
+        placeholder="Insert your username here"
+        value={username}
+        onChange={onChangeUsername}
+      />
+      <p className={styles.errorMessage}>
+        {getUsernameMissingText(isUsernameMissing, isUsernameInvalid)}
+      </p>
+      <input className={styles.button} type="submit" value="GO" />
+    </form>
+  </div>
+);
 
-  usernameMissing = isUsernameInvalid ? "User not found" : usernameMissing;
+function getUsernameMissingText(
+  usernameMissing: boolean,
+  usernameInvalid: boolean
+): string | null {
+  if (usernameMissing) {
+    return "Should inform an username";
+  }
 
-  return (
-    <div className={className}>
-      <form onSubmit={onFormSubmit}>
-        <input
-          className={classnames(styles.inputUsername, {
-            [styles.inputUsernameError]: isUsernameMissing,
-          })}
-          placeholder="Insert your username here"
-          value={username}
-          onChange={onChangeUsername}
-        />
-        <p className={styles.errorMessage}>{usernameMissing}</p>
-        <input className={styles.button} type="submit" value="GO" />
-      </form>
-    </div>
-  );
-};
+  if (usernameInvalid) {
+    return "User not found";
+  }
+
+  return null;
+}
+
 export default inputUsername;

@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { useRouter } from "next/router";
 import HomePage from "../index";
 import useUser from "@/hooks/useUser";
-import UserModel from "@/services/user/model";
+import UserModel from "@/hooks/useUser/model";
 
 jest.mock(
   "next/link",
@@ -86,6 +86,23 @@ describe("test when username is missing", () => {
       screen.queryByText("Should inform an username")
     ).not.toBeInTheDocument();
   });
+});
+
+it("when input an user that doesnt exists should inform that", async () => {
+  mockedUseUser.mockReturnValue({
+    data: null,
+    usernameMissing: true,
+    error: undefined,
+    isLoading: false,
+  });
+
+  render(<HomePage />);
+
+  await typeOnUsernameInput(username);
+
+  await goButtonClick();
+
+  expect(screen.getByText("User not found")).toBeInTheDocument();
 });
 
 it("should successfuly input username and go", async () => {

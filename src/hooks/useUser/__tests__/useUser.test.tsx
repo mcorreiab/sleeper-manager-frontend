@@ -2,7 +2,7 @@ import { waitFor } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { SWRConfig } from "swr";
 import axios from "@/config/axios";
-import UserModel from "@/services/user/model";
+import UserModel from "../model";
 import useUser from "../index";
 
 jest.mock("@/config/axios");
