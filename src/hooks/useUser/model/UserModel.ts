@@ -1,7 +1,7 @@
 interface UserModel {
   username: string;
   userId: string;
-  avatar: string;
+  avatar: string | null;
   displayName: string;
 }
 

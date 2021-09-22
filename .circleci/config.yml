@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
-  node: circleci/node@4.1.0
-  codecov: codecov/codecov@1.1.1
+  node: circleci/node@4.7.0
+  codecov: codecov/codecov@3.1.0
 jobs:
   checklint:
     docker:
@@ -18,7 +18,7 @@ jobs:
       - run: npm install
       - run: npm test
       - codecov/upload:
-        file: coverage/coverage-final.json
+        file: coverage/clover.xml
 workflows:
   code-style:
     jobs:

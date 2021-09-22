@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import { PlayerProps } from "../index";
+import { PlayerModel } from "@/services/roster/model";
 import { LeagueContext } from "./types";
 
 export async function expectUserDataToBePresent(
@@ -44,7 +44,7 @@ export function expectLeagueDataToBePresent({
   );
 }
 
-export function expectPlayersToBePresent(players: PlayerProps[]): void {
+export function expectPlayersToBePresent(players: PlayerModel[]): void {
   players.forEach((player) => {
     expect(screen.queryByText(player.name)).toBeInTheDocument();
     expect(

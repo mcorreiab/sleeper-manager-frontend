@@ -10,14 +10,14 @@ const mockedAxiosGet = axios.get as jest.MockedFunction<typeof axios.get>;
 
 const username = "username";
 
-const userModel: UserModel = {
-  username: "username",
-  avatar: "avatar",
-  displayName: "displayName",
-  userId: "userId",
-};
-
 it("should get data with success", async () => {
+  const userModel: UserModel = {
+    username: "username",
+    avatar: "avatar",
+    displayName: "displayName",
+    userId: "userId",
+  };
+
   const wrapper = ({ children }: { children: React.ElementType }) => (
     <SWRConfig value={{ provider: () => new Map() }}>{children}</SWRConfig>
   );

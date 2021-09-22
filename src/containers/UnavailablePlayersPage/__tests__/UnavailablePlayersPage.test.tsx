@@ -143,15 +143,17 @@ it("should get loading state when found user data but didnt found rosters", asyn
   });
 });
 
-it("should mount screen with with no players to show", async () => {
-  mockedUseUser.mockReturnValue(userData);
+it("should mount screen with with no players to show and defaul avatar", async () => {
+  const data = { ...userData.data, ...{ avatar: null } };
+  const userDataNoAvatar = { ...userData, data };
+  mockedUseUser.mockReturnValue(userDataNoAvatar);
   mockedGetRoster.mockResolvedValue([]);
 
   render(<UnavailablePlayersPage username={username} />);
 
   await waitFor(() => {
     expect(screen).toHaveACompleteHeader();
-    expectUserDataToBePresent(expectedAvatarUrl, displayName);
+    expectUserDataToBePresent("http://localhost/sleeper-logo.png", displayName);
     expectOverviewToBePresent(0, 0);
 
     expect(screen.getByText("Nothing to show")).toBeInTheDocument();
