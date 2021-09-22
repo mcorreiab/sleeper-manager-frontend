@@ -13,7 +13,8 @@
     "lint:css": "stylelint **/*.css",
     "lint:css-fix": "stylelint **/*.css --fix",
     "prettier": "prettier --write .",
-    "test": "jest --collectCoverage"
+    "test": "jest --collectCoverage",
+    "test:codecov": "npm run test && codecov"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.1",
@@ -42,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "babel-jest": "^26.6.3",
+    "codecov": "^3.8.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^7.2.0",

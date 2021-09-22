@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@4.7.0
-  codecov: codecov/codecov@3.1.0
 jobs:
   checklint:
     docker:
@@ -16,9 +15,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm test
-      - codecov/upload:
-        file: coverage/coverage-final.json
+      - run: npm run test:codecov
 workflows:
   code-style:
     jobs:
