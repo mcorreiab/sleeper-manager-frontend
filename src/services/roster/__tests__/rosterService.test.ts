@@ -38,10 +38,10 @@ it("when return a 404 status code should return an empty list", async () => {
   expect(actual).toEqual([]);
 });
 
-it("when return other error should receive it", () => {
+it("when return other error should receive it", async () => {
   mockedGet.mockRejectedValue(Error());
 
   const actual = getRostersByUserId(userId);
 
-  expect(actual).rejects.toBe(Error);
+  await expect(actual).rejects.toBeInstanceOf(Error);
 });
