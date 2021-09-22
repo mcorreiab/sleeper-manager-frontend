@@ -12,11 +12,6 @@ interface Props {
 
 const avatarBaseUrl = "https://sleepercdn.com/avatars/";
 
-const getRosterAvatar = (roster: RosterModel): string =>
-  roster.league.avatar
-    ? `${avatarBaseUrl}${roster.league.avatar}`
-    : "/sleeper-logo.png";
-
 const unavailablePlayersPage: React.FunctionComponent<Props> = ({
   username,
 }) => {
@@ -61,5 +56,11 @@ const unavailablePlayersPage: React.FunctionComponent<Props> = ({
     </main>
   );
 };
+
+function getRosterAvatar(roster: RosterModel): string {
+  return roster.league.avatar
+    ? `${avatarBaseUrl}${roster.league.avatar}`
+    : "/sleeper-logo.png";
+}
 
 export default unavailablePlayersPage;
