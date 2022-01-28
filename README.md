@@ -1,7 +1,7 @@
 # Sleeper Manager Frontend
 
-[![Next.js](https://img.shields.io/badge/next.js-10.2.3-lightgrey?style=flat&logo=next.js)](https://nextjs.org/)
-[![Typescript](https://img.shields.io/badge/typescript-4.4.2-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/next.js-12.0.8-lightgrey?style=flat&logo=next.js)](https://nextjs.org/)
+[![Typescript](https://img.shields.io/badge/typescript-4.5.5-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![React.js](https://img.shields.io/badge/react.js-17.0.2-informational?style=flat&logo=react)](https://reactjs.org/)
 [![CircleCI](https://circleci.com/gh/mcorreiab/sleeper-manager-frontend/tree/main.svg?style=svg)](https://circleci.com/gh/mcorreiab/sleeper-manager-frontend/tree/main)
 [![codecov](https://codecov.io/gh/mcorreiab/sleeper-manager-frontend/branch/main/graph/badge.svg?token=FIMKI9HHYZ)](https://codecov.io/gh/mcorreiab/sleeper-manager-frontend)
