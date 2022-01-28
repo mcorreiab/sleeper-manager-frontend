@@ -12,7 +12,7 @@ interface Props {
 
 const avatarBaseUrl = "https://sleepercdn.com/avatars/";
 
-const unavailablePlayersPage: React.FunctionComponent<Props> = ({
+const UnavailablePlayersPage: React.FunctionComponent<Props> = ({
   username,
 }) => {
   const { data, isLoading } = useUser(username, true);
@@ -63,4 +63,4 @@ function getRosterAvatar(roster: RosterModel): string {
     : "/sleeper-logo.png";
 }
 
-export default unavailablePlayersPage;
+export default UnavailablePlayersPage;

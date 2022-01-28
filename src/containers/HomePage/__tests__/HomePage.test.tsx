@@ -45,7 +45,7 @@ it("should render the page", () => {
     )
   ).toBeInTheDocument();
 
-  expect(screen.queryByAltText("Helmet and ball")).toBeInTheDocument();
+  expect(screen.queryByText("A helmet and a ball")).toBeInTheDocument();
 });
 
 describe("test when username is missing", () => {

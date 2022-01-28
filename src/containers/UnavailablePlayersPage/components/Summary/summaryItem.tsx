@@ -1,4 +1,6 @@
+import Image from "next/image";
 import styles from "./summaryItem.module.css";
+import LeagueBadge from "./leagueBadge";
 
 export interface summaryItemProps {
   summaryLabel: string;
@@ -10,13 +12,12 @@ export interface summaryItemProps {
 
 const summaryItem: React.FunctionComponent<summaryItemProps> = ({
   summaryLabel,
-  imagePath,
   imageDescription,
   quantity,
   text,
 }) => (
   <li aria-label={summaryLabel} className={styles.text}>
-    <img className={styles.badge} src={imagePath} alt={imageDescription} />
+    <LeagueBadge className={styles.badge} title={imageDescription} />
     <strong className={styles.number}>{quantity} </strong>
     <p className={styles.textItem}>{text}</p>
   </li>

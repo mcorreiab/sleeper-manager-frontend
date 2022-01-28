@@ -4,6 +4,7 @@ import WithHeader from "@/hoc/withHeader";
 import styles from "./index.module.css";
 import { TitleArea, InputUsername } from "./components";
 import useUser from "@/hooks/useUser";
+import BallAndHelmet from "./ballAndHelmet";
 
 const HomePage: React.FunctionComponent = () => {
   const [username, setUsername] = useState("");
@@ -40,7 +41,7 @@ const HomePage: React.FunctionComponent = () => {
       <main className={styles.content}>
         <TitleArea className={styles.titleArea} />
         <figure className={styles.illustration}>
-          <img src="/ball-and-helmet.svg" alt="Helmet and ball" />
+         <BallAndHelmet className={styles.illustrationImage} />
         </figure>
         <InputUsername
           className={styles.inputArea}

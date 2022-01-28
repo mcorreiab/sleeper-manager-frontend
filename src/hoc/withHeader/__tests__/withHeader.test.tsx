@@ -11,9 +11,9 @@ it("should render header with success", () => {
 
   expect(screen.queryByText("Sleeper Manager")).toBeInTheDocument();
   expect(
-    screen.queryByAltText("The logo from github webpage")
+    screen.queryByText("Go to the github repository of this project")
   ).toBeInTheDocument();
   expect(
-    screen.queryByAltText("More information about sleeper manager")
+    screen.queryByText("More information about sleeper manager")
   ).toBeInTheDocument();
 });

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./index.module.css";
 
 interface Props {
@@ -10,7 +11,9 @@ const userInformationSection: React.FunctionComponent<Props> = ({
   avatarUrl,
 }) => (
   <div className={styles.userInformation}>
-    <img className={styles.userAvatar} src={avatarUrl} alt="User avatar" />
+    <div className={styles.userAvatar}>
+      <Image src={avatarUrl} alt="User avatar" width={32} height={32} />
+    </div>
     <p aria-label="Username" className={styles.username}>
       {username}
     </p>

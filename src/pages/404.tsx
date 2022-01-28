@@ -1,7 +1,9 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { useEffect } from "react";
+import passDrop from "../../public/pass-drop.svg";
 
-const custom404: React.FunctionComponent = () => {
+const Custom404: React.FunctionComponent = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -22,11 +24,11 @@ const custom404: React.FunctionComponent = () => {
         color: "#eaeaea",
       }}
     >
-      <img src="/pass-drop.svg" alt="NFL Player dropping a pass" />
+      <Image src={passDrop} alt="NFL Player dropping a pass" />
       <h1>Page not found</h1>
       <p>Redirecting you back to home</p>
     </main>
   );
 };
 
-export default custom404;
+export default Custom404;

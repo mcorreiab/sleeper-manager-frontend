@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styles from "./index.module.css";
+import GithubLogo from "./githubLogo";
+import ProjectInfoIcon from "./projectInfoIcon";
 
 const Header: React.FunctionComponent = () => (
   <div className={styles.header}>
@@ -12,16 +14,13 @@ const Header: React.FunctionComponent = () => (
             target="_blank"
             rel="noreferrer"
           >
-            <img src="/github-logo.svg" alt="The logo from github webpage" />
+            <GithubLogo />
           </a>
         </li>
         <li>
           <Link href="/about">
             <a href="/about">
-              <img
-                src="/info-circle.svg"
-                alt="More information about sleeper manager"
-              />
+              <ProjectInfoIcon />
             </a>
           </Link>
         </li>

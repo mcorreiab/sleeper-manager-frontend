@@ -25,7 +25,7 @@ it("should be missing info circle", () => {
   render(
     <div>
       Sleeper Manager
-      <img alt="github logo" />
+      <img alt="github logo" src="" />
     </div>
   );
 

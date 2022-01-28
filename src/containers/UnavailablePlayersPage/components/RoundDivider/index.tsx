@@ -1,15 +1,13 @@
 import classnames from "classnames";
 import styles from "./index.module.css";
+import Icon from './icon';
 
 export interface Props {
   className?: string;
 }
 
 const roundDivider: React.FunctionComponent<Props> = ({ className }) => (
-  <img
-    src="/round-divider.svg"
-    alt="Divider"
-    aria-hidden="true"
+  <Icon
     className={classnames(styles.roundDivider, className)}
   />
 );

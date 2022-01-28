@@ -2,6 +2,8 @@ import { useState } from "react";
 import styles from "./index.module.css";
 import RoundDivider from "../RoundDivider";
 import ListStatusPlayer from "./listStatusPlayer";
+import Hide from "./hide";
+import Expand from "./expand";
 
 export interface PlayerProps {
   id: string;
@@ -24,7 +26,7 @@ export interface Props {
   key?: string;
 }
 
-const leagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
+const LeagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
   const [detailHidden, setDetailHidden] = useState(false);
 
   const onClick = () => {
@@ -32,19 +34,9 @@ const leagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
   };
 
   const arrow = detailHidden ? (
-    <img
-      aria-hidden="true"
-      src="/hide.svg"
-      alt="An arrow up"
-      className={styles.expand}
-    />
+    <Hide className={styles.expand} />
   ) : (
-    <img
-      aria-hidden="true"
-      src="/expand.svg"
-      alt="An arrow down"
-      className={styles.expand}
-    />
+    <Expand className={styles.expand} />
   );
 
   const outPlayers = roster.players.filter(
@@ -111,4 +103,4 @@ const leagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
   );
 };
 
-export default leagueInformation;
+export default LeagueInformation;

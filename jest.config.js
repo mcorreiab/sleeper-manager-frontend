@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["./jest.extends.ts", "jest-canvas-mock"],
   moduleNameMapper: {
     "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",

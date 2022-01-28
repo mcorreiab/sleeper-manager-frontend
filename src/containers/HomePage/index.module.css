@@ -2,6 +2,11 @@
   flex-grow: 1;
 }
 
+.illustrationImage {
+  width: 100%;
+  height: 100%;
+}
+
 .illustration img {
   width: 100%;
   height: 100%;
