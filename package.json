@@ -13,7 +13,7 @@
     "lint:css": "stylelint **/*.css",
     "lint:css-fix": "stylelint **/*.css --fix",
     "prettier": "prettier --write .",
-    "test": "jest --collectCoverage",
+    "test": "jest --collectCoverage --watch",
     "test:codecov": "npm run test && codecov"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.10",
     "@types/react": "^17.0.38",
+    "autoprefixer": "^10.4.2",
     "babel-jest": "^27.4.6",
     "codecov": "^3.8.3",
     "eslint": "8.7.0",
@@ -50,9 +51,12 @@
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.4.7",
     "jest-canvas-mock": "^2.3.1",
+    "postcss": "^8.4.5",
     "prettier": "^2.5.1",
+    "react-test-renderer": "^17.0.2",
     "stylelint": "^14.2.0",
     "stylelint-config-standard": "^24.0.0",
+    "tailwindcss": "^3.0.18",
     "typescript": "^4.5.5"
   }
 }

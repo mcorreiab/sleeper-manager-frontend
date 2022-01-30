@@ -5,6 +5,7 @@ import styles from "./index.module.css";
 import { TitleArea, InputUsername } from "./components";
 import useUser from "@/hooks/useUser";
 import BallAndHelmet from "./ballAndHelmet";
+import SiteDescription from "./components/molecules/siteDescription";
 
 const HomePage: React.FunctionComponent = () => {
   const [username, setUsername] = useState("");
@@ -39,9 +40,9 @@ const HomePage: React.FunctionComponent = () => {
   return (
     <WithHeader>
       <main className={styles.content}>
-        <TitleArea className={styles.titleArea} />
+        <SiteDescription className={styles.titleArea} />
         <figure className={styles.illustration}>
-         <BallAndHelmet className={styles.illustrationImage} />
+          <BallAndHelmet className={styles.illustrationImage} />
         </figure>
         <InputUsername
           className={styles.inputArea}

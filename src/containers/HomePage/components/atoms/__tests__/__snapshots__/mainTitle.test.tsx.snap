@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the styled main title 1`] = `
+<h2
+  className="font-normal text-[2.4375rem] md:text-[2.85rem]"
+>
+  Tool to easy your life at 
+  <span
+    className="text-[#f26506]"
+  >
+    sleeper
+  </span>
+   
+  fantasy platform
+</h2>
+`;

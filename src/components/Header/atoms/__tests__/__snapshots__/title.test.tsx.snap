@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the site title 1`] = `
+<h1
+  className="text-[#fa7820] m-0 text-base"
+>
+  Sleeper Manager
+</h1>
+`;

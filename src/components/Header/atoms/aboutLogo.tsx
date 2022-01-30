@@ -1,4 +1,4 @@
-const ProjectInfoIcon: React.FC = () => (
+const AboutLogo: React.FC = () => (
   <svg
     width="32"
     height="32"
@@ -18,4 +18,4 @@ const ProjectInfoIcon: React.FC = () => (
   </svg>
 );
 
-export default ProjectInfoIcon;
+export default AboutLogo;
