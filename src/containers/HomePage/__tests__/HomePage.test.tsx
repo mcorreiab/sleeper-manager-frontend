@@ -44,8 +44,6 @@ it("should render the page", () => {
       "Insert your username to check all players with non ok injury status"
     )
   ).toBeInTheDocument();
-
-  expect(screen.queryByText("A helmet and a ball")).toBeInTheDocument();
 });
 
 describe("test when username is missing", () => {

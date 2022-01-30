@@ -13,7 +13,7 @@
     "lint:css": "stylelint **/*.css",
     "lint:css-fix": "stylelint **/*.css --fix",
     "prettier": "prettier --write .",
-    "test": "jest --collectCoverage --watch",
+    "test": "jest --collectCoverage",
     "test:codecov": "npm run test && codecov"
   },
   "dependencies": {
