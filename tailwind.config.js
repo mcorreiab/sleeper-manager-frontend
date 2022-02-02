@@ -8,6 +8,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      'sm-orange': '#fa7820'
     },
   },
   plugins: [],

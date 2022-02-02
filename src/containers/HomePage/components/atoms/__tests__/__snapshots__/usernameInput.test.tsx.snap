@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the input with an username inserted 1`] = `
+Array [
+  <input
+    className="block w-full py-3 px-4 text-base rounded-lg border border-solid border-[#2E2E2E] outline-none focus:border-2 focus:border-solid focus:border-[#0073cd]"
+    onChange={[Function]}
+    placeholder="Insert your username here"
+    value="username"
+  />,
+  <p
+    className="text-[#e30202] pl-4"
+  />,
+]
+`;
+
+exports[`should render the input with the placeholder 1`] = `
+Array [
+  <input
+    className="block w-full py-3 px-4 text-base rounded-lg border border-solid border-[#2E2E2E] outline-none focus:border-2 focus:border-solid focus:border-[#0073cd]"
+    onChange={[Function]}
+    placeholder="Insert your username here"
+    value=""
+  />,
+  <p
+    className="text-[#e30202] pl-4"
+  />,
+]
+`;
+
+exports[`should render the input with username invalid 1`] = `
+Array [
+  <input
+    className="block w-full py-3 px-4 text-base rounded-lg border border-solid border-[#2E2E2E] outline-none focus:border-2 focus:border-solid focus:border-[#0073cd]"
+    onChange={[Function]}
+    placeholder="Insert your username here"
+    value=""
+  />,
+  <p
+    className="text-[#e30202] pl-4"
+  >
+    User not found
+  </p>,
+]
+`;
+
+exports[`should render the input with username missing 1`] = `
+Array [
+  <input
+    className="block w-full py-3 px-4 text-base rounded-lg border border-solid border-[#2E2E2E] outline-none focus:border-2 focus:border-solid focus:border-[#0073cd] border-[#e30202]"
+    onChange={[Function]}
+    placeholder="Insert your username here"
+    value=""
+  />,
+  <p
+    className="text-[#e30202] pl-4"
+  >
+    Should inform an username
+  </p>,
+]
+`;

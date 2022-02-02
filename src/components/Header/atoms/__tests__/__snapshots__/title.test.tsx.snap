@@ -2,7 +2,7 @@
 
 exports[`should render the site title 1`] = `
 <h1
-  className="text-[#fa7820] m-0 text-base"
+  className="text-sm-orange m-0 text-base"
 >
   Sleeper Manager
 </h1>
