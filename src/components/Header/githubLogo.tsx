@@ -1,4 +1,4 @@
-const GithubLog: React.FunctionComponent = () => (
+const GithubLogo: React.FunctionComponent = () => (
   <svg
     width="32"
     height="32"
@@ -18,4 +18,4 @@ const GithubLog: React.FunctionComponent = () => (
   </svg>
 );
 
-export default GithubLog;
+export default GithubLogo;

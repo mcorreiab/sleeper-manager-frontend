@@ -4,10 +4,10 @@ import GithubLogo from "./githubLogo";
 import ProjectInfoIcon from "./projectInfoIcon";
 
 const Header: React.FunctionComponent = () => (
-  <div className={styles.header}>
-    <h1 className={styles.menuTitle}>Sleeper Manager</h1>
-    <nav className={styles.navigation}>
-      <ul className={styles.navigationList}>
+  <div className="flex items-center text-xl justify-between">
+    <h1 className="text-[#fa7820] m-0 text-base">Sleeper Manager</h1>
+    <nav className="basis-20">
+      <ul className="flex list-none p-0 m-0 justify-between">
         <li>
           <a
             href="https://github.com/mcorreiab/sleeper-manager"
