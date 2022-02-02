@@ -7,7 +7,7 @@ interface Props {
 }
 
 const withHeader: React.FunctionComponent<Props> = ({ children }) => (
-  <div className={styles.container}>
+  <div className="flex flex-col h-screen bg-background-color p-default-spacing">
     <header>
       <Header />
     </header>
