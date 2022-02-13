@@ -10,7 +10,9 @@ expect.extend({
       };
     }
 
-    const githubLogo = received.queryByText("Go to the github repository of this project");
+    const githubLogo = received.queryByText(
+      "Go to the github repository of this project"
+    );
 
     if (!githubLogo) {
       return {
@@ -19,7 +21,9 @@ expect.extend({
       };
     }
 
-    const infoCircle = received.queryByText("More information about sleeper manager");
+    const infoCircle = received.queryByText(
+      "More information about sleeper manager"
+    );
 
     if (!infoCircle) {
       return {

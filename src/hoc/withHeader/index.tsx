@@ -6,7 +6,7 @@ interface Props {
   children?: ReactNode;
 }
 
-const withHeader: React.FunctionComponent<Props> = ({ children }) => (
+const withHeader: React.FC<Props> = ({ children }) => (
   <div className="flex flex-col h-screen bg-background-color p-default-spacing">
     <header>
       <Header />

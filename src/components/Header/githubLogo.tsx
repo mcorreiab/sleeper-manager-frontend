@@ -1,4 +1,4 @@
-const GithubLogo: React.FunctionComponent = () => (
+const GithubLogo: React.FC = () => (
   <svg
     width="32"
     height="32"
@@ -8,7 +8,9 @@ const GithubLogo: React.FunctionComponent = () => (
     role="img"
     aria-labelledby="githubLogoTitle"
   >
-    <title id="githubLogoTitle">Go to the github repository of this project</title>
+    <title id="githubLogoTitle">
+      Go to the github repository of this project
+    </title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

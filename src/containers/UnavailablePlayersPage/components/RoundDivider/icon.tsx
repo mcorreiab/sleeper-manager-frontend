@@ -1,5 +1,5 @@
 interface Props {
-    className?: string;
+  className?: string;
 }
 
 const Icon: React.FC<Props> = ({ className }) => (

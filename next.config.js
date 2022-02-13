@@ -5,13 +5,13 @@ const nextConfig = {
     rules: [
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      }
-    ]
+        use: ["@svgr/webpack"],
+      },
+    ],
   },
   images: {
-    domains: ['sleepercdn.com'] 
-  }
-}
+    domains: ["sleepercdn.com"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import renderer from "react-test-renderer";
 import { useRouter } from "next/router";
 import HomePage from "../index";
 import useUser from "@/hooks/useUser";
@@ -31,21 +32,8 @@ it("should render the page", () => {
     isLoading: false,
   });
 
-  render(<HomePage />);
-
-  expect(screen).toHaveACompleteHeader();
-
-  expect(
-    screen.queryByText("Tool to easy your life at", { exact: false })
-  ).toBeInTheDocument();
-
-  expect(
-    screen.queryByText(
-      "Insert your username to check all players with non ok injury status"
-    )
-  ).toBeInTheDocument();
-
-  expect(screen.queryByText("A helmet and a ball")).toBeInTheDocument();
+  const tree = renderer.create(<HomePage />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 describe("test when username is missing", () => {

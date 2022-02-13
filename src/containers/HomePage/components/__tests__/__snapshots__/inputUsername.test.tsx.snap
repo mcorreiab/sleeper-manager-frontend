@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the username input with an username 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="block w-full py-3 px-4 rounded-lg text-base border 
+  border-solid border-[#2E2E2E] text-black outline-none
+  focus:border-2 focus:border-[#0073cd] invalid:border-[#e30202]"
+      onChange={[Function]}
+      placeholder="Insert your username here"
+      required={false}
+      type="text"
+      value="username"
+    />
+    <p
+      className="text-[#e30202] pl-4 mb-4 mt-1"
+    />
+    <input
+      className="bg-sm-orange rounded-lg w-full h-auto py-3 px-4 
+        text-base border-0 text-white font-bold outline-none"
+      type="submit"
+      value="GO"
+    />
+  </form>
+</div>
+`;
+
+exports[`should render the username input with user invalid error state 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="block w-full py-3 px-4 rounded-lg text-base border 
+  border-solid border-[#2E2E2E] text-black outline-none
+  focus:border-2 focus:border-[#0073cd] invalid:border-[#e30202]"
+      onChange={[Function]}
+      placeholder="Insert your username here"
+      required={false}
+      type="text"
+      value="username"
+    />
+    <p
+      className="text-[#e30202] pl-4 mb-4 mt-1"
+    >
+      User not found
+    </p>
+    <input
+      className="bg-sm-orange rounded-lg w-full h-auto py-3 px-4 
+        text-base border-0 text-white font-bold outline-none"
+      type="submit"
+      value="GO"
+    />
+  </form>
+</div>
+`;
+
+exports[`should render the username input with user missing error state 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="block w-full py-3 px-4 rounded-lg text-base border 
+  border-solid border-[#2E2E2E] text-black outline-none
+  focus:border-2 focus:border-[#0073cd] invalid:border-[#e30202]"
+      onChange={[Function]}
+      placeholder="Insert your username here"
+      required={true}
+      type="text"
+      value="username"
+    />
+    <p
+      className="text-[#e30202] pl-4 mb-4 mt-1"
+    >
+      Should inform an username
+    </p>
+    <input
+      className="bg-sm-orange rounded-lg w-full h-auto py-3 px-4 
+        text-base border-0 text-white font-bold outline-none"
+      type="submit"
+      value="GO"
+    />
+  </form>
+</div>
+`;
+
+exports[`should render the username input without username 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="block w-full py-3 px-4 rounded-lg text-base border 
+  border-solid border-[#2E2E2E] text-black outline-none
+  focus:border-2 focus:border-[#0073cd] invalid:border-[#e30202]"
+      onChange={[Function]}
+      placeholder="Insert your username here"
+      required={false}
+      type="text"
+      value=""
+    />
+    <p
+      className="text-[#e30202] pl-4 mb-4 mt-1"
+    />
+    <input
+      className="bg-sm-orange rounded-lg w-full h-auto py-3 px-4 
+        text-base border-0 text-white font-bold outline-none"
+      type="submit"
+      value="GO"
+    />
+  </form>
+</div>
+`;
