@@ -1,0 +1,682 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render league information component with all types of status 1`] = `
+<details
+  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  onToggle={[Function]}
+>
+  <summary
+    className="grid gap-x-2 gap-y-2"
+  >
+    <h2
+      className="text-base font-bold"
+    >
+      Test Roster
+    </h2>
+    <svg
+      aria-hidden="true"
+      className="col-start-2 self-center justify-self-end"
+      fill="none"
+      height="8"
+      viewBox="0 0 12 8"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.875 0.99999L5.995 4.87999L2.115 0.99999C1.92817 0.812737 1.67452 0.707504 1.41 0.707504C1.14548 0.707504 0.89183 0.812737 0.704998 0.99999C0.314998 1.38999 0.314998 2.01999 0.704998 2.40999L5.295 6.99999C5.685 7.38999 6.315 7.38999 6.705 6.99999L11.295 2.40999C11.685 2.01999 11.685 1.38999 11.295 0.99999C10.905 0.61999 10.265 0.60999 9.875 0.99999Z"
+        fill="#EAEAEA"
+      />
+    </svg>
+    <p
+      aria-label="Test Roster players situation"
+      className="text-sm text-sm-lightgray row-start-2 col-span-2 flex mb-4 items-center"
+    >
+      1
+       Out
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+       
+      1
+       Doubtful 
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      1
+       Questionable
+    </p>
+  </summary>
+  <div
+    className="flex flex-col"
+  >
+    <h3
+      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    >
+      Out
+    </h3>
+    <ul
+      className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+    >
+      <li
+        className="grid grid-cols-4-autofr gap-y-2 w-full"
+      >
+        <p
+          className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+        >
+          Test Player
+        </p>
+        <p
+          aria-label="Test Player position"
+          className="col-start-1 row-start-2"
+        >
+          Test Position
+        </p>
+        <svg
+          aria-hidden="true"
+          className="col-start-2 row-start-2 self-center"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="2"
+            cy="2"
+            fill="#8F97AB"
+            r="2"
+          />
+        </svg>
+        <p
+          aria-label="Test Player NFL team"
+          className="col-start-3 row-start-2"
+        >
+          Test Team
+        </p>
+      </li>
+    </ul>
+    <hr
+      className="border border-t-0 border-[#ffffff26] border-solid mt-2 mb-6 mx-0"
+    />
+  </div>
+  <div
+    className="flex flex-col"
+  >
+    <h3
+      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    >
+      Doubtful
+    </h3>
+    <ul
+      className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+    >
+      <li
+        className="grid grid-cols-4-autofr gap-y-2 w-full"
+      >
+        <p
+          className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+        >
+          Test Player 2
+        </p>
+        <p
+          aria-label="Test Player 2 position"
+          className="col-start-1 row-start-2"
+        >
+          Test Position 2
+        </p>
+        <svg
+          aria-hidden="true"
+          className="col-start-2 row-start-2 self-center"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="2"
+            cy="2"
+            fill="#8F97AB"
+            r="2"
+          />
+        </svg>
+        <p
+          aria-label="Test Player 2 NFL team"
+          className="col-start-3 row-start-2"
+        >
+          Test Team 2
+        </p>
+      </li>
+    </ul>
+    <hr
+      className="border border-t-0 border-[#ffffff26] border-solid mt-2 mb-6 mx-0"
+    />
+  </div>
+  <div
+    className="flex flex-col"
+  >
+    <h3
+      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    >
+      Questionable
+    </h3>
+    <ul
+      className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+    >
+      <li
+        className="grid grid-cols-4-autofr gap-y-2 w-full"
+      >
+        <p
+          className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+        >
+          Test Player 3
+        </p>
+        <p
+          aria-label="Test Player 3 position"
+          className="col-start-1 row-start-2"
+        >
+          Test Position 3
+        </p>
+        <svg
+          aria-hidden="true"
+          className="col-start-2 row-start-2 self-center"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="2"
+            cy="2"
+            fill="#8F97AB"
+            r="2"
+          />
+        </svg>
+        <p
+          aria-label="Test Player 3 NFL team"
+          className="col-start-3 row-start-2"
+        >
+          Test Team 3
+        </p>
+      </li>
+    </ul>
+  </div>
+</details>
+`;
+
+exports[`should render league information component with no players 1`] = `
+<details
+  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  onToggle={[Function]}
+>
+  <summary
+    className="grid gap-x-2 gap-y-2"
+  >
+    <h2
+      className="text-base font-bold"
+    >
+      Test Roster
+    </h2>
+    <svg
+      aria-hidden="true"
+      className="col-start-2 self-center justify-self-end"
+      fill="none"
+      height="8"
+      viewBox="0 0 12 8"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.875 0.99999L5.995 4.87999L2.115 0.99999C1.92817 0.812737 1.67452 0.707504 1.41 0.707504C1.14548 0.707504 0.89183 0.812737 0.704998 0.99999C0.314998 1.38999 0.314998 2.01999 0.704998 2.40999L5.295 6.99999C5.685 7.38999 6.315 7.38999 6.705 6.99999L11.295 2.40999C11.685 2.01999 11.685 1.38999 11.295 0.99999C10.905 0.61999 10.265 0.60999 9.875 0.99999Z"
+        fill="#EAEAEA"
+      />
+    </svg>
+    <p
+      aria-label="Test Roster players situation"
+      className="text-sm text-sm-lightgray row-start-2 col-span-2 flex mb-4 items-center"
+    >
+      0
+       Out
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+       
+      0
+       Doubtful 
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      0
+       Questionable
+    </p>
+  </summary>
+</details>
+`;
+
+exports[`should render league information component with only doubtful players 1`] = `
+<details
+  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  onToggle={[Function]}
+>
+  <summary
+    className="grid gap-x-2 gap-y-2"
+  >
+    <h2
+      className="text-base font-bold"
+    >
+      Test Roster
+    </h2>
+    <svg
+      aria-hidden="true"
+      className="col-start-2 self-center justify-self-end"
+      fill="none"
+      height="8"
+      viewBox="0 0 12 8"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.875 0.99999L5.995 4.87999L2.115 0.99999C1.92817 0.812737 1.67452 0.707504 1.41 0.707504C1.14548 0.707504 0.89183 0.812737 0.704998 0.99999C0.314998 1.38999 0.314998 2.01999 0.704998 2.40999L5.295 6.99999C5.685 7.38999 6.315 7.38999 6.705 6.99999L11.295 2.40999C11.685 2.01999 11.685 1.38999 11.295 0.99999C10.905 0.61999 10.265 0.60999 9.875 0.99999Z"
+        fill="#EAEAEA"
+      />
+    </svg>
+    <p
+      aria-label="Test Roster players situation"
+      className="text-sm text-sm-lightgray row-start-2 col-span-2 flex mb-4 items-center"
+    >
+      0
+       Out
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+       
+      1
+       Doubtful 
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      0
+       Questionable
+    </p>
+  </summary>
+  <div
+    className="flex flex-col"
+  >
+    <h3
+      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    >
+      Doubtful
+    </h3>
+    <ul
+      className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+    >
+      <li
+        className="grid grid-cols-4-autofr gap-y-2 w-full"
+      >
+        <p
+          className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+        >
+          Test Player 2
+        </p>
+        <p
+          aria-label="Test Player 2 position"
+          className="col-start-1 row-start-2"
+        >
+          Test Position 2
+        </p>
+        <svg
+          aria-hidden="true"
+          className="col-start-2 row-start-2 self-center"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="2"
+            cy="2"
+            fill="#8F97AB"
+            r="2"
+          />
+        </svg>
+        <p
+          aria-label="Test Player 2 NFL team"
+          className="col-start-3 row-start-2"
+        >
+          Test Team 2
+        </p>
+      </li>
+    </ul>
+  </div>
+</details>
+`;
+
+exports[`should render league information component with only out players 1`] = `
+<details
+  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  onToggle={[Function]}
+>
+  <summary
+    className="grid gap-x-2 gap-y-2"
+  >
+    <h2
+      className="text-base font-bold"
+    >
+      Test Roster
+    </h2>
+    <svg
+      aria-hidden="true"
+      className="col-start-2 self-center justify-self-end"
+      fill="none"
+      height="8"
+      viewBox="0 0 12 8"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.875 0.99999L5.995 4.87999L2.115 0.99999C1.92817 0.812737 1.67452 0.707504 1.41 0.707504C1.14548 0.707504 0.89183 0.812737 0.704998 0.99999C0.314998 1.38999 0.314998 2.01999 0.704998 2.40999L5.295 6.99999C5.685 7.38999 6.315 7.38999 6.705 6.99999L11.295 2.40999C11.685 2.01999 11.685 1.38999 11.295 0.99999C10.905 0.61999 10.265 0.60999 9.875 0.99999Z"
+        fill="#EAEAEA"
+      />
+    </svg>
+    <p
+      aria-label="Test Roster players situation"
+      className="text-sm text-sm-lightgray row-start-2 col-span-2 flex mb-4 items-center"
+    >
+      1
+       Out
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+       
+      0
+       Doubtful 
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      0
+       Questionable
+    </p>
+  </summary>
+  <div
+    className="flex flex-col"
+  >
+    <h3
+      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    >
+      Out
+    </h3>
+    <ul
+      className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+    >
+      <li
+        className="grid grid-cols-4-autofr gap-y-2 w-full"
+      >
+        <p
+          className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+        >
+          Test Player
+        </p>
+        <p
+          aria-label="Test Player position"
+          className="col-start-1 row-start-2"
+        >
+          Test Position
+        </p>
+        <svg
+          aria-hidden="true"
+          className="col-start-2 row-start-2 self-center"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="2"
+            cy="2"
+            fill="#8F97AB"
+            r="2"
+          />
+        </svg>
+        <p
+          aria-label="Test Player NFL team"
+          className="col-start-3 row-start-2"
+        >
+          Test Team
+        </p>
+      </li>
+    </ul>
+  </div>
+</details>
+`;
+
+exports[`should render league information component with only questionable players 1`] = `
+<details
+  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  onToggle={[Function]}
+>
+  <summary
+    className="grid gap-x-2 gap-y-2"
+  >
+    <h2
+      className="text-base font-bold"
+    >
+      Test Roster
+    </h2>
+    <svg
+      aria-hidden="true"
+      className="col-start-2 self-center justify-self-end"
+      fill="none"
+      height="8"
+      viewBox="0 0 12 8"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.875 0.99999L5.995 4.87999L2.115 0.99999C1.92817 0.812737 1.67452 0.707504 1.41 0.707504C1.14548 0.707504 0.89183 0.812737 0.704998 0.99999C0.314998 1.38999 0.314998 2.01999 0.704998 2.40999L5.295 6.99999C5.685 7.38999 6.315 7.38999 6.705 6.99999L11.295 2.40999C11.685 2.01999 11.685 1.38999 11.295 0.99999C10.905 0.61999 10.265 0.60999 9.875 0.99999Z"
+        fill="#EAEAEA"
+      />
+    </svg>
+    <p
+      aria-label="Test Roster players situation"
+      className="text-sm text-sm-lightgray row-start-2 col-span-2 flex mb-4 items-center"
+    >
+      0
+       Out
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+       
+      0
+       Doubtful 
+      <svg
+        aria-hidden="true"
+        className=""
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      1
+       Questionable
+    </p>
+  </summary>
+  <div
+    className="flex flex-col"
+  >
+    <h3
+      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    >
+      Questionable
+    </h3>
+    <ul
+      className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+    >
+      <li
+        className="grid grid-cols-4-autofr gap-y-2 w-full"
+      >
+        <p
+          className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+        >
+          Test Player 3
+        </p>
+        <p
+          aria-label="Test Player 3 position"
+          className="col-start-1 row-start-2"
+        >
+          Test Position 3
+        </p>
+        <svg
+          aria-hidden="true"
+          className="col-start-2 row-start-2 self-center"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="2"
+            cy="2"
+            fill="#8F97AB"
+            r="2"
+          />
+        </svg>
+        <p
+          aria-label="Test Player 3 NFL team"
+          className="col-start-3 row-start-2"
+        >
+          Test Team 3
+        </p>
+      </li>
+    </ul>
+  </div>
+</details>
+`;

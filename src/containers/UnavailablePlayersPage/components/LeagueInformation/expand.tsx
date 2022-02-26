@@ -2,7 +2,7 @@ interface Props {
   className?: string;
 }
 
-const Hide: React.FC<Props> = ({ className }) => (
+const Expand: React.FC<Props> = ({ className }) => (
   <svg
     width="12"
     height="8"
@@ -19,4 +19,4 @@ const Hide: React.FC<Props> = ({ className }) => (
   </svg>
 );
 
-export default Hide;
+export default Expand;

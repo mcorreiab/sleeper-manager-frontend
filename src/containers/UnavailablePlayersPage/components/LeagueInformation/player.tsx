@@ -1,7 +1,6 @@
 import classnames from "classnames";
 import RoundDivider from "../RoundDivider";
 import HorizontalRule from "./horizontalRule";
-import styles from "./player.module.css";
 
 export interface Props {
   name: string;
@@ -10,27 +9,31 @@ export interface Props {
   hasHorizontalRule?: boolean;
 }
 
-const player: React.FunctionComponent<Props> = ({
+const Player: React.FunctionComponent<Props> = ({
   name,
   position,
   team,
   hasHorizontalRule,
 }) => (
-  <li
-    className={classnames(styles.detail, {
-      [styles.detailWithRule]: hasHorizontalRule,
-    })}
-  >
-    <p className={styles.name}>{name}</p>
-    <p aria-label={`${name} position`} className={styles.position}>
-      {position}
-    </p>
-    <RoundDivider className={styles.divider} />
-    <p aria-label={`${name} NFL team`} className={styles.nflTeam}>
-      {team}
-    </p>
-    {hasHorizontalRule && <HorizontalRule className={styles.horizontalRule} />}
-  </li>
+  <>
+    <li className={classnames("grid grid-cols-4-autofr gap-y-2 w-full")}>
+      <p className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite">
+        {name}
+      </p>
+      <p aria-label={`${name} position`} className="col-start-1 row-start-2">
+        {position}
+      </p>
+      <RoundDivider className="col-start-2 row-start-2 self-center" />
+      <p aria-label={`${name} NFL team`} className="col-start-3 row-start-2">
+        {team}
+      </p>
+    </li>
+    {hasHorizontalRule && (
+      <li className="w-full my-2">
+        <HorizontalRule />
+      </li>
+    )}
+  </>
 );
 
-export default player;
+export default Player;

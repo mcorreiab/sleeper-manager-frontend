@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`given that is not the last status, should render the list with success 1`] = `
+<div
+  className="flex flex-col"
+>
+  <h3
+    className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+  >
+    Status 1
+  </h3>
+  <ul
+    className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+  >
+    <li
+      className="grid grid-cols-4-autofr gap-y-2 w-full"
+    >
+      <p
+        className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+      >
+        Player 1
+      </p>
+      <p
+        aria-label="Player 1 position"
+        className="col-start-1 row-start-2"
+      >
+        Position 1
+      </p>
+      <svg
+        aria-hidden="true"
+        className="col-start-2 row-start-2 self-center"
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      <p
+        aria-label="Player 1 NFL team"
+        className="col-start-3 row-start-2"
+      >
+        Team 1
+      </p>
+    </li>
+    <li
+      className="w-full my-2"
+    >
+      <hr
+        className="border border-t-0 border-[#ffffff26] border-solid"
+      />
+    </li>
+    <li
+      className="grid grid-cols-4-autofr gap-y-2 w-full"
+    >
+      <p
+        className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+      >
+        Player 2
+      </p>
+      <p
+        aria-label="Player 2 position"
+        className="col-start-1 row-start-2"
+      >
+        Position 2
+      </p>
+      <svg
+        aria-hidden="true"
+        className="col-start-2 row-start-2 self-center"
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      <p
+        aria-label="Player 2 NFL team"
+        className="col-start-3 row-start-2"
+      >
+        Team 2
+      </p>
+    </li>
+  </ul>
+  <hr
+    className="border border-t-0 border-[#ffffff26] border-solid mt-2 mb-6 mx-0"
+  />
+</div>
+`;
+
+exports[`given that is the last status, should render the list with success 1`] = `
+<div
+  className="flex flex-col"
+>
+  <h3
+    className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+  >
+    Status 1
+  </h3>
+  <ul
+    className="list-none text-sm text-sm-lightgray flex flex-col items-start"
+  >
+    <li
+      className="grid grid-cols-4-autofr gap-y-2 w-full"
+    >
+      <p
+        className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+      >
+        Player 1
+      </p>
+      <p
+        aria-label="Player 1 position"
+        className="col-start-1 row-start-2"
+      >
+        Position 1
+      </p>
+      <svg
+        aria-hidden="true"
+        className="col-start-2 row-start-2 self-center"
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      <p
+        aria-label="Player 1 NFL team"
+        className="col-start-3 row-start-2"
+      >
+        Team 1
+      </p>
+    </li>
+    <li
+      className="w-full my-2"
+    >
+      <hr
+        className="border border-t-0 border-[#ffffff26] border-solid"
+      />
+    </li>
+    <li
+      className="grid grid-cols-4-autofr gap-y-2 w-full"
+    >
+      <p
+        className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+      >
+        Player 2
+      </p>
+      <p
+        aria-label="Player 2 position"
+        className="col-start-1 row-start-2"
+      >
+        Position 2
+      </p>
+      <svg
+        aria-hidden="true"
+        className="col-start-2 row-start-2 self-center"
+        fill="none"
+        height="4"
+        viewBox="0 0 4 4"
+        width="4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="2"
+          cy="2"
+          fill="#8F97AB"
+          r="2"
+        />
+      </svg>
+      <p
+        aria-label="Player 2 NFL team"
+        className="col-start-3 row-start-2"
+      >
+        Team 2
+      </p>
+    </li>
+  </ul>
+</div>
+`;

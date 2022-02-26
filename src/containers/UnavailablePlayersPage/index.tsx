@@ -23,7 +23,7 @@ const UnavailablePlayersPage: React.FunctionComponent<Props> = ({
       const rostersData = await getRoster(data.userId);
       setRosters(rostersData);
     }
-  }, [data]);
+  }, [data, isLoading]);
 
   useEffect(() => {
     getRosterCallback();
@@ -43,7 +43,6 @@ const UnavailablePlayersPage: React.FunctionComponent<Props> = ({
           name: roster.league.name,
           size: roster.league.size,
           avatarUrl: getRosterAvatar(roster),
-          type: roster.league.pointsByReception,
           players: roster.players,
         }))}
       />

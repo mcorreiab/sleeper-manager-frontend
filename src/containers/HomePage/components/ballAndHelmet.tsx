@@ -1,5 +1,5 @@
 interface Props {
-  className: string;
+  className?: string;
 }
 
 const BallAndHelmet: React.FC<Props> = ({ className }) => (

@@ -10,11 +10,35 @@ interface Props {
   isUsernameInvalid?: boolean;
 }
 
-const goInputStyles = `bg-sm-orange rounded-lg w-full h-auto py-3 px-4 
-        text-base border-0 text-white font-bold outline-none`;
-const insertUsernameStyles = `block w-full py-3 px-4 rounded-lg text-base border 
-  border-solid border-[#2E2E2E] text-black outline-none
-  focus:border-2 focus:border-[#0073cd] invalid:border-[#e30202]`;
+const goInputStyles = classnames(
+  "bg-sm-orange",
+  "rounded-lg w-full",
+  "h-auto",
+  "py-3",
+  "px-4",
+  "text-base",
+  "border-0",
+  "text-white",
+  "font-bold",
+  "outline-none"
+);
+
+const insertUsernameStyles = classnames(
+  "block",
+  "w-full",
+  "py-3",
+  "px-4",
+  "rounded-lg",
+  "text-base",
+  "border",
+  "border-solid",
+  "border-[#2E2E2E]",
+  "text-black",
+  "outline-none",
+  "focus:border-2",
+  "focus:border-[#0073cd]",
+  "invalid:border-[#e30202]"
+);
 
 const InputUsername: React.FC<Props> = ({
   className,

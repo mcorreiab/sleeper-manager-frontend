@@ -9,7 +9,6 @@
     "start": "next start -p $PORT",
     "start-local": "next start",
     "lint": "next lint",
-    "lint:ts": "next lint",
     "prettier": "prettier --write .",
     "test": "jest --collectCoverage",
     "test:watch": "jest --watch",

@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .text {

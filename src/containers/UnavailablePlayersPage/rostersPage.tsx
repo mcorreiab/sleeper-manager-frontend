@@ -14,7 +14,6 @@ export interface RosterProps {
   name: string;
   size: number;
   avatarUrl: string;
-  type: string;
   players: PlayerProps[];
 }
 

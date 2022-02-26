@@ -4,6 +4,7 @@ import RoundDivider from "../RoundDivider";
 import ListStatusPlayer from "./listStatusPlayer";
 import Hide from "./hide";
 import Expand from "./expand";
+import classNames from "classnames";
 
 export interface PlayerProps {
   id: string;
@@ -16,8 +17,6 @@ export interface PlayerProps {
 export interface RosterProps {
   name: string;
   size: number;
-  avatarUrl: string;
-  type: string;
   players: PlayerProps[];
 }
 
@@ -34,9 +33,9 @@ const LeagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
   };
 
   const arrow = detailHidden ? (
-    <Hide className={styles.expand} />
+    <Hide className="col-start-2 self-center justify-self-end" />
   ) : (
-    <Expand className={styles.expand} />
+    <Expand className="col-start-2 self-center justify-self-end" />
   );
 
   const outPlayers = roster.players.filter(
@@ -81,15 +80,26 @@ const LeagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
     ) : null;
 
   return (
-    <details onToggle={() => onClick()} className={styles.container}>
-      <summary className={styles.summary}>
-        <h2 className={styles.name} key={roster.name}>
+    <details
+      onToggle={() => onClick()}
+      className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+    >
+      <summary className="grid gap-x-2 gap-y-2">
+        <h2 className="text-base font-bold" key={roster.name}>
           {roster.name}
         </h2>
         {arrow}
         <p
           aria-label={`${roster.name} players situation`}
-          className={styles.overview}
+          className={classNames(
+            "text-sm",
+            "text-sm-lightgray",
+            "row-start-2",
+            "col-span-2",
+            "flex",
+            "mb-4",
+            "items-center"
+          )}
         >
           {outPlayers.length} Out
           <RoundDivider /> {doubtfulPlayers.length} Doubtful <RoundDivider />

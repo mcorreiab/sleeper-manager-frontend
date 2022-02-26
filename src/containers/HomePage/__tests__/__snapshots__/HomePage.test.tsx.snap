@@ -80,7 +80,7 @@ exports[`should render the page 1`] = `
     </div>
   </header>
   <main
-    className="flex grow flex-col justify-between text-[#eaeaea] items-stretch my-4 mx-0 lg:grid lg:grid-cols-2-45 lg:grid-rows-4-10-auto-15 lg:gap-x-28"
+    className="flex grow flex-col justify-between text-sm-lightwhite items-stretch my-4 mx-0 lg:grid lg:grid-cols-2-45 lg:grid-rows-4-10-auto-15 lg:gap-x-28"
   >
     <div
       className="lg:row-start-2"
@@ -387,9 +387,7 @@ exports[`should render the page 1`] = `
         onSubmit={[Function]}
       >
         <input
-          className="block w-full py-3 px-4 rounded-lg text-base border 
-  border-solid border-[#2E2E2E] text-black outline-none
-  focus:border-2 focus:border-[#0073cd] invalid:border-[#e30202]"
+          className="block w-full py-3 px-4 rounded-lg text-base border border-solid border-[#2E2E2E] text-black outline-none focus:border-2 focus:border-[#0073cd] invalid:border-[#e30202]"
           onChange={[Function]}
           placeholder="Insert your username here"
           required={false}
@@ -400,8 +398,7 @@ exports[`should render the page 1`] = `
           className="text-[#e30202] pl-4 mb-4 mt-1"
         />
         <input
-          className="bg-sm-orange rounded-lg w-full h-auto py-3 px-4 
-        text-base border-0 text-white font-bold outline-none"
+          className="bg-sm-orange rounded-lg w-full h-auto py-3 px-4 text-base border-0 text-white font-bold outline-none"
           type="submit"
           value="GO"
         />

@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render player component with horizontal rule 1`] = `
+Array [
+  <li
+    className="grid grid-cols-4-autofr gap-y-2 w-full"
+  >
+    <p
+      className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+    >
+      Player Name
+    </p>
+    <p
+      aria-label="Player Name position"
+      className="col-start-1 row-start-2"
+    >
+      Player Position
+    </p>
+    <svg
+      aria-hidden="true"
+      className="col-start-2 row-start-2 self-center"
+      fill="none"
+      height="4"
+      viewBox="0 0 4 4"
+      width="4"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="2"
+        cy="2"
+        fill="#8F97AB"
+        r="2"
+      />
+    </svg>
+    <p
+      aria-label="Player Name NFL team"
+      className="col-start-3 row-start-2"
+    >
+      Player team
+    </p>
+  </li>,
+  <li
+    className="w-full my-2"
+  >
+    <hr
+      className="border border-t-0 border-[#ffffff26] border-solid"
+    />
+  </li>,
+]
+`;
+
+exports[`should render player component without horizontal rule 1`] = `
+<li
+  className="grid grid-cols-4-autofr gap-y-2 w-full"
+>
+  <p
+    className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
+  >
+    Player Name
+  </p>
+  <p
+    aria-label="Player Name position"
+    className="col-start-1 row-start-2"
+  >
+    Player Position
+  </p>
+  <svg
+    aria-hidden="true"
+    className="col-start-2 row-start-2 self-center"
+    fill="none"
+    height="4"
+    viewBox="0 0 4 4"
+    width="4"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="2"
+      cy="2"
+      fill="#8F97AB"
+      r="2"
+    />
+  </svg>
+  <p
+    aria-label="Player Name NFL team"
+    className="col-start-3 row-start-2"
+  >
+    Player team
+  </p>
+</li>
+`;
