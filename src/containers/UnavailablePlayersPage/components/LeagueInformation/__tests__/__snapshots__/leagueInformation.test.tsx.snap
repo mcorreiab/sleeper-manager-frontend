@@ -35,7 +35,7 @@ exports[`should render league information component with all types of status 1`]
        Out
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -54,7 +54,7 @@ exports[`should render league information component with all types of status 1`]
        Doubtful 
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -99,7 +99,7 @@ exports[`should render league information component with all types of status 1`]
         </p>
         <svg
           aria-hidden="true"
-          className="col-start-2 row-start-2 self-center"
+          className="my-0 mx-1 col-start-2 row-start-2 self-center"
           fill="none"
           height="4"
           viewBox="0 0 4 4"
@@ -152,7 +152,7 @@ exports[`should render league information component with all types of status 1`]
         </p>
         <svg
           aria-hidden="true"
-          className="col-start-2 row-start-2 self-center"
+          className="my-0 mx-1 col-start-2 row-start-2 self-center"
           fill="none"
           height="4"
           viewBox="0 0 4 4"
@@ -205,7 +205,7 @@ exports[`should render league information component with all types of status 1`]
         </p>
         <svg
           aria-hidden="true"
-          className="col-start-2 row-start-2 self-center"
+          className="my-0 mx-1 col-start-2 row-start-2 self-center"
           fill="none"
           height="4"
           viewBox="0 0 4 4"
@@ -266,7 +266,7 @@ exports[`should render league information component with no players 1`] = `
        Out
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -285,7 +285,7 @@ exports[`should render league information component with no players 1`] = `
        Doubtful 
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -341,7 +341,7 @@ exports[`should render league information component with only doubtful players 1
        Out
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -360,7 +360,7 @@ exports[`should render league information component with only doubtful players 1
        Doubtful 
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -405,7 +405,7 @@ exports[`should render league information component with only doubtful players 1
         </p>
         <svg
           aria-hidden="true"
-          className="col-start-2 row-start-2 self-center"
+          className="my-0 mx-1 col-start-2 row-start-2 self-center"
           fill="none"
           height="4"
           viewBox="0 0 4 4"
@@ -466,7 +466,7 @@ exports[`should render league information component with only out players 1`] = 
        Out
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -485,7 +485,7 @@ exports[`should render league information component with only out players 1`] = 
        Doubtful 
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -530,7 +530,7 @@ exports[`should render league information component with only out players 1`] = 
         </p>
         <svg
           aria-hidden="true"
-          className="col-start-2 row-start-2 self-center"
+          className="my-0 mx-1 col-start-2 row-start-2 self-center"
           fill="none"
           height="4"
           viewBox="0 0 4 4"
@@ -591,7 +591,7 @@ exports[`should render league information component with only questionable playe
        Out
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -610,7 +610,7 @@ exports[`should render league information component with only questionable playe
        Doubtful 
       <svg
         aria-hidden="true"
-        className=""
+        className="my-0 mx-1"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -655,7 +655,7 @@ exports[`should render league information component with only questionable playe
         </p>
         <svg
           aria-hidden="true"
-          className="col-start-2 row-start-2 self-center"
+          className="my-0 mx-1 col-start-2 row-start-2 self-center"
           fill="none"
           height="4"
           viewBox="0 0 4 4"

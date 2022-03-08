@@ -28,7 +28,7 @@ exports[`given that is not the last status, should render the list with success 
       </p>
       <svg
         aria-hidden="true"
-        className="col-start-2 row-start-2 self-center"
+        className="my-0 mx-1 col-start-2 row-start-2 self-center"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -72,7 +72,7 @@ exports[`given that is not the last status, should render the list with success 
       </p>
       <svg
         aria-hidden="true"
-        className="col-start-2 row-start-2 self-center"
+        className="my-0 mx-1 col-start-2 row-start-2 self-center"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -128,7 +128,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       </p>
       <svg
         aria-hidden="true"
-        className="col-start-2 row-start-2 self-center"
+        className="my-0 mx-1 col-start-2 row-start-2 self-center"
         fill="none"
         height="4"
         viewBox="0 0 4 4"
@@ -172,7 +172,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       </p>
       <svg
         aria-hidden="true"
-        className="col-start-2 row-start-2 self-center"
+        className="my-0 mx-1 col-start-2 row-start-2 self-center"
         fill="none"
         height="4"
         viewBox="0 0 4 4"

@@ -18,7 +18,7 @@ Array [
     </p>
     <svg
       aria-hidden="true"
-      className="col-start-2 row-start-2 self-center"
+      className="my-0 mx-1 col-start-2 row-start-2 self-center"
       fill="none"
       height="4"
       viewBox="0 0 4 4"
@@ -66,7 +66,7 @@ exports[`should render player component without horizontal rule 1`] = `
   </p>
   <svg
     aria-hidden="true"
-    className="col-start-2 row-start-2 self-center"
+    className="my-0 mx-1 col-start-2 row-start-2 self-center"
     fill="none"
     height="4"
     viewBox="0 0 4 4"

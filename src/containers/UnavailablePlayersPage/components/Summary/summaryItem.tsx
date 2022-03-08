@@ -1,26 +1,57 @@
-import Image from "next/image";
-import styles from "./summaryItem.module.css";
 import LeagueBadge from "./leagueBadge";
+import classNames from "classnames";
+import Helmet from "./helmet";
 
 export interface summaryItemProps {
   summaryLabel: string;
-  imagePath: string;
-  imageDescription: string;
   quantity: number;
   text: string;
+  type: "badge" | "helmet";
 }
 
-const summaryItem: React.FunctionComponent<summaryItemProps> = ({
+const SummaryItem: React.FunctionComponent<summaryItemProps> = ({
   summaryLabel,
-  imageDescription,
   quantity,
   text,
-}) => (
-  <li aria-label={summaryLabel} className={styles.text}>
-    <LeagueBadge className={styles.badge} title={imageDescription} />
-    <strong className={styles.number}>{quantity} </strong>
-    <p className={styles.textItem}>{text}</p>
-  </li>
-);
+  type,
+}) => {
+  let icon: React.ReactNode;
+  if (type === "badge") {
+    icon = <LeagueBadge className="justify-self-end" />;
+  } else {
+    icon = <Helmet className="justify-self-end" />;
+  }
 
-export default summaryItem;
+  return (
+    <li
+      aria-label={summaryLabel}
+      className={classNames(
+        "text-[#ffffff]",
+        "grid",
+        "grid-cols-2",
+        "gap-y-1",
+        "gap-x-2",
+        "items-center"
+      )}
+    >
+      {icon}
+      <strong className="col-start-2 font-black not-italic text-2xl">
+        {quantity}{" "}
+      </strong>
+      <p
+        className={classNames(
+          "row-start-2",
+          "col-span-2",
+          "text-center",
+          "text-sm",
+          "leading-[1.125rem]",
+          "tracking-[0.009375rem]"
+        )}
+      >
+        {text}
+      </p>
+    </li>
+  );
+};
+
+export default SummaryItem;

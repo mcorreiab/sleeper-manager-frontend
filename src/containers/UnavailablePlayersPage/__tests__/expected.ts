@@ -20,10 +20,6 @@ export function expectOverviewToBePresent(
   leaguesToReview: number,
   playersToReview: number
 ): void {
-  expect(screen.getByText("A generic league badge")).toBeInTheDocument();
-  expect(
-    screen.getByText("A generic football helmet badge")
-  ).toBeInTheDocument();
   expect(screen.getByLabelText("League's overview")).toHaveTextContent(
     `${leaguesToReview} Leagues to be reviewed`
   );
