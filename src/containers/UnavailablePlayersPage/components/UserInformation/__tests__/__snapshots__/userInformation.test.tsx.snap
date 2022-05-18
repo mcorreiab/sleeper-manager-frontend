@@ -64,6 +64,8 @@ exports[`Should render user information with John on username 1`] = `
         alt="User avatar"
         data-nimg="intrinsic"
         decoding="async"
+        onError={[Function]}
+        onLoad={[Function]}
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         style={
           Object {
