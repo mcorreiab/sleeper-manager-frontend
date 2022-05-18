@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from "./index.module.css";
 import RoundDivider from "../RoundDivider";
 import ListStatusPlayer from "./listStatusPlayer";
 import Hide from "./hide";

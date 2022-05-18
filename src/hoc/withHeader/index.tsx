@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import Header from "@/components/Header";
-import styles from "./index.module.css";
 
 interface Props {
   children?: ReactNode;

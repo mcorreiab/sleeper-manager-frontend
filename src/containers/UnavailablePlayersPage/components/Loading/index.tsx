@@ -1,7 +1,11 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import classNames from "classnames";
 
-const loading: React.FunctionComponent = () => (
+interface Props {
+  className?: string;
+}
+
+const loading: React.FunctionComponent<Props> = ({ className }) => (
   <div
     className={classNames(
       "bg-background-color",
@@ -11,7 +15,8 @@ const loading: React.FunctionComponent = () => (
       "justify-center",
       "h-full",
       "text-[2rem]",
-      "font-light"
+      "font-light",
+      className
     )}
   >
     <Player

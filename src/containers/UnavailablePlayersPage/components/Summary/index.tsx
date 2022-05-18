@@ -1,5 +1,4 @@
 import SummaryItem from "./summaryItem";
-import styles from "./index.module.css";
 import classNames from "classnames";
 
 export interface Props {

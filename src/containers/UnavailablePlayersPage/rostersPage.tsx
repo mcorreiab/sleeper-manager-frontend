@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
+import classNames from "classnames";
 import { UserInformation, Summary, LeagueInformation } from "./components";
-import styles from "./rostersPage.module.css";
 
 export interface PlayerProps {
   id: string;
@@ -23,7 +23,7 @@ export interface Props {
   rosters: RosterProps[];
 }
 
-const renderedPage: React.FunctionComponent<Props> = ({
+const RostersPage: React.FunctionComponent<Props> = ({
   user,
   rosters,
   userAvatarUrl,
@@ -38,6 +38,8 @@ const renderedPage: React.FunctionComponent<Props> = ({
   }
 
   const createPageDetails = () => {
+    const styles = classNames("font-bold", "text-sm", "mt-8", "mx-0", "mb-4");
+
     if (totalOfPlayers > 0) {
       const leagues = rosters.map((roster) => (
         <LeagueInformation key={roster.name} roster={roster} />
@@ -45,7 +47,7 @@ const renderedPage: React.FunctionComponent<Props> = ({
 
       return (
         <>
-          <h1 className={styles.detailTitle}>Leagues to review</h1>
+          <h1 className={styles}>Leagues to review</h1>
           {leagues}
         </>
       );
@@ -53,16 +55,16 @@ const renderedPage: React.FunctionComponent<Props> = ({
 
     return (
       <>
-        <h1 className={styles.detailTitle}>Nothing to show</h1>
+        <h1 className={styles}>Nothing to show</h1>
         <p>All your players are up to go!</p>
       </>
     );
   };
 
   return (
-    <div className={styles.content}>
-      <div className={styles.container}>
-        <header className={styles.header}>
+    <div className="h-full bg-background-color overflow-auto">
+      <div className="mt-4 mx-default-spacing mb-0 text-sm-lightwhite">
+        <header className="mb-[1.625rem]">
           <Header />
         </header>
         <main>
@@ -73,7 +75,7 @@ const renderedPage: React.FunctionComponent<Props> = ({
             />
             <section
               aria-label="Player's leagues and players overview"
-              className={styles.summary}
+              className="mt-5"
             >
               <Summary
                 leaguesTotal={numberOfLeagues}
@@ -88,4 +90,4 @@ const renderedPage: React.FunctionComponent<Props> = ({
   );
 };
 
-export default renderedPage;
+export default RostersPage;
