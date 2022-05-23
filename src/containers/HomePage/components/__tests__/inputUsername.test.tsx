@@ -57,7 +57,7 @@ it("should render the username input with user invalid error state", () => {
   expect(tree).toMatchSnapshot();
 });
 
-it("should call a callback when typing an username", () => {
+it("should call a callback when typing an username", async () => {
   const onChangeUsername = jest.fn();
   const { getByPlaceholderText } = render(
     <InputUsername
@@ -68,11 +68,11 @@ it("should call a callback when typing an username", () => {
   );
 
   const input = getByPlaceholderText("Insert your username here");
-  userEvent.type(input, "username");
+  await userEvent.type(input, "username");
   expect(onChangeUsername).toHaveBeenCalled();
 });
 
-it("should call a callback when click on go button", () => {
+it("should call a callback when click on go button", async () => {
   const onFormSubmit = jest.fn();
   const { getByText } = render(
     <InputUsername
@@ -83,6 +83,6 @@ it("should call a callback when click on go button", () => {
   );
 
   const input = getByText("GO");
-  userEvent.click(input);
+  await userEvent.click(input);
   expect(onFormSubmit).toHaveBeenCalled();
 });

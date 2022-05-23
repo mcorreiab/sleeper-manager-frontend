@@ -1,5 +1,5 @@
 import { waitFor } from "@testing-library/react";
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react";
 import { SWRConfig } from "swr";
 import axios from "@/config/axios";
 import UserModel from "../model";
@@ -18,12 +18,12 @@ it("should get data with success", async () => {
     userId: "userId",
   };
 
-  const wrapper = ({ children }: { children: React.ElementType }) => (
-    <SWRConfig value={{ provider: () => new Map() }}>{children}</SWRConfig>
-  );
+  // const wrapper = ({ children }: { children: React.ReactNode }) => (
+  //   <SWRConfig value={{ provider: () => new Map() }}>{children}</SWRConfig>
+  // );
   mockedAxiosGet.mockResolvedValueOnce({ data: { ...userModel } });
 
-  const { result } = renderHook(() => useUser(username, true), { wrapper });
+  const { result } = renderHook(() => useUser(username, true));
 
   await waitFor(() => {
     expect(result.current).toEqual({

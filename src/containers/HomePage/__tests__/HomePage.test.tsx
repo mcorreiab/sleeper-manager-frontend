@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import renderer from "react-test-renderer";
 import { useRouter } from "next/router";
@@ -130,7 +130,7 @@ async function goButtonClick() {
     throw new Error(`Should be a input, is ${goButton}`);
   }
 
-  userEvent.click(goButton);
+  await userEvent.click(goButton);
 }
 
 async function typeOnUsernameInput(inputtedUsername: string) {
@@ -142,6 +142,7 @@ async function typeOnUsernameInput(inputtedUsername: string) {
     throw new Error(`Should be a input, is ${usernameInput}`);
   }
 
-  userEvent.type(usernameInput, inputtedUsername);
+  await userEvent.type(usernameInput, inputtedUsername);
+
   return usernameInput;
 }

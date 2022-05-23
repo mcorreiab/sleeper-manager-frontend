@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import faker from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import useUser from "@/hooks/useUser";
 import UnavailablePlayersPage from "../index";
 import createLeague from "./createLeague";
