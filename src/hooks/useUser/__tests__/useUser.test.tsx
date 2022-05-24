@@ -18,12 +18,12 @@ it("should get data with success", async () => {
     userId: "userId",
   };
 
-  // const wrapper = ({ children }: { children: React.ReactNode }) => (
-  //   <SWRConfig value={{ provider: () => new Map() }}>{children}</SWRConfig>
-  // );
+  const wrapper = ({ children }: { children: React.ReactNode }) => (
+    <SWRConfig value={{ provider: () => new Map() }}>{children}</SWRConfig>
+  );
   mockedAxiosGet.mockResolvedValueOnce({ data: { ...userModel } });
 
-  const { result } = renderHook(() => useUser(username, true));
+  const { result } = renderHook(() => useUser(username, true), { wrapper });
 
   await waitFor(() => {
     expect(result.current).toEqual({
