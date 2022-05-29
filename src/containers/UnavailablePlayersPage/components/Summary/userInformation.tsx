@@ -9,11 +9,9 @@ const UserInformationSection: React.FunctionComponent<Props> = ({
   username,
   avatarUrl,
 }) => (
-  <div className="flex items-center">
-    <div className="w-8 mr-2 h-8">
-      <Image src={avatarUrl} alt="User avatar" width={32} height={32} />
-    </div>
-    <p aria-label="Username" className="text-[#eaeaea] font-bold">
+  <div className="flex items-center max-h-min">
+    <Image src={avatarUrl} alt="User avatar" width={32} height={32} />
+    <p aria-label="Username" className="text-[#eaeaea] font-bold ml-2">
       {username}
     </p>
   </div>

@@ -13,15 +13,6 @@ import {
 } from "./expected";
 import getRoster from "@/services/roster";
 
-jest.mock(
-  "next/link",
-  () =>
-    ({ children }) =>
-      children
-);
-jest.mock("next/router", () => ({
-  useRouter: jest.fn(),
-}));
 jest.mock("@/hooks/useUser");
 jest.mock("@/services/roster");
 
@@ -82,6 +73,7 @@ describe("Mount Unavailable Players page with roster data", () => {
     mockedUseUser.mockReturnValue(userData);
 
     mockedGetRoster.mockResolvedValue(rosters);
+    global.innerWidth = 500;
   });
 
   it("should mount screen with unavailable players to show", async () => {

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import WithHeader from "@/hoc/withHeader";
 import { InputUsername, TitleArea, BallAndHelmet } from "./components";
 import useUser from "@/hooks/useUser";
+import classNames from "classnames";
 
 const HomePage: React.FunctionComponent = () => {
   const [username, setUsername] = useState("");
@@ -36,9 +37,34 @@ const HomePage: React.FunctionComponent = () => {
 
   return (
     <WithHeader>
-      <main className="flex grow flex-col justify-between text-sm-lightwhite items-stretch my-4 mx-0 lg:grid lg:grid-cols-2-45 lg:grid-rows-4-10-auto-15 lg:gap-x-28">
+      <main
+        className={classNames(
+          "flex grow",
+          "flex-col",
+          "justify-between",
+          "text-sm-lightwhite",
+          "items-stretch",
+          "my-4",
+          "mx-0",
+          "lg:grid",
+          "lg:grid-cols-2-45",
+          "lg:grid-rows-4-10-auto-15",
+          "lg:gap-x-28"
+        )}
+      >
         <TitleArea className="lg:row-start-2" />
-        <figure className="grow lg:col-start-2 lg:row-start-2 lg:row-span-2 lg:place-self-stretch">
+        <figure
+          className={classNames(
+            "grow",
+            "lg:col-start-2",
+            "lg:row-start-2",
+            "lg:row-span-2",
+            "lg:place-self-stretch",
+            "flex",
+            "flex-col",
+            "justify-center"
+          )}
+        >
           <BallAndHelmet className="w-full h-full" />
         </figure>
         <InputUsername

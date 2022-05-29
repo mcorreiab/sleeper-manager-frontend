@@ -1,5 +1,6 @@
 import renderer from "react-test-renderer";
-import RostersPage, { RosterProps } from "../rostersPage";
+import RostersPage from "../rostersPage";
+import { RosterProps } from "../rosterProps";
 
 const roster: RosterProps = {
   name: "Test League",
@@ -17,6 +18,7 @@ const roster: RosterProps = {
 };
 
 it("should render rosters for user darthvader", () => {
+  global.innerWidth = 500;
   const tree = renderer
     .create(
       <RostersPage
@@ -30,6 +32,7 @@ it("should render rosters for user darthvader", () => {
 });
 
 it("should render no rosters for user darthvader", () => {
+  global.innerWidth = 500;
   const tree = renderer
     .create(
       <RostersPage user="darthvader" userAvatarUrl="/mockAvatar" rosters={[]} />

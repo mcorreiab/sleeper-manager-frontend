@@ -9,7 +9,7 @@ export interface summaryItemProps {
   type: "badge" | "helmet";
 }
 
-const SummaryItem: React.FunctionComponent<summaryItemProps> = ({
+const SummaryInfoItem: React.FunctionComponent<summaryItemProps> = ({
   summaryLabel,
   quantity,
   text,
@@ -54,4 +54,4 @@ const SummaryItem: React.FunctionComponent<summaryItemProps> = ({
   );
 };
 
-export default SummaryItem;
+export default SummaryInfoItem;

@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`should render horizontal rule without props 1`] = `
-<hr
-  className="border border-t-0 border-[#ffffff26] border-solid"
-/>
-`;

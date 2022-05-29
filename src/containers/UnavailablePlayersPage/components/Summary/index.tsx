@@ -1,48 +1,37 @@
-import SummaryItem from "./summaryItem";
-import classNames from "classnames";
+import SummaryInfo from "./summaryInfo";
+import UserInformation from "./userInformation";
 
-export interface Props {
-  leaguesTotal: number;
-  playersTotal: number;
+interface Props {
+  userAvatarUrl: string;
+  username: string;
+  numberOfLeagues: number;
+  totalOfPlayers: number;
+  cardOverviewColor: string;
+  ruleColor: string;
 }
 
 const Summary: React.FunctionComponent<Props> = ({
-  leaguesTotal,
-  playersTotal,
+  userAvatarUrl,
+  username,
+  numberOfLeagues,
+  totalOfPlayers,
+  cardOverviewColor,
+  ruleColor,
 }) => (
-  <ul
-    className={classNames(
-      "flex",
-      "bg-sm-blue rounded-[16px]",
-      "py-6",
-      "px-8",
-      "justify-between",
-      "items-center"
-    )}
-  >
-    <SummaryItem
-      summaryLabel="League's overview"
-      type="badge"
-      quantity={leaguesTotal}
-      text="Leagues to be reviewed"
-    />
-    <hr
-      className={classNames(
-        "h-[71px]",
-        "border-[1px]",
-        "border-l-0",
-        "border-[#5e49dc]",
-        "my-0",
-        "mx-9"
-      )}
-    />
-    <SummaryItem
-      summaryLabel="Player's overview"
-      type="helmet"
-      quantity={playersTotal}
-      text="Players to be changed"
-    />
-  </ul>
+  <section aria-label="User situation overview">
+    <UserInformation avatarUrl={userAvatarUrl} username={username} />
+    <section
+      aria-label="Player's leagues and players overview"
+      className="mt-5"
+    >
+      <SummaryInfo
+        leaguesTotal={numberOfLeagues}
+        playersTotal={totalOfPlayers}
+        backgroundColor={cardOverviewColor}
+        ruleColor={ruleColor}
+      />
+    </section>
+  </section>
 );
 
 export default Summary;

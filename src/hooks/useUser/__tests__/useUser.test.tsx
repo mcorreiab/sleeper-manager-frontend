@@ -36,7 +36,7 @@ it("should get data with success", async () => {
 });
 
 it("should get loading state with success", async () => {
-  const wrapper = ({ children }: { children: React.ElementType }) => (
+  const wrapper = ({ children }: { children: React.ReactNode }) => (
     <SWRConfig value={{ provider: () => new Map() }}>{children}</SWRConfig>
   );
 
@@ -55,7 +55,7 @@ it("should get loading state with success", async () => {
 });
 
 it("should get username missing with success", async () => {
-  const wrapper = ({ children }: { children: React.ElementType }) => (
+  const wrapper = ({ children }: { children: React.ReactNode }) => (
     <SWRConfig value={{ provider: () => new Map() }}>{children}</SWRConfig>
   );
 
