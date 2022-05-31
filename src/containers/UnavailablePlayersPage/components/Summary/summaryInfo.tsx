@@ -4,25 +4,24 @@ import classNames from "classnames";
 export interface Props {
   leaguesTotal: number;
   playersTotal: number;
-  backgroundColor: string;
   ruleColor: string;
+  className?: string;
 }
 
 const SummaryInfo: React.FunctionComponent<Props> = ({
   leaguesTotal,
   playersTotal,
-  backgroundColor,
   ruleColor,
+  className,
 }) => (
   <ul
     className={classNames(
       "flex",
       "rounded-[16px]",
       "py-6",
-      "px-8",
       "justify-between",
       "items-center",
-      backgroundColor
+      className
     )}
   >
     <SummaryInfoItem

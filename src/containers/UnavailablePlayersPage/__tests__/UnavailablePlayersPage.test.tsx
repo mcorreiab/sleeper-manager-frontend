@@ -80,7 +80,6 @@ describe("Mount Unavailable Players page with roster data", () => {
     render(<UnavailablePlayersPage username={username} />);
 
     await waitFor(() => {
-      expect(screen).toHaveACompleteHeader();
       expectUserDataToBePresent(userAvatarUrl, displayName);
       expectOverviewToBePresent(4, 16);
 
@@ -153,7 +152,6 @@ it("should mount screen with with no players to show and defaul avatar", async (
   render(<UnavailablePlayersPage username={username} />);
 
   await waitFor(() => {
-    expect(screen).toHaveACompleteHeader();
     expectUserDataToBePresent("http://localhost/sleeper-logo.png", displayName);
     expectOverviewToBePresent(0, 0);
 

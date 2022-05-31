@@ -13,6 +13,7 @@ module.exports = {
         "sm-blue": "#3a28a7",
         "sm-lightgray": "#8f97ab",
         "sm-lightwhite": "#eaeaea",
+        "sm-white": "#ffffff",
       },
       spacing: {
         "default-spacing": "1.5rem",

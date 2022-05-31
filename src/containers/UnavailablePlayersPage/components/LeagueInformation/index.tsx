@@ -4,20 +4,9 @@ import ListStatusPlayer from "./listStatusPlayer";
 import Hide from "./hide";
 import Expand from "./expand";
 import classNames from "classnames";
-
-export interface PlayerProps {
-  id: string;
-  name: string;
-  injuryStatus: string;
-  position: string;
-  team: string;
-}
-
-export interface RosterProps {
-  name: string;
-  size: number;
-  players: PlayerProps[];
-}
+import { getPlayersByStatus } from "../../rosterQuantities";
+import { RosterProps } from "../../rosterProps";
+import PlayersOverview from "../PlayersOverview";
 
 export interface Props {
   roster: RosterProps;
@@ -37,17 +26,8 @@ const LeagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
     <Expand className="col-start-2 self-center justify-self-end" />
   );
 
-  const outPlayers = roster.players.filter(
-    (player) => player.injuryStatus === "Out"
-  );
-
-  const doubtfulPlayers = roster.players.filter(
-    (player) => player.injuryStatus === "Doubtful"
-  );
-
-  const questionablePlayers = roster.players.filter(
-    (player) => player.injuryStatus === "Questionable"
-  );
+  const { outPlayers, doubtfulPlayers, questionablePlayers } =
+    getPlayersByStatus(roster);
 
   const questionableComponent =
     questionablePlayers.length > 0 ? (
@@ -88,22 +68,13 @@ const LeagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
           {roster.name}
         </h2>
         {arrow}
-        <p
-          aria-label={`${roster.name} players situation`}
-          className={classNames(
-            "text-sm",
-            "text-sm-lightgray",
-            "row-start-2",
-            "col-span-2",
-            "flex",
-            "mb-4",
-            "items-center"
-          )}
-        >
-          {outPlayers.length} Out
-          <RoundDivider /> {doubtfulPlayers.length} Doubtful <RoundDivider />
-          {questionablePlayers.length} Questionable
-        </p>
+        <PlayersOverview
+          rosterName={roster.name}
+          outPlayers={outPlayers.length}
+          doubtfulPlayers={doubtfulPlayers.length}
+          questionablePlayers={questionablePlayers.length}
+          className="text-sm-lightgray mb-4"
+        />
       </summary>
       {outComponent}
       {doubtfulComponent}

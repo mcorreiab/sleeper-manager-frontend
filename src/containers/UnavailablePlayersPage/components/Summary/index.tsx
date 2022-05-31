@@ -6,8 +6,9 @@ interface Props {
   username: string;
   numberOfLeagues: number;
   totalOfPlayers: number;
-  cardOverviewColor: string;
+  summaryCardClassName: string;
   ruleColor: string;
+  className?: string;
 }
 
 const Summary: React.FunctionComponent<Props> = ({
@@ -15,10 +16,11 @@ const Summary: React.FunctionComponent<Props> = ({
   username,
   numberOfLeagues,
   totalOfPlayers,
-  cardOverviewColor,
+  summaryCardClassName,
   ruleColor,
+  className,
 }) => (
-  <section aria-label="User situation overview">
+  <section className={className} aria-label="User situation overview">
     <UserInformation avatarUrl={userAvatarUrl} username={username} />
     <section
       aria-label="Player's leagues and players overview"
@@ -27,7 +29,7 @@ const Summary: React.FunctionComponent<Props> = ({
       <SummaryInfo
         leaguesTotal={numberOfLeagues}
         playersTotal={totalOfPlayers}
-        backgroundColor={cardOverviewColor}
+        className={summaryCardClassName}
         ruleColor={ruleColor}
       />
     </section>

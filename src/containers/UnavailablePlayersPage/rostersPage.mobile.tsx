@@ -2,14 +2,15 @@ import Header from "@/components/Header";
 import classNames from "classnames";
 import { Summary, LeagueInformation } from "./components";
 import { Props } from "./rosterProps";
-import getSummaryOnRosters from "./getSummaryOnRosters";
+import { getCondensedDataOfRosters } from "./rosterQuantities";
 
 const RostersPage: React.FunctionComponent<Props> = ({
   user,
   rosters,
   userAvatarUrl,
 }) => {
-  const { totalOfPlayers, numberOfLeagues } = getSummaryOnRosters(rosters);
+  const { totalOfPlayers, numberOfLeagues } =
+    getCondensedDataOfRosters(rosters);
 
   const createPageDetails = () => {
     const styles = classNames("font-bold", "text-sm", "mt-8", "mx-0", "mb-4");
@@ -47,7 +48,7 @@ const RostersPage: React.FunctionComponent<Props> = ({
             username={user}
             numberOfLeagues={numberOfLeagues}
             totalOfPlayers={totalOfPlayers}
-            cardOverviewColor="bg-sm-blue"
+            summaryCardClassName="bg-sm-blue px-8"
             ruleColor="border-[#5e49dc]"
           />
           <section>{createPageDetails()}</section>

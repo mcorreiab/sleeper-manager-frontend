@@ -26,7 +26,7 @@ const SummaryInfoItem: React.FunctionComponent<summaryItemProps> = ({
     <li
       aria-label={summaryLabel}
       className={classNames(
-        "text-[#ffffff]",
+        "text-sm-white",
         "grid",
         "grid-cols-2",
         "gap-y-1",
