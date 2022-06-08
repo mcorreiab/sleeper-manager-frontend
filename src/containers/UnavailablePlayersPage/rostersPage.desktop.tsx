@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Header from "@/components/Header";
-import { RostersUser, Summary } from "./components";
+import { RostersUser, Summary, LeagueDetail } from "./components";
 import { Props } from "./rosterProps";
 import { getCondensedDataOfRosters } from "./rosterQuantities";
 
@@ -34,34 +33,11 @@ const RostersPage: React.FunctionComponent<Props> = ({
       </aside>
       <main className="px-12 py-6 overflow-auto scrollbar scrollbar-light w-[calc(100%-328px)]">
         {rosters.map((roster) => (
-          <section key={roster.name}>
-            <h1 className="font-bold text-2xl text-sm-lightwhite flex items-center">
-              <div className="mr-4">
-                <Image
-                  src={roster.avatarUrl}
-                  alt={roster.name}
-                  width={62}
-                  height={62}
-                />
-              </div>
-              {roster.name}
-            </h1>
-          </section>
-        ))}
-        {rosters.map((roster) => (
-          <section key={roster.name}>
-            <h1 className="font-bold text-2xl text-sm-lightwhite flex items-center">
-              <div className="mr-4">
-                <Image
-                  src={roster.avatarUrl}
-                  alt={roster.name}
-                  width={62}
-                  height={62}
-                />
-              </div>
-              {roster.name}
-            </h1>
-          </section>
+          <LeagueDetail
+            key={roster.name}
+            roster={roster}
+            className="mb-[3.75rem]"
+          />
         ))}
       </main>
     </div>

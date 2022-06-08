@@ -5,7 +5,7 @@ exports[`given that is not the last status, should render the list with success 
   className="flex flex-col"
 >
   <h3
-    className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
   >
     Status 1
   </h3>
@@ -13,7 +13,7 @@ exports[`given that is not the last status, should render the list with success 
     className="list-none text-sm text-sm-lightgray flex flex-col items-start"
   >
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -22,7 +22,7 @@ exports[`given that is not the last status, should render the list with success 
       </p>
       <p
         aria-label="Player 1 position"
-        className="col-start-1 row-start-2"
+        className="col-start-1 row-start-2 text-sm-lightgray text-sm"
       >
         Position 1
       </p>
@@ -44,7 +44,7 @@ exports[`given that is not the last status, should render the list with success 
       </svg>
       <p
         aria-label="Player 1 NFL team"
-        className="col-start-3 row-start-2"
+        className="col-start-3 row-start-2 text-sm-lightgray text-sm"
       >
         Team 1
       </p>
@@ -57,7 +57,7 @@ exports[`given that is not the last status, should render the list with success 
       />
     </li>
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -66,7 +66,7 @@ exports[`given that is not the last status, should render the list with success 
       </p>
       <p
         aria-label="Player 2 position"
-        className="col-start-1 row-start-2"
+        className="col-start-1 row-start-2 text-sm-lightgray text-sm"
       >
         Position 2
       </p>
@@ -88,7 +88,7 @@ exports[`given that is not the last status, should render the list with success 
       </svg>
       <p
         aria-label="Player 2 NFL team"
-        className="col-start-3 row-start-2"
+        className="col-start-3 row-start-2 text-sm-lightgray text-sm"
       >
         Team 2
       </p>
@@ -105,7 +105,7 @@ exports[`given that is the last status, should render the list with success 1`] 
   className="flex flex-col"
 >
   <h3
-    className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+    className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
   >
     Status 1
   </h3>
@@ -113,7 +113,7 @@ exports[`given that is the last status, should render the list with success 1`] 
     className="list-none text-sm text-sm-lightgray flex flex-col items-start"
   >
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -122,7 +122,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       </p>
       <p
         aria-label="Player 1 position"
-        className="col-start-1 row-start-2"
+        className="col-start-1 row-start-2 text-sm-lightgray text-sm"
       >
         Position 1
       </p>
@@ -144,7 +144,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       </svg>
       <p
         aria-label="Player 1 NFL team"
-        className="col-start-3 row-start-2"
+        className="col-start-3 row-start-2 text-sm-lightgray text-sm"
       >
         Team 1
       </p>
@@ -157,7 +157,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       />
     </li>
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -166,7 +166,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       </p>
       <p
         aria-label="Player 2 position"
-        className="col-start-1 row-start-2"
+        className="col-start-1 row-start-2 text-sm-lightgray text-sm"
       >
         Position 2
       </p>
@@ -188,7 +188,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       </svg>
       <p
         aria-label="Player 2 NFL team"
-        className="col-start-3 row-start-2"
+        className="col-start-3 row-start-2 text-sm-lightgray text-sm"
       >
         Team 2
       </p>

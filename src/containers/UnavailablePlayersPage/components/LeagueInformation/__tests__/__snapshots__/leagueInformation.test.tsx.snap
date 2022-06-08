@@ -76,7 +76,7 @@ exports[`should render league information component with all types of status 1`]
     className="flex flex-col"
   >
     <h3
-      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+      className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
     >
       Out
     </h3>
@@ -84,7 +84,7 @@ exports[`should render league information component with all types of status 1`]
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -93,7 +93,7 @@ exports[`should render league information component with all types of status 1`]
         </p>
         <p
           aria-label="Test Player position"
-          className="col-start-1 row-start-2"
+          className="col-start-1 row-start-2 text-sm-lightgray text-sm"
         >
           Test Position
         </p>
@@ -115,7 +115,7 @@ exports[`should render league information component with all types of status 1`]
         </svg>
         <p
           aria-label="Test Player NFL team"
-          className="col-start-3 row-start-2"
+          className="col-start-3 row-start-2 text-sm-lightgray text-sm"
         >
           Test Team
         </p>
@@ -129,7 +129,7 @@ exports[`should render league information component with all types of status 1`]
     className="flex flex-col"
   >
     <h3
-      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+      className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
     >
       Doubtful
     </h3>
@@ -137,7 +137,7 @@ exports[`should render league information component with all types of status 1`]
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -146,7 +146,7 @@ exports[`should render league information component with all types of status 1`]
         </p>
         <p
           aria-label="Test Player 2 position"
-          className="col-start-1 row-start-2"
+          className="col-start-1 row-start-2 text-sm-lightgray text-sm"
         >
           Test Position 2
         </p>
@@ -168,7 +168,7 @@ exports[`should render league information component with all types of status 1`]
         </svg>
         <p
           aria-label="Test Player 2 NFL team"
-          className="col-start-3 row-start-2"
+          className="col-start-3 row-start-2 text-sm-lightgray text-sm"
         >
           Test Team 2
         </p>
@@ -182,7 +182,7 @@ exports[`should render league information component with all types of status 1`]
     className="flex flex-col"
   >
     <h3
-      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+      className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
     >
       Questionable
     </h3>
@@ -190,7 +190,7 @@ exports[`should render league information component with all types of status 1`]
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -199,7 +199,7 @@ exports[`should render league information component with all types of status 1`]
         </p>
         <p
           aria-label="Test Player 3 position"
-          className="col-start-1 row-start-2"
+          className="col-start-1 row-start-2 text-sm-lightgray text-sm"
         >
           Test Position 3
         </p>
@@ -221,7 +221,7 @@ exports[`should render league information component with all types of status 1`]
         </svg>
         <p
           aria-label="Test Player 3 NFL team"
-          className="col-start-3 row-start-2"
+          className="col-start-3 row-start-2 text-sm-lightgray text-sm"
         >
           Test Team 3
         </p>
@@ -382,7 +382,7 @@ exports[`should render league information component with only doubtful players 1
     className="flex flex-col"
   >
     <h3
-      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+      className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
     >
       Doubtful
     </h3>
@@ -390,7 +390,7 @@ exports[`should render league information component with only doubtful players 1
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -399,7 +399,7 @@ exports[`should render league information component with only doubtful players 1
         </p>
         <p
           aria-label="Test Player 2 position"
-          className="col-start-1 row-start-2"
+          className="col-start-1 row-start-2 text-sm-lightgray text-sm"
         >
           Test Position 2
         </p>
@@ -421,7 +421,7 @@ exports[`should render league information component with only doubtful players 1
         </svg>
         <p
           aria-label="Test Player 2 NFL team"
-          className="col-start-3 row-start-2"
+          className="col-start-3 row-start-2 text-sm-lightgray text-sm"
         >
           Test Team 2
         </p>
@@ -507,7 +507,7 @@ exports[`should render league information component with only out players 1`] = 
     className="flex flex-col"
   >
     <h3
-      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+      className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
     >
       Out
     </h3>
@@ -515,7 +515,7 @@ exports[`should render league information component with only out players 1`] = 
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -524,7 +524,7 @@ exports[`should render league information component with only out players 1`] = 
         </p>
         <p
           aria-label="Test Player position"
-          className="col-start-1 row-start-2"
+          className="col-start-1 row-start-2 text-sm-lightgray text-sm"
         >
           Test Position
         </p>
@@ -546,7 +546,7 @@ exports[`should render league information component with only out players 1`] = 
         </svg>
         <p
           aria-label="Test Player NFL team"
-          className="col-start-3 row-start-2"
+          className="col-start-3 row-start-2 text-sm-lightgray text-sm"
         >
           Test Team
         </p>
@@ -632,7 +632,7 @@ exports[`should render league information component with only questionable playe
     className="flex flex-col"
   >
     <h3
-      className="font-bold text-xs text-[#dbdfff] py-1 px-2 rounded-[32px] bg-sm-blue self-start mb-[0.625rem]"
+      className="font-bold text-[#dbdfff] rounded-[32px] bg-sm-blue self-start text-xs py-1 px-2 mb-[0.625rem]"
     >
       Questionable
     </h3>
@@ -640,7 +640,7 @@ exports[`should render league information component with only questionable playe
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -649,7 +649,7 @@ exports[`should render league information component with only questionable playe
         </p>
         <p
           aria-label="Test Player 3 position"
-          className="col-start-1 row-start-2"
+          className="col-start-1 row-start-2 text-sm-lightgray text-sm"
         >
           Test Position 3
         </p>
@@ -671,7 +671,7 @@ exports[`should render league information component with only questionable playe
         </svg>
         <p
           aria-label="Test Player 3 NFL team"
-          className="col-start-3 row-start-2"
+          className="col-start-3 row-start-2 text-sm-lightgray text-sm"
         >
           Test Team 3
         </p>

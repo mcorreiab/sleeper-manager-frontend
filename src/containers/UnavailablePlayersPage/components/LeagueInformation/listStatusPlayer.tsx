@@ -1,6 +1,6 @@
-import classNames from "classnames";
 import HorizontalRule from "./horizontalRule";
 import Player from "./player";
+import StatusBadge from "../StatusBadge";
 
 export interface PlayerProps {
   id: string;
@@ -32,21 +32,11 @@ const ListStatusPlayer: React.FunctionComponent<Props> = ({
 
   return (
     <div className="flex flex-col">
-      <h3
-        className={classNames(
-          "font-bold",
-          "text-xs",
-          "text-[#dbdfff]",
-          "py-1",
-          "px-2",
-          "rounded-[32px]",
-          "bg-sm-blue",
-          "self-start",
-          "mb-[0.625rem]"
-        )}
-      >
-        {statusLabel}
-      </h3>
+      <StatusBadge
+        tag="h3"
+        statusLabel={statusLabel}
+        className="text-xs py-1 px-2 mb-[0.625rem]"
+      />
       <ul className="list-none text-sm text-sm-lightgray flex flex-col items-start">
         {playersComponent}
       </ul>

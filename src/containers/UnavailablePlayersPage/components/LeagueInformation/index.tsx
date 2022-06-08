@@ -1,9 +1,7 @@
 import { useState } from "react";
-import RoundDivider from "../RoundDivider";
 import ListStatusPlayer from "./listStatusPlayer";
 import Hide from "./hide";
 import Expand from "./expand";
-import classNames from "classnames";
 import { getPlayersByStatus } from "../../rosterQuantities";
 import { RosterProps } from "../../rosterProps";
 import PlayersOverview from "../PlayersOverview";

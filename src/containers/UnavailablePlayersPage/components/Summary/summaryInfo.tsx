@@ -37,7 +37,8 @@ const SummaryInfo: React.FunctionComponent<Props> = ({
         "border-l-0",
         ruleColor,
         "my-0",
-        "mx-9"
+        "mx-9",
+        "lg:mx-7"
       )}
     />
     <SummaryInfoItem

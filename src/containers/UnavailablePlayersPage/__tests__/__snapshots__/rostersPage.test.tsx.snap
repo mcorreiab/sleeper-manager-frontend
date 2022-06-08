@@ -275,7 +275,7 @@ exports[`should render no rosters for user darthvader 1`] = `
               </p>
             </li>
             <hr
-              className="h-[71px] border-[1px] border-l-0 border-[#5e49dc] my-0 mx-9"
+              className="h-[71px] border-[1px] border-l-0 border-[#5e49dc] my-0 mx-9 lg:mx-7"
             />
             <li
               aria-label="Player's overview"
@@ -604,7 +604,7 @@ exports[`should render rosters for user darthvader 1`] = `
               </p>
             </li>
             <hr
-              className="h-[71px] border-[1px] border-l-0 border-[#5e49dc] my-0 mx-9"
+              className="h-[71px] border-[1px] border-l-0 border-[#5e49dc] my-0 mx-9 lg:mx-7"
             />
             <li
               aria-label="Player's overview"
