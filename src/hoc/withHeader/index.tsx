@@ -6,8 +6,8 @@ interface Props {
 }
 
 const withHeader: React.FC<Props> = ({ children }) => (
-  <div className="bg-background-color h-screen">
-    <div className="flex flex-col max-w-screen-xl p-default-spacing min-h-full my-0 mx-auto">
+  <div className="bg-background-color">
+    <div className="flex flex-col max-w-screen-xl p-default-spacing min-h-screen my-0 mx-auto">
       <header>
         <Header />
       </header>

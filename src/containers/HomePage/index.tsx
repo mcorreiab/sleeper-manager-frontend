@@ -1,9 +1,7 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { useRouter } from "next/router";
-import WithHeader from "@/hoc/withHeader";
-import { InputUsername, TitleArea, BallAndHelmet } from "./components";
+import HomePageComponent from "./homePage";
 import useUser from "@/hooks/useUser";
-import classNames from "classnames";
 
 const HomePage: React.FunctionComponent = () => {
   const [username, setUsername] = useState("");
@@ -36,47 +34,13 @@ const HomePage: React.FunctionComponent = () => {
   }, [data]);
 
   return (
-    <WithHeader>
-      <main
-        className={classNames(
-          "flex grow",
-          "flex-col",
-          "justify-between",
-          "text-sm-lightwhite",
-          "items-stretch",
-          "my-4",
-          "mx-0",
-          "lg:grid",
-          "lg:grid-cols-2-45",
-          "lg:grid-rows-4-10-auto-15",
-          "lg:gap-x-28"
-        )}
-      >
-        <TitleArea className="lg:row-start-2" />
-        <figure
-          className={classNames(
-            "grow",
-            "lg:col-start-2",
-            "lg:row-start-2",
-            "lg:row-span-2",
-            "lg:place-self-stretch",
-            "flex",
-            "flex-col",
-            "justify-center"
-          )}
-        >
-          <BallAndHelmet className="w-full h-full" />
-        </figure>
-        <InputUsername
-          className="font-['Open Sans', sans-serif] lg:row-start-3"
-          onFormSubmit={onFormSubmit}
-          username={username}
-          onChangeUsername={onChangeUsername}
-          isUsernameMissing={isUsernameMissing}
-          isUsernameInvalid={usernameMissing}
-        />
-      </main>
-    </WithHeader>
+    <HomePageComponent
+      isUsernameInvalid={usernameMissing}
+      isUsernameMissing={isUsernameMissing}
+      onChangeUsername={onChangeUsername}
+      onFormSubmit={onFormSubmit}
+      username={username}
+    />
   );
 };
 
