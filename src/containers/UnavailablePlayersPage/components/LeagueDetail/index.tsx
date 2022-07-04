@@ -7,11 +7,13 @@ import StatusSection from "./statusSection";
 interface Props {
   roster: RosterProps;
   className?: string;
+  innerRef: React.Ref<HTMLElement>;
 }
 
 const LeagueDetail: React.FunctionComponent<Props> = ({
   roster,
   className,
+  innerRef,
 }) => {
   const { questionablePlayers, doubtfulPlayers, outPlayers } =
     getPlayersByStatus(roster);
@@ -27,7 +29,7 @@ const LeagueDetail: React.FunctionComponent<Props> = ({
   );
 
   return (
-    <section key={roster.name} className={classNames(className)}>
+    <section key={roster.name} className={classNames(className)} ref={innerRef}>
       <h1
         className={classNames(
           "font-bold",

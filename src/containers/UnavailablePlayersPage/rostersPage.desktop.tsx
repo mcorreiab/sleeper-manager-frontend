@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
-import { RostersUser, Summary, LeagueDetail } from "./components";
+import { useEffect, useRef, useState } from "react";
+import { Summary, LeagueDetail } from "./components";
+import RosterCard from "./components/RosterCard";
 import { Props } from "./rosterProps";
 import { getCondensedDataOfRosters } from "./rosterQuantities";
 
@@ -8,6 +10,19 @@ const RostersPage: React.FunctionComponent<Props> = ({
   userAvatarUrl,
   rosters,
 }) => {
+  const rostersRef = useRef<Array<HTMLElement>>([]);
+  const [selectedRoster, setSelectedRoster] = useState(0);
+
+  useEffect(() => {
+    rostersRef.current = rostersRef.current.slice(0, rosters.length);
+  }, [rosters]);
+
+  useEffect(() => {
+    rostersRef &&
+      rostersRef.current[selectedRoster] &&
+      rostersRef.current[selectedRoster].scrollIntoView();
+  }, [selectedRoster]);
+
   const { totalOfPlayers, numberOfLeagues } =
     getCondensedDataOfRosters(rosters);
 
@@ -25,15 +40,27 @@ const RostersPage: React.FunctionComponent<Props> = ({
         />
         <section className="mb-[4.125rem]">
           <h1 className="font-bold text-sm-white mx-6">Leagues to review</h1>
-          <RostersUser rosters={rosters} />
+          <ul>
+            {rosters.map((roster, i) => (
+              <RosterCard
+                key={roster.name}
+                roster={roster}
+                onClick={() => {
+                  setSelectedRoster(i);
+                }}
+                isSelected={i === selectedRoster}
+              />
+            ))}
+          </ul>
         </section>
         <section className="mx-6 pb-6">
           <Header />
         </section>
       </aside>
       <main className="px-12 py-6 overflow-auto scrollbar scrollbar-light w-[calc(100%-328px)]">
-        {rosters.map((roster) => (
+        {rosters.map((roster, i) => (
           <LeagueDetail
+            innerRef={(el) => el && (rostersRef.current[i] = el)}
             key={roster.name}
             roster={roster}
             className="mb-[3.75rem]"
