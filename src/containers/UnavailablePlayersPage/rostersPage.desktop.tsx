@@ -17,11 +17,10 @@ const RostersPage: React.FunctionComponent<Props> = ({
     rostersRef.current = rostersRef.current.slice(0, rosters.length);
   }, [rosters]);
 
-  useEffect(() => {
-    rostersRef &&
-      rostersRef.current[selectedRoster] &&
-      rostersRef.current[selectedRoster].scrollIntoView();
-  }, [selectedRoster]);
+  const clickOnRosterCard = (index: number) => {
+    setSelectedRoster(index);
+    rostersRef.current[index].scrollIntoView();
+  };
 
   const { totalOfPlayers, numberOfLeagues } =
     getCondensedDataOfRosters(rosters);
@@ -46,7 +45,7 @@ const RostersPage: React.FunctionComponent<Props> = ({
                 key={roster.name}
                 roster={roster}
                 onClick={() => {
-                  setSelectedRoster(i);
+                  clickOnRosterCard(i);
                 }}
                 isSelected={i === selectedRoster}
               />

@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
 import HomePage from "./homePage";
 
 export default {
+  title: "Home Page",
   component: HomePage,
 } as ComponentMeta<typeof HomePage>;
 

@@ -31,6 +31,7 @@ const RosterCard: React.FunctionComponent<Props> = ({
           { "bg-sm-blue": isSelected }
         )}
         onClick={onClick}
+        aria-label={`Go to roster ${roster.name}`}
       >
         <div className="row-span-2 self-center text-[0]">
           <Image
