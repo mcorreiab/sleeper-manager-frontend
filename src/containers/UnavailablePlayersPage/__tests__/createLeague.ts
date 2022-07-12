@@ -1,8 +1,9 @@
+import { Faker } from "@faker-js/faker";
 import { LeagueContext } from "./types";
 import { RosterModel, PlayerModel } from "@/services/roster/model";
 
-export default (
-  faker: Faker.FakerStatic,
+const createLeagueUsingFakeData = (
+  faker: Faker,
   { out, doubtful, questionable, name }: LeagueContext
 ): RosterModel => {
   const outPlayersList = createPlayersByStatus(out, name, faker, "Out");
@@ -30,7 +31,6 @@ export default (
     name,
     10,
     faker.internet.url(),
-    "Standard",
     players
   );
 };
@@ -38,7 +38,7 @@ export default (
 function createPlayersByStatus(
   quantityOfPlayers: number,
   leagueName: string,
-  faker: Faker.FakerStatic,
+  faker: Faker,
   injuryStatus: string
 ): PlayerModel[] {
   const players: PlayerModel[] = [];
@@ -64,12 +64,13 @@ function createLeague(
   name: string,
   size: number,
   avatarUrl: string,
-  type: string,
   players: PlayerModel[]
 ): RosterModel {
   return {
     id,
-    league: { name, size, pointsByReception: type, avatar: avatarUrl },
+    league: { name, size, avatar: avatarUrl },
     players,
   };
 }
+
+export default createLeagueUsingFakeData;
