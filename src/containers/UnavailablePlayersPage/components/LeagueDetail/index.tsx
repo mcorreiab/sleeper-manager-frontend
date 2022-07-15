@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { RosterProps } from "../../rosterProps";
+import { PlayerProps, RosterProps } from "../../rosterProps";
 import { getPlayersByStatus } from "../../rosterQuantities";
 import classNames from "classnames";
 import StatusSection from "./statusSection";
@@ -18,15 +18,9 @@ const LeagueDetail: React.FunctionComponent<Props> = ({
   const { questionablePlayers, doubtfulPlayers, outPlayers } =
     getPlayersByStatus(roster);
 
-  const out = outPlayers.length && (
-    <StatusSection players={outPlayers} statusLabel="Out" />
-  );
-  const doubtful = doubtfulPlayers.length && (
-    <StatusSection players={doubtfulPlayers} statusLabel="Doubtful" />
-  );
-  const questionable = questionablePlayers.length && (
-    <StatusSection players={questionablePlayers} statusLabel="Questionable" />
-  );
+  const out = createStatusSection("Out", outPlayers);
+  const doubtful = createStatusSection("Doubtful", doubtfulPlayers);
+  const questionable = createStatusSection("Questionable", questionablePlayers);
 
   return (
     <section key={roster.name} className={classNames(className)} ref={innerRef}>
@@ -56,5 +50,11 @@ const LeagueDetail: React.FunctionComponent<Props> = ({
     </section>
   );
 };
+
+function createStatusSection(statusLabel: string, players: PlayerProps[]) {
+  return players.length > 0 ? (
+    <StatusSection players={players} statusLabel={statusLabel} />
+  ) : null;
+}
 
 export default LeagueDetail;
