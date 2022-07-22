@@ -21,11 +21,6 @@ a {
   box-sizing: border-box;
 }
 
-:root {
-  --background-color: #1f2027;
-  --content-spacing: 1.5rem;
-}
-
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 16px;
