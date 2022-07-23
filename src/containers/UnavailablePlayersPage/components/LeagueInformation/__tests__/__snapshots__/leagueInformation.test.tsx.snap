@@ -2,7 +2,7 @@
 
 exports[`should render league information component with all types of status 1`] = `
 <details
-  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  className="px-5 pt-4 pb-0 bg-sm-dark-blue rounded-[8px] mb-4 open:pb-5"
   onToggle={[Function]}
 >
   <summary
@@ -84,7 +84,7 @@ exports[`should render league information component with all types of status 1`]
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -137,7 +137,7 @@ exports[`should render league information component with all types of status 1`]
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -190,7 +190,7 @@ exports[`should render league information component with all types of status 1`]
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -233,7 +233,7 @@ exports[`should render league information component with all types of status 1`]
 
 exports[`should render league information component with no players 1`] = `
 <details
-  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  className="px-5 pt-4 pb-0 bg-sm-dark-blue rounded-[8px] mb-4 open:pb-5"
   onToggle={[Function]}
 >
   <summary
@@ -308,7 +308,7 @@ exports[`should render league information component with no players 1`] = `
 
 exports[`should render league information component with only doubtful players 1`] = `
 <details
-  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  className="px-5 pt-4 pb-0 bg-sm-dark-blue rounded-[8px] mb-4 open:pb-5"
   onToggle={[Function]}
 >
   <summary
@@ -390,7 +390,7 @@ exports[`should render league information component with only doubtful players 1
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -433,7 +433,7 @@ exports[`should render league information component with only doubtful players 1
 
 exports[`should render league information component with only out players 1`] = `
 <details
-  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  className="px-5 pt-4 pb-0 bg-sm-dark-blue rounded-[8px] mb-4 open:pb-5"
   onToggle={[Function]}
 >
   <summary
@@ -515,7 +515,7 @@ exports[`should render league information component with only out players 1`] = 
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -558,7 +558,7 @@ exports[`should render league information component with only out players 1`] = 
 
 exports[`should render league information component with only questionable players 1`] = `
 <details
-  className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+  className="px-5 pt-4 pb-0 bg-sm-dark-blue rounded-[8px] mb-4 open:pb-5"
   onToggle={[Function]}
 >
   <summary
@@ -640,7 +640,7 @@ exports[`should render league information component with only questionable playe
       className="list-none text-sm text-sm-lightgray flex flex-col items-start"
     >
       <li
-        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+        className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
       >
         <p
           className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"

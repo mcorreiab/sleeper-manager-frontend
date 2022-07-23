@@ -13,7 +13,7 @@ exports[`given that is not the last status, should render the list with success 
     className="list-none text-sm text-sm-lightgray flex flex-col items-start"
   >
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -57,7 +57,7 @@ exports[`given that is not the last status, should render the list with success 
       />
     </li>
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -113,7 +113,7 @@ exports[`given that is the last status, should render the list with success 1`] 
     className="list-none text-sm text-sm-lightgray flex flex-col items-start"
   >
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"
@@ -157,7 +157,7 @@ exports[`given that is the last status, should render the list with success 1`] 
       />
     </li>
     <li
-      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-[#292E3C] lg:rounded-lg"
+      className="grid grid-cols-4-autofr gap-y-2 w-full lg:py-4 lg:pl-6 lg:bg-sm-dark-blue lg:rounded-lg"
     >
       <p
         className="col-start-1 row-start-1 col-span-4 text-sm-lightwhite"

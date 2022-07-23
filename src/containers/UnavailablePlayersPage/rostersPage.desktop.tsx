@@ -27,7 +27,7 @@ const RostersPage: React.FunctionComponent<Props> = ({
 
   return (
     <div className="bg-background-color flex h-screen">
-      <aside className="bg-[#292E3C] w-[328px] overflow-auto scrollbar scrollbar-dark">
+      <aside className="bg-sm-dark-blue w-[328px] overflow-auto scrollbar scrollbar-dark">
         <Summary
           numberOfLeagues={numberOfLeagues}
           totalOfPlayers={totalOfPlayers}

@@ -26,7 +26,7 @@ const Player: React.FunctionComponent<Props> = ({
         "w-full",
         "lg:py-4",
         "lg:pl-6",
-        "lg:bg-[#292E3C]",
+        "lg:bg-sm-dark-blue",
         "lg:rounded-lg",
         className
       )}

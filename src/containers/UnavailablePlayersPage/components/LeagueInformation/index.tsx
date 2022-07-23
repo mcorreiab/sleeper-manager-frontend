@@ -59,7 +59,7 @@ const LeagueInformation: React.FunctionComponent<Props> = ({ roster }) => {
   return (
     <details
       onToggle={() => onClick()}
-      className="px-5 pt-4 pb-0 bg-[#292e3c] rounded-[8px] mb-4 open:pb-5"
+      className="px-5 pt-4 pb-0 bg-sm-dark-blue rounded-[8px] mb-4 open:pb-5"
     >
       <summary className="grid gap-x-2 gap-y-2">
         <h2 className="text-base font-bold" key={roster.name}>
