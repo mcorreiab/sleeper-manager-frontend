@@ -5,7 +5,7 @@ import { RosterModel } from "./model";
 const getRostersByUserId = async (userId: string): Promise<RosterModel[]> => {
   try {
     const response = await appAxios.get<RosterModel[]>(
-      `https://sleeper-manager-api.mcorreia.dev/rosters/user/userId/${userId}/unavailable`
+      `https://sleeper-manager.fly.dev/rosters/user/userId/${userId}/unavailable`
     );
     return response.data;
   } catch (error) {
