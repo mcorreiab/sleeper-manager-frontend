@@ -58,6 +58,7 @@ exports[`should render no rosters for user darthvader in mobile view 1`] = `
                 href="/about"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 <svg
                   aria-labelledby="projectInfoIconId"
@@ -803,6 +804,7 @@ exports[`should render rosters for user darthvader in desktop view 1`] = `
                 href="/about"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 <svg
                   aria-labelledby="projectInfoIconId"
@@ -1176,6 +1178,7 @@ exports[`should render rosters for user darthvader in mobile view 1`] = `
                 href="/about"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
+                onTouchStart={[Function]}
               >
                 <svg
                   aria-labelledby="projectInfoIconId"
