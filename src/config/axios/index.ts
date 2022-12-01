@@ -11,6 +11,6 @@ appAxios.interceptors.response.use((value: AxiosResponse) => {
 });
 appAxios.defaults.timeout = 30000;
 
-axiosRetry(appAxios, { retries: 2 });
+axiosRetry(appAxios, { retries: 3 });
 
 export default appAxios;

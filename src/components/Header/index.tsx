@@ -18,9 +18,7 @@ const Header: React.FunctionComponent = () => (
         </li>
         <li>
           <Link href="/about">
-            <a href="/about">
-              <ProjectInfoIcon />
-            </a>
+            <ProjectInfoIcon />
           </Link>
         </li>
       </ul>
